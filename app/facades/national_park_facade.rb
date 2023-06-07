@@ -4,12 +4,8 @@ class NationalParkFacade
         search = NationalParkService.parks_by_state(state)
 
         parks = search[:data]
-
         parks.map do |park|
-            # binding.pry
             Park.new(park)
         end
-        
     end
-
 end
