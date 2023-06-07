@@ -8,7 +8,7 @@ class Park
     @park_code = data[:parkCode]
     @latitude = data[:latitude]
     @longitude = data[:longitude]
-    @phone_number = data[:contacts][:phoneNumbers].first[:phoneNumber]
+    @phone_number = formatted_phone_number(data[:contacts][:phoneNumbers])
     @email = data[:contacts][:emailAddresses].first[:emailAddress]
     @entrance_fees = data[:entranceFees] # iterate through
     @directions_website = data[:directionsUrl]
@@ -16,5 +16,10 @@ class Park
     @operating_hours = data[:operatingHours].first[:standardHours] # iterate through
     @address = data[:addresses].first[:line1] + ', ' + data[:addresses].first[:city] + ', ' + data[:addresses].first[:stateCode] + ' ' + data[:addresses].first[:postalCode]
     @photos = data[:images] # iterate through
+  end
+
+  def formatted_phone_number(number)
+    return nil if number.empty?
+    return number.first[:phoneNumber]
   end
 end
