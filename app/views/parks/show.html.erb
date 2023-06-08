@@ -1,1 +1,17 @@
-hello
+   <h1><p><%= @park.name %></p></h1>
+   <p> <%=@park.phone_number%></p>
+   <p> <%=@park.email%></p>
+   <p> <%=@park.directions_website%></p>
+   <p> <%=@park.closed_day%></p>
+    <%@park.entrance_fees.each do |p_fees|%>
+       <p> <%=p_fees[:cost]%></p>
+       <p> <%=p_fees[:description]%></p>
+    <%end%>
+        <h3> Operating Hours </h3>
+    <p>Monday: <%=@park.operating_hours[:monday]%></p>
+   <p>Tuesday: <%=@park.operating_hours[:tuesday]%></p>
+   <p>Wednesday: <%=@park.operating_hours[:wednesday]%></p>
+   <p>Thursday: <%=@park.operating_hours[:thursday]%></p>
+   <p>Friday: <%=@park.operating_hours[:friday]%></p>
+   <p>Saturday: <%=@park.operating_hours[:saturday]%></p>
+   <p>Sunday: <%=@park.operating_hours[:sunday]%></p>
