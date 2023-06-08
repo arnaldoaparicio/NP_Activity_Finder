@@ -12,4 +12,9 @@ class NationalParkFacade
     park = single_park[:data][0]
     Park.new(park)
   end
+
+  def self.all_park_events(park_code)
+    park_events = NationalParkService.find_all_park_events(park_code)[:data]
+
+  end
 end
