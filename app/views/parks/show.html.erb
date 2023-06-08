@@ -15,3 +15,11 @@
    <p>Friday: <%=@park.operating_hours[:friday]%></p>
    <p>Saturday: <%=@park.operating_hours[:saturday]%></p>
    <p>Sunday: <%=@park.operating_hours[:sunday]%></p>
+
+
+   <%=form_with url: "/parks/#{@park.park_code}/events", method: :get do |form|%>
+      <%=form.date_field :start%>
+      <%=form.date_field :finish%>
+     
+      <%=form.submit "Search"%>
+   <%end%>

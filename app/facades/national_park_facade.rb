@@ -13,8 +13,10 @@ class NationalParkFacade
     Park.new(park)
   end
 
-  def self.all_park_events(park_code)
-    park_events = NationalParkService.find_all_park_events(park_code)[:data]
-
+  def self.all_park_events(park_code, start, finish)
+    park_events = NationalParkService.find_all_park_events(park_code,start,finish)[:data]
+    park_events.map do |event|
+      Event.new(event)
+    end
   end
 end
