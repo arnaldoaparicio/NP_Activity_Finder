@@ -15,3 +15,10 @@
     </ul>
   </div>
 </nav>
+
+<%= link_to "Create An Account", "/users/new"%>
+<%= link_to "Login", "/login"%>
+<%= link_to "Logout", logout_path, method: :delete%>
+<%if current_user%>
+<%= link_to "profile", user_path(@user)%>
+<%end%>
