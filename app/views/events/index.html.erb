@@ -1,18 +1,23 @@
+
+<% flash.each do |msg| %>
+    <%= msg %>
+<% end %>
+
 <%@events.each do |event|%>
     <h1><p><%=sanitize event.name %></p></h1>
    <p> <%= sanitize event.description %></p>
-   <p>Location: <%= event.location %></p>
-        <%if event.fee_info.blank?%>
-            <p> Fee Description: No Description Available</p>
-        <%else%>
-            <p> Fee Description: <%= event.fee_info %></p>
-        <%end%>
+   <p><b>Location: </b><%= event.location %></p>
+        <p><b>Fee Information: </b><%= event.fee_info %></p>
           <h3> Available Dates In Your Search Range </h3>
      <% event.date.each do |date| %>
          <p> <%= date %></p>
         <% end %>
 
     <p>This Event Will Start At: <%= event.time[0][:timestart] %> And End At: <%= event.time[0][:timeend] %></p>
+    <p><h3>Event Type: </h3></p>
+    <% event.type.each do |t| %>
+        <p><%= t %></p>
+    <% end %>
    <p><%= link_to "View Directions", "https://www.google.com/maps/dir/?api=1&destination=#{event.latitude},#{event.longitude}" %> </p>
 
 <%end%>
