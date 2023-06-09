@@ -2,7 +2,7 @@
     <p><h2> <%= link_to park.name, park_path(park.park_code, :park_code => park.park_code)%></h2></p>
     <p><%=park.description%></p>
     <%park.photos.each do |photo|%>
-        <img src="<%=photo[:url]%>" alt="<%=photo[:altText]%>" style="width:100px;height:110px;">
+        <img src="<%=photo[:url]%>" alt="<%=photo[:altText]%>" style="width:110px;height:110px;">
     <%end%>
 <%end%>
 

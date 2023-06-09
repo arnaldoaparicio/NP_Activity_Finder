@@ -1,12 +1,13 @@
    <h1><p><%= @park.name %></p></h1>
-   <p> <%=@park.phone_number%></p>
-   <p> <%=@park.email%></p>
-   <p> <%=@park.directions_website%></p>
-   <p> <%=@park.closed_day%></p>
+   <p> <b>Phone: </b><%=@park.phone_number%> </p>
+   <p><b>Email: </b><%=@park.email%></p>
+   <p> <b>Directions From Site: </b><%=@park.directions_website%></p>
+   <p><%= link_to "View Directions", "https://www.google.com/maps/dir/?api=1&destination=#{@park.latitude},#{@park.longitude}" %> </p>
     <%@park.entrance_fees.each do |p_fees|%>
-       <p> <%=p_fees[:cost]%></p>
-       <p> <%=p_fees[:description]%></p>
+       <p> <%=p_fees[:description]%>: <b>$<%=p_fees[:cost]%></b></p>
     <%end%>
+      <h3> Important Operating Hours Information </h3>
+    <p> <%=@park.closed_day%></p>
         <h3> Operating Hours </h3>
     <p>Monday: <%=@park.operating_hours[:monday]%></p>
    <p>Tuesday: <%=@park.operating_hours[:tuesday]%></p>
@@ -15,3 +16,12 @@
    <p>Friday: <%=@park.operating_hours[:friday]%></p>
    <p>Saturday: <%=@park.operating_hours[:saturday]%></p>
    <p>Sunday: <%=@park.operating_hours[:sunday]%></p>
+
+   <h3> Search Events </h3>
+
+   <%=form_with url: "/parks/#{@park.park_code}/events", method: :get do |form|%>
+      <%=form.date_field :start%>
+      <%=form.date_field :finish%>
+     
+      <%=form.submit "Search"%>
+   <%end%>
