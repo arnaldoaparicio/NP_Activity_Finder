@@ -13,13 +13,39 @@ class Park
     @entrance_fees = data[:entranceFees] # iterate through
     @directions_website = data[:directionsUrl]
     @closed_day = data[:operatingHours].first[:description]
-    @operating_hours = data[:operatingHours].first[:standardHours] # iterate through
-    @address = data[:addresses].first[:line1] + ', ' + data[:addresses].first[:city] + ', ' + data[:addresses].first[:stateCode] + ' ' + data[:addresses].first[:postalCode]
-    @photos = data[:images] # iterate through
+    @operating_hours = formatted_operating_hours(data[:operatingHours].first[:standardHours]) # iterate through
+    @address = formatted_address(data)
+    @photos = formatted_photos(data[:images]) # iterate through
   end
 
   def formatted_phone_number(number)
     return nil if number.empty?
-    return number.first[:phoneNumber]
+
+    number.first[:phoneNumber]
+  end
+
+  def formatted_address(data)
+    "#{data[:addresses].first[:line1]}, #{data[:addresses].first[:city]}, #{data[:addresses].first[:stateCode]} #{data[:addresses].first[:postalCode]}"
+  end
+
+  def formatted_operating_hours(data)
+    days = [['Monday'], ['Tuesday'], ['Wednesday'], ['Thursday'], ['Friday'], ['Saturday'], ['Sunday']]
+
+    days.each do |day|
+      data.each do |k, v|
+        if day[0].downcase == k.to_s
+          day << v
+        end
+      end
+    end
+    days
+  end
+
+  def formatted_photos(data)
+    array = []
+    data.each do |d|
+      array << [d[:url], d[:altText]]
+    end
+    array
   end
 end

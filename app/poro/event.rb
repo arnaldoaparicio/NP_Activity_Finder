@@ -8,7 +8,7 @@ class Event
     @description = data[:description]
     @name = data[:title]
     @date = data[:dates] #iterate
-    @time = data[:times] #iterate
+    @time = formatted_time(data[:times])
     @free = data[:isfree]
     @id = data[:id]
     # @fee_info = data[:feeinfo]
@@ -32,6 +32,16 @@ class Event
     else 
       @location = data[:location]
     end
+  end
+
+  def formatted_time(data)
+    time_start_and_end = []
+    data[0].each do |k, v|
+      time_start_and_end << v
+    end
+    time_start_and_end = time_start_and_end[0..-3]
+    time_start_and_end
+
   end
   
 end
