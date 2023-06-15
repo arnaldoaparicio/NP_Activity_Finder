@@ -15,8 +15,7 @@ class Park
     @closed_day = data[:operatingHours].first[:description]
     @operating_hours = formatted_operating_hours(data[:operatingHours].first[:standardHours]) # iterate through
     @address = formatted_address(data)
-    @photos = data[:images] # iterate through
-    require 'pry'; binding.pry
+    @photos = formatted_photos(data[:images]) # iterate through
   end
 
   def formatted_phone_number(number)
@@ -40,5 +39,13 @@ class Park
       end
     end
     days
+  end
+
+  def formatted_photos(data)
+    array = []
+    data.each do |d|
+      array << [d[:url], d[:altText]]
+    end
+    array
   end
 end
