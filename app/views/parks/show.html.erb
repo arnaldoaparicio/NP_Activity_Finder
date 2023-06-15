@@ -9,13 +9,10 @@
       <h3> Important Operating Hours Information </h3>
     <p> <%=@park.closed_day%></p>
         <h3> Operating Hours </h3>
-    <p>Monday: <%=@park.operating_hours[:monday]%></p>
-   <p>Tuesday: <%=@park.operating_hours[:tuesday]%></p>
-   <p>Wednesday: <%=@park.operating_hours[:wednesday]%></p>
-   <p>Thursday: <%=@park.operating_hours[:thursday]%></p>
-   <p>Friday: <%=@park.operating_hours[:friday]%></p>
-   <p>Saturday: <%=@park.operating_hours[:saturday]%></p>
-   <p>Sunday: <%=@park.operating_hours[:sunday]%></p>
+      <% @park.operating_hours.each do |hours| %>
+         <p><%= hours[0]%>: <%=hours[1] %></p>
+      <% end %>
+
 
    <h3> Search Events </h3>
 
