@@ -56,6 +56,9 @@ RSpec.describe ' Park Poro' do
                }]
 
     }
+
+   
+      
     park = Park.new(data)
     expect(park).to be_a Park
   end

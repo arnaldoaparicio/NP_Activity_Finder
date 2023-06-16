@@ -4,7 +4,7 @@
    <p> <b>Directions From Site: </b><%=link_to @park.directions_website, @park.directions_website, target: :blank%></p>
    <p><%= link_to "View Directions", "https://www.google.com/maps/dir/?api=1&destination=#{@park.latitude},#{@park.longitude}" %> </p>
     <%@park.entrance_fees.each do |p_fees|%>
-       <p> <%=p_fees[:description]%>: <b>$<%=p_fees[:cost]%></b></p>
+       <p> <%=p_fees[1]%>: <b>$<%=p_fees[0]%></b></p>
     <%end%>
       <h3> Important Operating Hours Information </h3>
     <p> <%=@park.closed_day%></p>
