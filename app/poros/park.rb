@@ -16,7 +16,6 @@ class Park
     @operating_hours = formatted_operating_hours(data[:operatingHours].first[:standardHours]) # iterate through
     @address = formatted_address(data)
     @photos = formatted_photos(data[:images]) # iterate through
-    
   end
 
   def formatted_phone_number(number)
@@ -56,6 +55,5 @@ class Park
       array << [d[:cost], d[:description]]
     end
     array
-    
   end
 end
