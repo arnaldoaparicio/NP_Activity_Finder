@@ -1,5 +1,4 @@
 class Event
-
   attr_reader :location, :description, :name, :date, :time, :free, :id, :fee_info, :latitude, :longitude, :type
 
   def initialize(data)
