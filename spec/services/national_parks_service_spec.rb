@@ -29,7 +29,7 @@ RSpec.describe NationalParkService do
     expect(search[:data].first[:contacts][:phoneNumbers].first[:phoneNumber]).to be_a String
 
     expect(search[:data].first[:contacts][:emailAddresses].first).to have_key :emailAddress
-    expect(search[:data].first[:contacts[:emailAddresses].first][:emailAddress]).to be_a String
+    expect(search[:data].first[:contacts][:emailAddresses].first[:emailAddress]).to be_a String
 
     expect(search[:data].first).to have_key :entranceFees
     expect(search[:data].first[:entranceFees]).to be_an Array
@@ -41,11 +41,11 @@ RSpec.describe NationalParkService do
     expect(search[:data].first[:operatingHours].first[:description]).to be_a String
 
     expect(search[:data].first[:operatingHours].first).to have_key :standardHours
-    expect(search[:data].first[:operatingHours].first[:standardHours]).to be_an Array
+    expect(search[:data].first[:operatingHours].first[:standardHours]).to be_an Hash
 
     search[:data].first[:addresses].each do |text|
       expect(text).to have_key :line1
-      expect(text[:line]).to be_a String
+      expect(text[:line1]).to be_a String
 
       expect(text).to have_key :city
       expect(text[:city]).to be_a String
