@@ -10,7 +10,7 @@ class Event
     @date = data[:dates] #iterate
     @time = formatted_time(data[:times])
     @free = data[:isfree]
-    @id = data[:id]
+    @event_code = data[:id]
     # @fee_info = data[:feeinfo]
     @fee_info = blank_event(data)
     @latitude = data[:latitude]

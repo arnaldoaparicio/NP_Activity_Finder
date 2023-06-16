@@ -10,12 +10,14 @@ class Park
     @longitude = data[:longitude]
     @phone_number = formatted_phone_number(data[:contacts][:phoneNumbers])
     @email = data[:contacts][:emailAddresses].first[:emailAddress]
-    @entrance_fees = data[:entranceFees] # iterate through
+    # @entrance_fees = data[:entranceFees] # iterate through
+    @entrance_fees = formated_entrace_fees(data[:entranceFees])
     @directions_website = data[:directionsUrl]
     @closed_day = data[:operatingHours].first[:description]
     @operating_hours = formatted_operating_hours(data[:operatingHours].first[:standardHours]) # iterate through
     @address = formatted_address(data)
     @photos = formatted_photos(data[:images]) # iterate through
+    # binding.pry
   end
 
   def formatted_phone_number(number)
@@ -47,5 +49,14 @@ class Park
       array << [d[:url], d[:altText]]
     end
     array
+  end
+
+  def formated_entrace_fees(data)
+    array = []
+    data.each do |d|
+      array << [d[:cost], d[:description]]
+    end
+    array
+    
   end
 end
