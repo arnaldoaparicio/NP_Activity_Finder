@@ -3,7 +3,7 @@ require 'pry'
 require 'date'
 
 RSpec.describe NationalParkFacade do
-  it 'returns parks by state code' do
+  it 'returns parks by state code', :vcr do
     state = 'md'
     search = NationalParkFacade.get_parks_by_state(state)
     expect(search).to be_a Array
@@ -13,7 +13,7 @@ RSpec.describe NationalParkFacade do
     end
   end
 
-  it 'returns events by park code' do
+  it 'returns events by park code', :vcr do
     park_code = 'shen'
     start = Date.today.to_s
     finish = (Date.today + 7).to_s
@@ -25,7 +25,7 @@ RSpec.describe NationalParkFacade do
     end
   end
 
-  it 'returns one park by park code' do
+  it 'returns one park by park code', :vcr do
     park_code = 'shen'
     single_park = NationalParkService.find_one_park(park_code)
 
