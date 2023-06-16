@@ -1,0 +1,190 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://developer.nps.gov/api/v1/parks?api_key=zmuTdZgBkO6cmrf401Mfjpr6hRqdfLwi8NdgROnB&parkCode=shen
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.6
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Jun 2023 22:04:01 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-type, Authorization, Access-Control-Allow-Headers, Credentials, X-Api-Key
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Age:
+      - '0'
+      Allow:
+      - Get
+      Content-Security-Policy:
+      - default-src 'none'; base-uri 'none'; connect-src 'self'; form-action 'self';
+        font-src 'self'; frame-ancestors 'none'; img-src 'self'; media-src 'self';
+        style-src 'self' 'unsafe-inline'; script-src 'self'; worker-src 'self';
+      Strict-Transport-Security:
+      - max-age=31536000; preload
+      - max-age=31536000; preload
+      Vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      Via:
+      - http/1.1 api-umbrella (ApacheTrafficServer [cMsSf ])
+      X-Api-Umbrella-Request-Id:
+      - c8oou9t7rutln2uk5660
+      X-Cache:
+      - MISS
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '952'
+      X-Vcap-Request-Id:
+      - c9680111-71b6-43ba-6d5c-ee5f8593ed2d
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+    body:
+      encoding: UTF-8
+      string: " \r\n{\r\n\r\n\"total\":\"1\",\r\n\"limit\":\"50\",\r\n\"start\":\"0\",
+        \ \r\n\"data\":[\r\n\r\n{\r\n\r\n\"id\":\"E991C8BC-C203-4A09-AFD5-87380CF5C387\"\r\n\r\n,\"url\":\r\n\r\n\"https://www.nps.gov/shen/index.htm\"\r\n\r\n,\"fullName\":\"Shenandoah
+        National Park\"      \r\n\r\n,\"parkCode\":\"shen\"\r\n\r\n,\"description\":\"Just
+        75 miles from the bustle of Washington, D.C., Shenandoah National Park is
+        a land bursting with cascading waterfalls, spectacular vistas, fields of wildflowers,
+        and quiet wooded hollows. With over 200,000 acres of protected lands that
+        are haven to deer, songbirds, and black bear, there's so much to explore...and
+        your journey begins right here!\"\r\n\r\n,\"latitude\":\r\n\r\n\"38.49236644\"
+        \r\n\r\n,\"longitude\":\r\n\r\n\"-78.46907715\" \r\n\r\n,\"latLong\":\"lat:38.49236644,
+        long:-78.46907715\"\r\n\r\n,\"activities\":[{\"id\":\"5F723BAD-7359-48FC-98FA-631592256E35\",\"name\":\"Auto
+        and ATV\"},{\"id\":\"0B4A5320-216D-451A-9990-626E1D5ACE28\",\"name\":\"Scenic
+        Driving\"},{\"id\":\"13A57703-BB1A-41A2-94B8-53B692EB7238\",\"name\":\"Astronomy\"},{\"id\":\"D37A0003-8317-4F04-8FB0-4CF0A272E195\",\"name\":\"Stargazing\"},{\"id\":\"7CE6E935-F839-4FEC-A63E-052B1DEF39D2\",\"name\":\"Biking\"},{\"id\":\"8D778629-F603-4C50-A121-6F4BB2FE2C4B\",\"name\":\"Road
+        Biking\"},{\"id\":\"A59947B7-3376-49B4-AD02-C0423E08C5F7\",\"name\":\"Camping\"},{\"id\":\"4A58AF13-E8FB-4530-B41A-97DF0B0C77B7\",\"name\":\"Backcountry
+        Camping\"},{\"id\":\"9159DF0F-951D-4AAE-9987-CEB3CE2A9ADA\",\"name\":\"Car
+        or Front Country Camping\"},{\"id\":\"7CFF5F03-5ECC-4F5A-8572-75D1F0976C0C\",\"name\":\"Group
+        Camping\"},{\"id\":\"C5C5971C-E325-4CEB-8C81-EE49A881DF17\",\"name\":\"RV
+        Camping\"},{\"id\":\"B12FAAB9-713F-4B38-83E4-A273F5A43C77\",\"name\":\"Climbing\"},{\"id\":\"87D3B1CD-3903-4561-ABB1-2DD870C43F2F\",\"name\":\"Rock
+        Climbing\"},{\"id\":\"C11D3746-5063-4BD0-B245-7178D1AD866C\",\"name\":\"Compass
+        and GPS\"},{\"id\":\"CA3641A0-FADC-497F-B036-3FE426D0DDCC\",\"name\":\"Geocaching\"},{\"id\":\"AE42B46C-E4B7-4889-A122-08FE180371AE\",\"name\":\"Fishing\"},{\"id\":\"1DFACD97-1B9C-4F5A-80F2-05593604799E\",\"name\":\"Food\"},{\"id\":\"E53E1320-9B17-41DC-86A5-37EB7D622572\",\"name\":\"Dining\"},{\"id\":\"C6D3230A-2CEA-4AFE-BFF3-DC1E2C2C4BB4\",\"name\":\"Picnicking\"},{\"id\":\"42FD78B9-2B90-4AA9-BC43-F10E9FEA8B5A\",\"name\":\"Hands-On\"},{\"id\":\"31F88DA6-696F-441F-89CF-D7B1415C4CB9\",\"name\":\"Citizen
+        Science\"},{\"id\":\"BFF8C027-7C8F-480B-A5F8-CD8CE490BFBA\",\"name\":\"Hiking\"},{\"id\":\"0307955A-B65C-4CE4-A780-EB36BAAADF0B\",\"name\":\"Horse
+        Trekking\"},{\"id\":\"1886DA47-0AEC-4568-B9C2-8E9BC316AAAC\",\"name\":\"Horseback
+        Riding\"},{\"id\":\"8386EEAF-985F-4DE8-9037-CCF91975AC94\",\"name\":\"Hunting
+        and Gathering\"},{\"id\":\"8286295F-0932-4491-9350-280C9848E6AB\",\"name\":\"Gathering
+        and Foraging\"},{\"id\":\"DF4A35E0-7983-4A3E-BC47-F37B872B0F25\",\"name\":\"Junior
+        Ranger Program\"},{\"id\":\"0B685688-3405-4E2A-ABBA-E3069492EC50\",\"name\":\"Wildlife
+        Watching\"},{\"id\":\"5A2C91D1-50EC-4B24-8BED-A2E11A1892DF\",\"name\":\"Birdwatching\"},{\"id\":\"C8F98B28-3C10-41AE-AA99-092B3B398C43\",\"name\":\"Museum
+        Exhibits\"},{\"id\":\"24380E3F-AD9D-4E38-BF13-C8EEB21893E7\",\"name\":\"Shopping\"},{\"id\":\"467DC8B8-0B7D-436D-A026-80A22358F615\",\"name\":\"Bookstore
+        and Park Store\"},{\"id\":\"43800AD1-D439-40F3-AAB3-9FB651FE45BB\",\"name\":\"Gift
+        Shop and Souvenirs\"}]\r\n,\"topics\":[{\"id\":\"00F3C3F9-2D67-4802-81AE-CCEA5D3BA370\",\"name\":\"Arts\"},{\"id\":\"F12B6BDB-2FE9-4961-9DC2-59FEBC0990CD\",\"name\":\"Great
+        Depression\"},{\"id\":\"F669BC40-BDC4-41C0-9ACE-B2CD25373045\",\"name\":\"Presidents\"},{\"id\":\"3CDB67A9-1EAC-408D-88EC-F26FA35E90AF\",\"name\":\"Schools
+        and Education\"},{\"id\":\"FE2C2613-B41E-4531-BC43-03EB6E45CBCF\",\"name\":\"Transportation\"},{\"id\":\"0BBD4A42-2B3D-4E82-B5C4-1A3874C8682E\",\"name\":\"Roads,
+        Routes and Highways\"},{\"id\":\"FB3641FE-67A3-4EC7-B9C4-0A0867776798\",\"name\":\"Ancient
+        Seas\"},{\"id\":\"0D00073E-18C3-46E5-8727-2F87B112DDC6\",\"name\":\"Animals\"},{\"id\":\"957EF2BD-AC6C-4B7B-BD9A-87593ADC6691\",\"name\":\"Birds\"},{\"id\":\"1608649A-E7D7-4529-BD83-074C90F9FB68\",\"name\":\"Fish\"},{\"id\":\"4DC11D06-00F1-4A01-81D0-89CCCCE4FF50\",\"name\":\"Climate
+        Change\"},{\"id\":\"04A39AB8-DD02-432F-AE5F-BA1267D41A0D\",\"name\":\"Fire\"},{\"id\":\"41B1A0A3-11FF-4F55-9CB9-034A7E28B087\",\"name\":\"Forests
+        and Woodlands\"},{\"id\":\"F0F97E32-2F29-41B4-AF98-9FBE8DAB36B1\",\"name\":\"Geology\"},{\"id\":\"94262026-92F5-48E9-90EF-01CEAEFBA4FF\",\"name\":\"Grasslands\"},{\"id\":\"AEA4C5FD-F25C-4C3D-97FE-2767ED3EE682\",\"name\":\"Meadows\"},{\"id\":\"101F4D51-F99D-45A6-BBB6-CD481E5FACED\",\"name\":\"Mountains\"},{\"id\":\"A7359FC4-DAD8-45F5-AF15-7FF62F816ED3\",\"name\":\"Night
+        Sky\"},{\"id\":\"4244F489-6813-4B7A-9D0C-20CE098C8FFF\",\"name\":\"Rock Landscapes
+        and Features\"},{\"id\":\"9C9FCBB6-360B-4743-8155-6F9341CBE01B\",\"name\":\"Scenic
+        Views\"},{\"id\":\"5BE55D7F-BDB6-4E3D-AC35-2D8EBB974417\",\"name\":\"Trails\"},{\"id\":\"78E4F4AC-AF97-435A-8C2C-7FB8D67516ED\",\"name\":\"Unique
+        Species\"},{\"id\":\"489D6333-FD72-44DF-83B0-3D4412DD0A75\",\"name\":\"Endangered\"},{\"id\":\"BA12B386-49EA-46B0-9121-FCACACC47538\",\"name\":\"Watersheds\"},{\"id\":\"5ED826E0-76BB-47BB-87DD-E081A72B0A04\",\"name\":\"Waterfalls\"},{\"id\":\"B85866E2-0897-4000-9040-605CA335804F\",\"name\":\"Wilderness\"}]\r\n,\"states\":\"VA\"\r\n\r\n,\"contacts\":{\"phoneNumbers\":[{\"phoneNumber\":\"5409993500\",\"description\":\"\",\"extension\":\"\",\"type\":\"Voice\"}],\"emailAddresses\":[{\"description\":\"Park
+        information, lost and found and trip planning. Emails are answered on weekdays
+        only, usually within 5 business days.\",\"emailAddress\":\"shen_info@nps.gov\"}]}\r\n,\"entranceFees\":[{\"cost\":\"30.00\",\"description\":\"Unlimited
+        entry for one vehicle and all passengers for seven consecutive days, beginning
+        on the day of purchase. Vehicles must be private, noncommercial, and with
+        a seating capacity of 15 or less.\",\"title\":\"Entrance - Private Vehicle\"},{\"cost\":\"25.00\",\"description\":\"Entry
+        for one motorcycle and one passenger for seven consecutive days, beginning
+        on the day of purchase.\",\"title\":\"Entrance - Motorcycle\"},{\"cost\":\"15.00\",\"description\":\"Entry
+        for walk-up or bicycling visitors, when 16 years of age or older (children
+        under 16 are admitted for free). Includes entering the Park by all means other
+        than a private, non-commercial vehicle. A family traveling together shall
+        pay no more than the vehicle fee.\",\"title\":\"Entrance - Per Person\"},{\"cost\":\"25.00\",\"description\":\"The
+        total cost is calculated: $25 + $10 per passenger.\",\"title\":\"Commercial
+        Entrance - Sedan\"},{\"cost\":\"10.00\",\"description\":\"This fee is for
+        commercial use between 1-6 passengers (sedan). The total cost is calculated:
+        $25 for the vehicle + $10 per passenger.\",\"title\":\"Commercial Entrance
+        - Per Person\"},{\"cost\":\"75.00\",\"description\":\"Based upon the total
+        capacity of a vehicle that can carry 7-15 passengers, regardless of the actual
+        number of passengers.\",\"title\":\"Commercial Entrance - Van\"},{\"cost\":\"100.00\",\"description\":\"Based
+        upon the total capacity of a vehicle that can carry 16-25 passengers, regardless
+        of the actual number of passengers.\",\"title\":\"Commercial Entrance - Mini-bus\"},{\"cost\":\"200.00\",\"description\":\"Based
+        upon the total capacity of a vehicle that can carry 26 or more passengers,
+        regardless of the actual number of passengers.\",\"title\":\"Commercial Entrance
+        - Motor Coach\"},{\"cost\":\"0.00\",\"description\":\"National Park Service
+        regulations allow school groups and other approved national and international
+        academic institutions to obtain a waiver of Park entrance fees, provided that
+        visit is for educational or scientific purposes, and the resources or facilities
+        that the group intends to use, support those purposes. Request an academic
+        fee waiver through the education section of our website.\",\"title\":\"Entrance
+        - Education/Academic Groups\"},{\"cost\":\"15.00\",\"description\":\"Fee is
+        calculated per person for anyone 16 years of age or older (children under
+        16 are admitted for free). Groups will not be charged more than the equivalent
+        commercial group fee.\",\"title\":\"Entrance - Non-commercial Groups\"}]\r\n,\"entrancePasses\":[{\"cost\":\"55.00\",\"description\":\"Provides
+        unlimited entry for one year to the pass holder and passengers in the same
+        vehicle, not to exceed 4 total adults. Children under 16 are admitted for
+        free and are not included in this total. Purchase online or at any of our
+        entrance stations.\",\"title\":\"Annual Entrance - Park\"}]\r\n,\"fees\":[]\r\n,\"directionsInfo\":\"Shenandoah
+        National Park is located in the Blue Ridge Mountains of Virginia, west of
+        Washington, D.C. It stretches 105 miles and has four entrances: Front Royal
+        (northern entrance), Thornton Gap, Swift Run Gap, and Rockfish Gap (southern
+        entrance to Shenandoah and the northern entrance to the Blue Ridge Parkway).
+        The physical address listed is to the administrative offices, not the Park
+        itself. GPS can be unreliable for navigating to the Park, so we encourage
+        you to check out our website for more info.\"\r\n\r\n,\"directionsUrl\":\"http://www.nps.gov/shen/planyourvisit/directions.htm\"\r\n\r\n,\"operatingHours\":[{\"exceptions\":[],\"description\":\"Shenandoah
+        National Park is always open. However, portions of Skyline Drive, the only
+        public road through the Park, are periodically closed during inclement weather.
+        Visitors can still enter the Park on foot to hike, even when the Skyline Drive
+        is closed. Campgrounds, services, and facilities have separate hours; please
+        see descriptions of those facilities elsewhere on our website.\",\"standardHours\":{\"wednesday\":\"All
+        Day\",\"monday\":\"All Day\",\"thursday\":\"All Day\",\"sunday\":\"All Day\",\"tuesday\":\"All
+        Day\",\"friday\":\"All Day\",\"saturday\":\"All Day\"},\"name\":\"Shenandoah
+        National Park\"}]\r\n,\"addresses\":[{\"postalCode\":\"22835\",\"city\":\"Luray\",\"stateCode\":\"VA\",\"countryCode\":\"US\",\"provinceTerritoryCode\":\"\",\"line1\":\"Shenandoah
+        National Park\",\"type\":\"Physical\",\"line3\":\"\",\"line2\":\"3655 U.S.
+        Highway 211 East\"},{\"postalCode\":\"22835\",\"city\":\"Luray\",\"stateCode\":\"VA\",\"countryCode\":\"US\",\"provinceTerritoryCode\":\"\",\"line1\":\"Shenandoah
+        National Park\",\"type\":\"Mailing\",\"line3\":\"\",\"line2\":\"3655 U.S.
+        Highway 211 East\"}]\r\n,\"images\":[{\"credit\":\"NPS Photo / Neal Lewis\",\"title\":\"Adventure
+        Awaits\",\"altText\":\"A man stands on a rocky outcrop overlooking the receding
+        mountains.\",\"caption\":\"There are over 60 peaks with an elevation over
+        3,000 feet in Shenandoah.\",\"url\":\"https://www.nps.gov/common/uploads/structured_data/3C80B539-1DD8-B71B-0BEAAA4AC31E7D5B.jpg\"},{\"credit\":\"NPS
+        Photo / Katy Cain\",\"title\":\"Wonderful Waterfalls\",\"altText\":\"A man
+        stands with his back facing us, looking at a waterfall.\",\"caption\":\"Dark
+        Hollow Falls, at 70 feet, is our most visited waterfall.\",\"url\":\"https://www.nps.gov/common/uploads/structured_data/3C80B63B-1DD8-B71B-0BAC3145E329FC99.jpg\"},{\"credit\":\"NPS
+        Photo / Neal Lewis\",\"title\":\"Red-Bellied Woodpecker\",\"altText\":\"A
+        close up shot of a Red-Bellied Woodpecker with a blurry teal background.\",\"caption\":\"There
+        are over 200 species of bird that call Shenandoah \\\"home.\\\"\",\"url\":\"https://www.nps.gov/common/uploads/structured_data/3C80B752-1DD8-B71B-0B0FAB718671DC3E.jpg\"},{\"credit\":\"NPS
+        Photo / Neal Lewis\",\"title\":\"Driving on Skyline Drive\",\"altText\":\"A
+        road surrounded by fall foliage turns a curve around a small waterfall.\",\"caption\":\"There
+        are 105 miles to explore on Skyline Drive.\",\"url\":\"https://www.nps.gov/common/uploads/structured_data/3C80B867-1DD8-B71B-0B328321E4420769.jpg\"},{\"credit\":\"NPS
+        Photo / Katy Cain\",\"title\":\"Find Yourself in Nature\",\"altText\":\"Looking
+        up at a poplar stand canopy, which is turning yellow in fall.\",\"caption\":\"This
+        poplar stand at mile 8 is a popular stop for visitors entering from the north
+        entrance.\",\"url\":\"https://www.nps.gov/common/uploads/structured_data/3C80B989-1DD8-B71B-0B3A418BF2F78CF0.jpg\"}]\r\n,\"weatherInfo\":\"Shenandoah
+        National Park has four very distinct seasons. Spring typically brings mild
+        temperatures, rain, and wildflowers. Summer brings lush green forests, but
+        can be hot and very humid. Fall follows with cooler temperatures and spectacular
+        fall foliage. Winter can bring snow and ice. The park spans roughly 100 miles,
+        which means that weather can vary greatly depending on your location. The
+        mountain is usually 10°F cooler than the valley below. Always check the forecast,
+        dress in layers, and be prepared.\"\r\n\r\n,\"name\":\"Shenandoah\"\r\n\r\n,\"designation\":\"National
+        Park\"\r\n\r\n\r\n}\r\n\r\n]\r\n}\r\n"
+  recorded_at: Fri, 16 Jun 2023 22:04:01 GMT
+recorded_with: VCR 6.1.0

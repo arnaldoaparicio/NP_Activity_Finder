@@ -1,0 +1,197 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://developer.nps.gov/api/v1/events?api_key=zmuTdZgBkO6cmrf401Mfjpr6hRqdfLwi8NdgROnB&dateEnd=2023-06-23&dateStart=2023-06-16&parkCode=shen
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.6
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Jun 2023 22:04:01 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '2450'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-type, Authorization, Access-Control-Allow-Headers, Credentials
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, PATCH, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Age:
+      - '2'
+      Allow:
+      - GET
+      Strict-Transport-Security:
+      - max-age=31536000; preload
+      - max-age=31536000; preload
+      Vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      Via:
+      - http/1.1 api-umbrella (ApacheTrafficServer [cMsSf ])
+      X-Api-Umbrella-Request-Id:
+      - c8oou9jub5u5s6kl5gmg
+      X-Cache:
+      - MISS
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '953'
+      X-Time-In-Cache-Check:
+      - '0'
+      X-Time-In-Cache-Save:
+      - '0'
+      X-Time-In-Ontaffyrequest:
+      - '0'
+      X-Time-In-Ontaffyrequestend:
+      - '0'
+      X-Time-In-Parse:
+      - '0'
+      X-Time-In-Resource:
+      - '62'
+      X-Time-In-Serialize:
+      - '537'
+      X-Time-In-Taffy:
+      - '0'
+      X-Vcap-Request-Id:
+      - 822a23ea-3d85-4526-6cb6-a75fd1008695
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '{"total":"27","errors":[],"data":[{"location":"Rapidan Camp","updateuser":"","contactname":"","contacttelephonenumber":"","recurrencedateend":"2023-09-04","longitude":"-78.419520","datestart":"2023-06-16","isrecurring":"true","datetimeupdated":"","portalname":"","types":["Guided
+        Tour","Talk"],"createuser":"","isfree":"true","contactemailaddress":"","regresurl":"https:\/\/www.recreation.gov\/ticket\/facility\/251745","description":"<p>Travel
+        by van 30 minutes to President Hoover’s summer retreat. Reservations are required
+        and can be made online at www.recreation.gov or by calling (877) 444-6777.
+        Byrd Visitor Center (mile 51), 2-½ hrs. Check for other tour times at www.recreation.gov<\/p>\n<p>Wheelchair
+        Accessible. Assistive Listening Available (please arrive 15 minutes early).<\/p>","images":[],"category":"Regular
+        Event","imageidlist":"","isregresrequired":"true","organizationname":"","id":"81F4CF23-91FF-2DC9-85BFA0FC411C2381","isallday":"false","dateend":"2023-06-16","sitecode":"shen","infourl":"","times":[{"timestart":"10:00
+        AM","timeend":"11:30 AM","sunsetend":"false","sunrisestart":"false"},{"timestart":"02:00
+        PM","timeend":"03:30 PM","sunsetend":"false","sunrisestart":"false"}],"regresinfo":"Reservations
+        can be made at www.recreation.gov or by calling (877) 444-6777.","timeinfo":"","categoryid":"0","eventid":"0","parkfullname":"Shenandoah
+        National Park","recurrencedatestart":"2023-05-26","date":"2023-06-16","sitetype":"park","feeinfo":"However,
+        there is a $30 entrance fee to the park (good for seven days).","recurrencerule":"DTSTART=20230526T040000Z;UNTIL=20230904T040000Z;FREQ=WEEKLY;WKST=SU;BYDAY=SU,MO,TH,FR,SA;COUNT=0;INTERVAL=1","dates":["2023-06-16","2023-06-17","2023-06-18","2023-06-19","2023-06-22","2023-06-23"],"datetimecreated":"","title":"Historic
+        Rapidan Camp","latitude":"38.490760","subjectname":"","tags":["ranger program","ranger
+        programs","summer","Rapidan Camp"]},{"location":"Lewis Mountain Amphitheater
+        (mile 57.2)","updateuser":"","contactname":"","contacttelephonenumber":"","recurrencedateend":"2023-09-04","longitude":"","datestart":"2023-06-16","isrecurring":"true","datetimeupdated":"","portalname":"","types":["Campfire\/Evening
+        Program","Talk"],"createuser":"","isfree":"true","contactemailaddress":"","regresurl":"","description":"<p>Join
+        a Ranger for a national park tradition while learning more about the natural
+        or cultural history of Shenandoah. Check visitor centers for topics. Dress
+        for cool mountain nights and bring a flashlight. Wheelchair Accessible.<\/p>\n<p><em>Lewis
+        Mountain Amphitheater (mile 57.2), 45 min<\/em><\/p>","images":[],"category":"Regular
+        Event","imageidlist":"","isregresrequired":"false","organizationname":"","id":"7CB12392-B56D-DD08-CCBFC0D1E1209A51","isallday":"false","dateend":"2023-06-16","sitecode":"shen","infourl":"","times":[{"timestart":"07:30
+        PM","timeend":"08:15 PM","sunsetend":"false","sunrisestart":"false"}],"regresinfo":"","timeinfo":"","categoryid":"0","eventid":"0","parkfullname":"Shenandoah
+        National Park","recurrencedatestart":"2023-05-26","date":"2023-06-16","sitetype":"park","feeinfo":"However,
+        there is a $30 entrance fee to the park (good for seven days).","recurrencerule":"DTSTART=20230526T040000Z;UNTIL=20230904T040000Z;FREQ=WEEKLY;WKST=SU;BYDAY=FR;COUNT=0;INTERVAL=1","dates":["2023-06-16","2023-06-23"],"datetimecreated":"","title":"Lewis
+        Mountain Evening Program","latitude":"","subjectname":"","tags":["ranger program","ranger
+        programs","summer","Lewis Mountain","evening program"]},{"location":"Loft
+        Mountain Amphitheater (mile 79.5), 45 min.","updateuser":"","contactname":"","contacttelephonenumber":"","recurrencedateend":"2023-09-04","longitude":"-78.669036","datestart":"2023-06-16","isrecurring":"true","datetimeupdated":"","portalname":"","types":["Campfire\/Evening
+        Program","Talk"],"createuser":"","isfree":"true","contactemailaddress":"","regresurl":"","description":"<p>Join
+        a Ranger for an exploration of the night sky. Bring a lawn chair or blanket
+        and dress for cool mountain nights. Wheelchair Accessible. Assistive Listening
+        Available (please arrive 15 minutes early).<\/p>\n<p><em>Loft Mountain Amphitheater
+        (mile 79.5), 45 min.<\/em><\/p>","images":[],"category":"Regular Event","imageidlist":"","isregresrequired":"true","organizationname":"","id":"8252A489-E0FA-84AB-17AE0BFF3128DBEE","isallday":"false","dateend":"2023-06-16","sitecode":"shen","infourl":"","times":[{"timestart":"09:30
+        PM","timeend":"10:15 PM","sunsetend":"false","sunrisestart":"false"}],"regresinfo":"","timeinfo":"","categoryid":"0","eventid":"0","parkfullname":"Shenandoah
+        National Park","recurrencedatestart":"2023-05-26","date":"2023-06-16","sitetype":"park","feeinfo":"However,
+        there is a $30 entrance fee to the park (good for seven days).","recurrencerule":"DTSTART=20230526T040000Z;UNTIL=20230904T040000Z;FREQ=WEEKLY;WKST=SU;BYDAY=FR;COUNT=0;INTERVAL=1","dates":["2023-06-16","2023-06-23"],"datetimecreated":"","title":"Loft
+        Mountain Star Party","latitude":"38.250220","subjectname":"","tags":["ranger
+        program","ranger programs","summer","Loft Mountain","evening program"]},{"location":"Park
+        at Skyland Conference Hall and follow the sign to walk up road (mile 42.5).","updateuser":"","contactname":"","contacttelephonenumber":"","recurrencedateend":"2023-09-04","longitude":"","datestart":"2023-06-16","isrecurring":"true","datetimeupdated":"","portalname":"","types":["Guided
+        Tour","Other"],"createuser":"","isfree":"true","contactemailaddress":"","regresurl":"","description":"<p>Tour
+        Addie Pollock’s restored bungalow and hear the stories of early Skyland. Wheelchair
+        Accessible.<\/p>\n<p><em>Park at Skyland Conference Hall and follow the sign
+        to walk up road (mile 42.5).<\/em><\/p>","images":[],"category":"Regular Event","imageidlist":"","isregresrequired":"false","organizationname":"","id":"7467095F-DEC2-269B-58C74BA841015F48","isallday":"false","dateend":"2023-06-16","sitecode":"shen","infourl":"","times":[{"timestart":"02:00
+        PM","timeend":"04:00 PM","sunsetend":"false","sunrisestart":"false"}],"regresinfo":"","timeinfo":"","categoryid":"0","eventid":"0","parkfullname":"Shenandoah
+        National Park","recurrencedatestart":"2023-05-26","date":"2023-06-16","sitetype":"park","feeinfo":"However,
+        there is a $30 entrance fee to the park (good for seven days).","recurrencerule":"DTSTART=20230526T040000Z;UNTIL=20230904T040000Z;FREQ=WEEKLY;WKST=SU;BYDAY=SU,MO,TH,FR,SA;COUNT=0;INTERVAL=1","dates":["2023-06-16","2023-06-17","2023-06-18","2023-06-19","2023-06-22","2023-06-23"],"datetimecreated":"","title":"Massanutten
+        Lodge Open House","latitude":"","subjectname":"","tags":["ranger program","summer","Skyland","Addie
+        Pollock","Massanutten Lodge"]},{"location":"Located at Skyland lower-level
+        (mile 42.5).","updateuser":"","contactname":"","contacttelephonenumber":"","recurrencedateend":"2023-09-04","longitude":"","datestart":"2023-06-16","isrecurring":"true","datetimeupdated":"","portalname":"","types":["Talk"],"createuser":"","isfree":"true","contactemailaddress":"","regresurl":"","description":"<p>Learn
+        the history of Skyland including Addie Pollock’s restored bungalow and hear
+        the stories of early Skland Resort. Wheelchair Accessible.<\/p>\n<p><em>Located
+        at Skyland lower-level (mile 42.5). Park near Skyland Conference Hall and
+        follow the sign to walk up road - 20 minutes.<\/em><\/p>","images":[],"category":"Regular
+        Event","imageidlist":"","isregresrequired":"false","organizationname":"","id":"77438DD9-C9AC-4401-5F802B2A68AF023F","isallday":"false","dateend":"2023-06-16","sitecode":"shen","infourl":"","times":[{"timestart":"01:30
+        PM","timeend":"02:00 PM","sunsetend":"false","sunrisestart":"false"}],"regresinfo":"","timeinfo":"","categoryid":"0","eventid":"0","parkfullname":"Shenandoah
+        National Park","recurrencedatestart":"2023-05-26","date":"2023-06-16","sitetype":"park","feeinfo":"However,
+        there is a $30 entrance fee to the park (good for seven days).","recurrencerule":"DTSTART=20230526T040000Z;UNTIL=20230904T040000Z;FREQ=WEEKLY;WKST=SU;BYDAY=SU,MO,TH,FR,SA;COUNT=0;INTERVAL=1","dates":["2023-06-16","2023-06-17","2023-06-18","2023-06-19","2023-06-22","2023-06-23"],"datetimecreated":"","title":"Massanutten
+        Lodge Porch Talk","latitude":"","subjectname":"","tags":["ranger program","summer","Skyland","Massanutten
+        Lodge","Addie Pollock"]},{"location":"Mathews Arm Campground Amphitheater
+        (mile 22.2)","updateuser":"","contactname":"","contacttelephonenumber":"","recurrencedateend":"2023-09-04","longitude":"","datestart":"2023-06-16","isrecurring":"true","datetimeupdated":"","portalname":"","types":["Campfire\/Evening
+        Program","Talk"],"createuser":"","isfree":"true","contactemailaddress":"","regresurl":"","description":"<p>Join
+        a Ranger for a national park tradition while learning more about the natural
+        or cultural history of Shenandoah. Check visitor centers for topics. Dress
+        for cool mountain nights and bring a flashlight. Wheelchair Accessible. Assistive
+        Listening Available (please arrive 15 minutes early).<\/p>\n<p><em>Mathews
+        Arm Campground Amphitheater (mile 22.2), 45 minutes.<\/em><\/p>","images":[],"category":"Regular
+        Event","imageidlist":"","isregresrequired":"false","organizationname":"","id":"A0C0E97E-A54F-737B-761D2883DEB9C74F","isallday":"false","dateend":"2023-06-16","sitecode":"shen","infourl":"","times":[{"timestart":"07:30
+        PM","timeend":"08:15 PM","sunsetend":"false","sunrisestart":"false"}],"regresinfo":"","timeinfo":"","categoryid":"0","eventid":"0","parkfullname":"Shenandoah
+        National Park","recurrencedatestart":"2023-05-26","date":"2023-06-16","sitetype":"park","feeinfo":"Ranger
+        programs are free. However, there is a $30 entrance fee to the park (good
+        for seven days).","recurrencerule":"DTSTART=20230526T040000Z;UNTIL=20230904T040000Z;FREQ=WEEKLY;WKST=SU;BYDAY=FR,SA;COUNT=0;INTERVAL=1","dates":["2023-06-16","2023-06-17","2023-06-23"],"datetimecreated":"","title":"Mathews
+        Arm Evening Program","latitude":"","subjectname":"","tags":["ranger program","summer","Mathews
+        Arm Campground","evening program"]},{"location":"Visitor Center at Big Meadows
+        (mile 51)","updateuser":"","contactname":"","contacttelephonenumber":"","recurrencedateend":"2023-09-04","longitude":"","datestart":"2023-06-16","isrecurring":"true","datetimeupdated":"","portalname":"","types":["Walk"],"createuser":"","isfree":"true","contactemailaddress":"","regresurl":"","description":"<p>Experience
+        a rare high-elevation wetland meadow on this gentle walk. Assistive Listening
+        Available (please arrive 15 minutes early).<\/p>\n<p><em>Byrd Visitor Center
+        (mile 51), 1-½ hrs, 1-mile walk.<\/em><\/p>","images":[],"category":"Regular
+        Event","imageidlist":"","isregresrequired":"false","organizationname":"","id":"4CCA5699-EB0E-C64B-AA50246C7BDB5E7E","isallday":"false","dateend":"2023-06-16","sitecode":"shen","infourl":"","times":[{"timestart":"10:00
+        AM","timeend":"11:30 AM","sunsetend":"false","sunrisestart":"false"}],"regresinfo":"","timeinfo":"","categoryid":"0","eventid":"0","parkfullname":"Shenandoah
+        National Park","recurrencedatestart":"2023-05-26","date":"2023-06-16","sitetype":"park","feeinfo":"However,
+        there is a $30 entrance fee to the park (good for seven days).","recurrencerule":"DTSTART=20230526T040000Z;UNTIL=20230904T040000Z;FREQ=WEEKLY;WKST=SU;BYDAY=MO,WE,FR;COUNT=0;INTERVAL=1","dates":["2023-06-16","2023-06-19","2023-06-21","2023-06-23"],"datetimecreated":"","title":"Meadow
+        Walk","latitude":"","subjectname":"","tags":["ranger program","summer","meadow","Big
+        Meadows","walk"]},{"location":"","updateuser":"","contactname":"","contacttelephonenumber":"","recurrencedateend":"2023-09-04","longitude":"","datestart":"2023-06-16","isrecurring":"true","datetimeupdated":"","portalname":"","types":["Talk"],"createuser":"","isfree":"true","contactemailaddress":"","regresurl":"","description":"<p>Come
+        and enjoy this short talk on the various subjects that make Shenandoah great.
+        Wheelchair Accessible. Assistive Listening Available (please arrive 15 minutes
+        early).<\/p>\n<p><em>Byrd Visitor Center (mile 51), 15-25 min. <\/em><\/p>","images":[],"category":"Regular
+        Event","imageidlist":"","isregresrequired":"false","organizationname":"","id":"7C2FDCE4-D9AA-754B-FAD9EEA2F77465C0","isallday":"false","dateend":"2023-06-16","sitecode":"shen","infourl":"","times":[{"timestart":"01:30
+        PM","timeend":"01:45 PM","sunsetend":"false","sunrisestart":"false"}],"regresinfo":"","timeinfo":"","categoryid":"0","eventid":"0","parkfullname":"Shenandoah
+        National Park","recurrencedatestart":"2023-05-26","date":"2023-06-16","sitetype":"park","feeinfo":"However,
+        there is a $30 entrance fee to the park (good for seven days).","recurrencerule":"DTSTART=20230526T040000Z;UNTIL=20230904T040000Z;FREQ=WEEKLY;WKST=SU;BYDAY=SU,MO,TU,WE,TH,FR,SA;COUNT=0;INTERVAL=1","dates":["2023-06-16","2023-06-17","2023-06-18","2023-06-19","2023-06-20","2023-06-21","2023-06-22","2023-06-23"],"datetimecreated":"","title":"Ranger
+        Porch Talk at Big Meadows","latitude":"","subjectname":"","tags":["ranger
+        program","ranger programs","summer","Big Meadows"]},{"location":"Dickey Ridge
+        Visitor Center Lawn (mile 4.6)","updateuser":"","contactname":"","contacttelephonenumber":"","recurrencedateend":"2023-09-04","longitude":"-78.204659","datestart":"2023-06-16","isrecurring":"true","datetimeupdated":"","portalname":"","types":["Talk"],"createuser":"","isfree":"true","contactemailaddress":"","regresurl":"","description":"<p>Come
+        and enjoy this short talk on the various subjects that make Shenandoah great. Wheelchair
+        Accessible. Assistive Listening Available (please arrive 15 minutes early).<\/p>\n<p><em>Dickey
+        Ridge Visitor Center Lawn (mile 4.6), 20-30 min.<\/em><\/p>","images":[],"category":"Regular
+        Event","imageidlist":"","isregresrequired":"false","organizationname":"","id":"7D09F01B-EBCB-A784-DE58A7AF33A270FC","isallday":"false","dateend":"2023-06-16","sitecode":"shen","infourl":"","times":[{"timestart":"11:00
+        AM","timeend":"11:30 AM","sunsetend":"false","sunrisestart":"false"}],"regresinfo":"","timeinfo":"","categoryid":"0","eventid":"0","parkfullname":"Shenandoah
+        National Park","recurrencedatestart":"2023-05-26","date":"2023-06-16","sitetype":"park","feeinfo":"Ranger
+        programs are free. However, there is a $30 entrance fee to the park (good
+        for seven days).","recurrencerule":"DTSTART=20230526T040000Z;UNTIL=20230904T040000Z;FREQ=DAILY;WKST=SU;COUNT=0;INTERVAL=1","dates":["2023-06-16","2023-06-17","2023-06-18","2023-06-19","2023-06-20","2023-06-21","2023-06-22","2023-06-23"],"datetimecreated":"","title":"Ranger
+        Talk at Dickey Ridge","latitude":"38.871724","subjectname":"","tags":["ranger
+        program","Dickey Ridge","summer"]},{"location":"Skyland Amphitheater (42.5)","updateuser":"","contactname":"","contacttelephonenumber":"","recurrencedateend":"2023-09-04","longitude":"","datestart":"2023-06-16","isrecurring":"true","datetimeupdated":"","portalname":"","types":["Campfire\/Evening
+        Program","Talk"],"createuser":"","isfree":"true","contactemailaddress":"","regresurl":"","description":"<p> Join
+        a Ranger for a national park tradition while learning more about the natural
+        or cultural history of Shenandoah. Check visitor centers for topics. Dress
+        for cool mountain nights. Wheelchair Accessible. Assistive Listening Available
+        (please arrive 15 minutes early).<\/p>\n<p><em>Skyland Amphitheater (42.5),
+        45 minutes.<\/em><\/p>","images":[],"category":"Regular Event","imageidlist":"","isregresrequired":"false","organizationname":"","id":"7ECD8A76-9C73-341C-51D1381BB67A56D7","isallday":"false","dateend":"2023-06-16","sitecode":"shen","infourl":"","times":[{"timestart":"08:30
+        PM","timeend":"09:15 PM","sunsetend":"false","sunrisestart":"false"}],"regresinfo":"","timeinfo":"","categoryid":"0","eventid":"0","parkfullname":"Shenandoah
+        National Park","recurrencedatestart":"2023-05-26","date":"2023-06-16","sitetype":"park","feeinfo":"However,
+        there is a $30 entrance fee to the park (good for seven days).","recurrencerule":"DTSTART=20230526T040000Z;UNTIL=20230904T040000Z;FREQ=WEEKLY;WKST=SU;BYDAY=MO,WE,FR;COUNT=0;INTERVAL=1","dates":["2023-06-16","2023-06-19","2023-06-21","2023-06-23"],"datetimecreated":"","title":"Skyland
+        Evening Program","latitude":"","subjectname":"","tags":["ranger program","summer","Skyland","evening
+        program"]}],"dates":"2023-06-16,2023-06-17,2023-06-18,2023-06-19,2023-06-20,2023-06-21,2023-06-22,2023-06-23","pagenumber":"1","pagesize":"10"}'
+  recorded_at: Fri, 16 Jun 2023 22:04:01 GMT
+recorded_with: VCR 6.1.0
