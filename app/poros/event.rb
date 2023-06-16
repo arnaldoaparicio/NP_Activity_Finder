@@ -1,9 +1,7 @@
 class Event
-
   attr_reader :location, :description, :name, :date, :time, :free, :id, :fee_info, :latitude, :longitude, :type
 
   def initialize(data)
-
     @location = blank_location(data)
     @description = data[:description]
     @name = data[:title]
@@ -11,7 +9,6 @@ class Event
     @time = formatted_time(data[:times])
     @free = data[:isfree]
     @event_code = data[:id]
-    # @fee_info = data[:feeinfo]
     @fee_info = blank_event(data)
     @latitude = data[:latitude]
     @longitude = data[:longitude]
@@ -41,7 +38,5 @@ class Event
     end
     time_start_and_end = time_start_and_end[0..-3]
     time_start_and_end
-
   end
-  
 end
