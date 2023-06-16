@@ -14,7 +14,11 @@ class Park < ApplicationRecord
     validates_presence_of :address, allows_nil: true
     validates_presence_of :photos, allows_nil: true
 
-    has_many :user_events
-    has_many :events, through: :user_events
+    # has_many :user_events
+    # has_many :events, through: :user_events
+    
+
+
+
 
 end

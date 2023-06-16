@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'pry'
 
 RSpec.describe ' Park Poro' do
-  xit 'tests park attributes' do
+  it 'tests park attributes' do
     
     data = {
       fullName: 'Test',
@@ -40,22 +40,25 @@ RSpec.describe ' Park Poro' do
                     city: 'Bear',
                     stateCode: 'DE',
                     postalCode: '19701' }],
-      # images: [{
-      #   credit: 'wade',
-      #   title: 'wade',
-      #   altText: 'wade2',
-      #   caption: 'wade3',
-      #   url: 'wade4.jpg'
-      # },
-              #  {
-              #    credit: 'wade3',
-              #    title: 'wade',
-              #    altText: 'wade2',
-              #    caption: 'wade3',
-              #    url: 'wade4.jpg'
-              #  }]
+      images: [{
+        credit: 'wade',
+        title: 'wade',
+        altText: 'wade2',
+        caption: 'wade3',
+        url: 'wade4.jpg'
+      },
+               {
+                 credit: 'wade3',
+                 title: 'wade',
+                 altText: 'wade2',
+                 caption: 'wade3',
+                 url: 'wade4.jpg'
+               }]
 
     }
+
+   
+      
     park = Park.new(data)
     expect(park).to be_a Park
   end

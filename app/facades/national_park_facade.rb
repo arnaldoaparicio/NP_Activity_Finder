@@ -9,6 +9,7 @@ class NationalParkFacade
 
   def self.one_park(park_code)
     single_park = NationalParkService.find_one_park(park_code)
+   
     park = single_park[:data][0]
     Park.new(park)
   end

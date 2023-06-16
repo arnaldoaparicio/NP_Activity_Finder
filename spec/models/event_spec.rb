@@ -16,8 +16,8 @@ RSpec.describe Event, type: :model do
         it { should validate_presence_of :type}
     end
 
-    describe 'relationships' do
-        it {should have_many(:user_events)}
-        it {should have_many(:users).through(:user_events)}
-    end
+    # describe 'relationships' do
+    #     it {should have_many(:user_events)}
+    #     it {should have_many(:users).through(:user_events)}
+    # end
 end
