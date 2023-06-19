@@ -1,11 +1,9 @@
-# class UserEvent < ApplicationRecord
+class UserNewEvent < ApplicationRecord
 
-#     validates_presence_of :user_id
-#     validates_presence_of :event_id
-#     validates_presence_of :park_id
+    validates_presence_of :user_id
+    validates_presence_of :new_event_id
 
-#     belongs_to :user
-#     belongs_to :park
-#     belongs_to :event
+    belongs_to :user
+    belongs_to :new_event
 
-# end
+end

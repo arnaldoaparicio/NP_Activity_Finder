@@ -1,9 +1,11 @@
 class ParksController < ApplicationController
   def index
+    @user = User.find_by(id: session[:user_id])
     @parks = NationalParkFacade.get_parks_by_state(params[:state])
   end
 
   def show
+    @user = User.find_by(id: session[:user_id])
     if NewPark.where(id: params[:id]).empty?
       @park = NationalParkFacade.one_park(params[:park_code])
 

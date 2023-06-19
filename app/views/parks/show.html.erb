@@ -1,24 +1,51 @@
-   <h1><p><%= @park.name %></p></h1>
-   <p> <b>Phone: </b><%=@park.phone_number%> </p>
-   <p><b>Email: </b><%=@park.email%></p>
-   <p> <b>Directions From Site: </b><%=link_to @park.directions_website, @park.directions_website, target: :blank%></p>
-   <p><%= link_to "View Directions", "https://www.google.com/maps/dir/?api=1&destination=#{@park.latitude},#{@park.longitude}" %> </p>
-    <%@park.entrance_fees.each do |p_fees|%>
-       <p> <%=p_fees[1]%>: <b>$<%=p_fees[0]%></b></p>
-    <%end%>
-      <h3> Important Operating Hours Information </h3>
-    <p> <%=@park.closed_day%></p>
-        <h3> Operating Hours </h3>
-      <% @park.operating_hours.each do |hours| %>
-         <p><%= hours[0]%>: <%=hours[1] %></p>
-      <% end %>
+   <%if !logged_in?%>
+      <h1><p><%= @park.name %></p></h1>
+      <p> <b>Phone: </b><%=@park.phone_number%> </p>
+      <p><b>Email: </b><%=@park.email%></p>
+      <p> <b>Directions From Site: </b><%=link_to @park.directions_website, @park.directions_website, target: :blank%></p>
+      <p><%= link_to "View Directions", "https://www.google.com/maps/dir/?api=1&destination=#{@park.latitude},#{@park.longitude}" %> </p>
+      <%@park.entrance_fees.each do |p_fees|%>
+         <p> <%=p_fees[1]%>: <b>$<%=p_fees[0]%></b></p>
+      <%end%>
+         <h3> Important Operating Hours Information </h3>
+      <p> <%=@park.closed_day%></p>
+         <h3> Operating Hours </h3>
+         <% @park.operating_hours.each do |hours| %>
+            <p><%= hours[0]%>: <%=hours[1] %></p>
+         <% end %>
 
 
-   <h3> Search Events </h3>
+      <h3> Search Events </h3>
 
-   <%=form_with url: "/parks/#{@park.park_code}/events", method: :get do |form|%>
-      <%=form.date_field :start%>
-      <%=form.date_field :finish%>
-     
-      <%=form.submit "Search"%>
-   <%end%>
+      <%=form_with url: "/parks/#{@park.park_code}/events", method: :get do |form|%>
+         <%=form.date_field :start%>
+         <%=form.date_field :finish%>
+      
+         <%=form.submit "Search"%>
+      <%end%>
+   <%else%>
+      <h1><p><%= @park.name %></p></h1>
+      <p> <b>Phone: </b><%=@park.phone_number%> </p>
+      <p><b>Email: </b><%=@park.email%></p>
+      <p> <b>Directions From Site: </b><%=link_to @park.directions_website, @park.directions_website, target: :blank%></p>
+      <p><%= link_to "View Directions", "https://www.google.com/maps/dir/?api=1&destination=#{@park.latitude},#{@park.longitude}" %> </p>
+      <%@park.entrance_fees.each do |p_fees|%>
+         <p> <%=p_fees[1]%>: <b>$<%=p_fees[0]%></b></p>
+      <%end%>
+         <h3> Important Operating Hours Information </h3>
+      <p> <%=@park.closed_day%></p>
+         <h3> Operating Hours </h3>
+         <% @park.operating_hours.each do |hours| %>
+            <p><%= hours[0]%>: <%=hours[1] %></p>
+         <% end %>
+
+
+      <h3> Search Events </h3>
+
+      <%=form_with url: "/users/#{@user.id}/parks/#{@park.park_code}/events", method: :get do |form|%>
+         <%=form.date_field :start%>
+         <%=form.date_field :finish%>
+      
+         <%=form.submit "Search"%>
+      <%end%>
+<%end%>

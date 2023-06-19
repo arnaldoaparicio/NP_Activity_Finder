@@ -7,13 +7,14 @@ Rails.application.routes.draw do
     resources :events
   end
 
-  resources :users
+  # resources :users
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
-# resources :users do 
-#   resources :parks
-#     resources :events
-#   end
+resources :users do 
+  resources :parks do
+    resources :events
+    end
+  end
 end
