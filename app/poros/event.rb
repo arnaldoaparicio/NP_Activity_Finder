@@ -1,5 +1,5 @@
 class Event
-  attr_reader :location, :description, :name, :date, :time, :free, :id, :fee_info, :latitude, :longitude, :type
+  attr_reader :location, :description, :name, :date, :time, :free, :id, :fee_info, :latitude, :longitude, :type_of_event, :event_code
 
   def initialize(data)
     @location = blank_location(data)
@@ -12,7 +12,7 @@ class Event
     @fee_info = blank_event(data)
     @latitude = data[:latitude]
     @longitude = data[:longitude]
-    @type = data[:types] #iterate
+    @type_of_event = data[:types] #iterate
   end
 
   def blank_event(data)

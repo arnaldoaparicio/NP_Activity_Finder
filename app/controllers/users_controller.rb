@@ -1,10 +1,15 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
+    @user = current_user
   end
 
   def show
     @user = User.find(params[:id])
+    @user_new_parks = @user.new_parks
+    @user_new_events = @user.new_events
+    @park = NewPark.find_by(id: params[:new_park_id])
+    binding.pry
   end
 
   def new

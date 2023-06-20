@@ -7,6 +7,9 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  # has_many :user_events
-  # has_many :events, through: :user_events
+  has_many :user_new_parks
+  has_many :new_parks, through: :user_new_parks
+
+  has_many :user_new_events
+  has_many :new_events, through: :user_new_events
 end

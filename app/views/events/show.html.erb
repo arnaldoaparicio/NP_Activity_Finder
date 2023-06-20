@@ -1,0 +1,2 @@
+<%=@event.name%>
+<%=button_to "Add to Profile", "/users/#{@user.id}/parks/#{@park.id}/events/#{@event.id}/user_new_events", method: :post%>
