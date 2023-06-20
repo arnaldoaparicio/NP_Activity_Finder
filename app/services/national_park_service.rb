@@ -28,4 +28,13 @@ class NationalParkService
     end
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.get_single_event(event_code)
+    response = conn.get('events') do |faraday|
+      faraday.params['id'] = event_code
+    end
+    
+    JSON.parse(response.body, symbolize_names: true)
+    # binding.pry
+  end
 end

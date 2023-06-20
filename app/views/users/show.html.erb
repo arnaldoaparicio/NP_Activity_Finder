@@ -1,4 +1,15 @@
-<%=@user.first_name%>
+<h1><%=@user.first_name%>'s Profile</h1>
 <%=@user.last_name%>
 <%=@user.username%>
 <%=@user.state%>
+<h3> Favorite Parks </h3>
+<%@user_new_parks.each do |park|%>
+    <p>Name: <%=link_to "#{park.name}", "/users/#{@user.id}/parks/#{park.id}"%></p>
+    <p>Description: <%=park.description%></p>
+<%end%>
+
+<h3> Favorite Events </h3>
+<%@user_new_events.each do |event|%>
+    <p>Name: <%=link_to "#{event.name}", "/users/#{@user.id}/parks/#{@park.id}/events/#{event.id}"%></p>
+    <p>Description: <%=event.description%></p>
+<%end%>

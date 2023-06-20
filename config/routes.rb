@@ -12,9 +12,12 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
-resources :users do 
-  resources :parks do
-    resources :events
+  resources :users do 
+    resources :parks do
+    resources :user_new_parks
+      resources :events do
+        resources :user_new_events
+      end
     end
   end
 end

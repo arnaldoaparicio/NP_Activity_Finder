@@ -19,4 +19,10 @@ class NationalParkFacade
       Event.new(event)
     end
   end
+
+  def self.get_single_event(event_code)
+    single_event = NationalParkService.get_single_event(event_code)
+    event = single_event[:data][0]
+    Event.new(event)
+  end
 end
