@@ -10,6 +10,6 @@
 
 <h3> Favorite Events </h3>
 <%@user_new_events.each do |event|%>
-    <p>Name: <%=link_to "#{event.name}", "/users/#{@user.id}/parks/#{@park.id}/events/#{event.id}"%></p>
-    <p>Description: <%=event.description%></p>
+    <p>Name: <%=sanitize event.name %></p>
+    <p>Description: <%=sanitize event.description%></p>
 <%end%>
