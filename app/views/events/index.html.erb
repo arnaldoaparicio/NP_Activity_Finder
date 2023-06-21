@@ -7,18 +7,8 @@
 
     <h1><p><%=event.name%></p></h1>
    <p> <%= sanitize event.description %></p>
-   <p><b>Location: </b><%= event.location %></p>
-        <p><b>Fee Information: </b><%= event.fee_info %></p>
-          <h3> Available Dates In Your Search Range </h3>
-     <% event.date.each do |date| %>
-         <p> <%= date %></p>
-        <% end %>
-
-    <p>This Event Will Start At: <%= event.time[0] %> And End At: <%= event.time[1] %></p>
-    <p><h3>Event Type: </h3></p>
-    <% event.type_of_event.each do |t| %>
-        <p><%= t %></p>
+  
+   <% if current_user %>
+        <%= link_to "View Event", "/users/#{current_user.id}/parks/#{@park.id}/events/#{event.event_code}"%>
     <% end %>
-   <p><%= link_to "View Directions", "https://www.google.com/maps/dir/?api=1&destination=#{event.latitude},#{event.longitude}" %> </p>
-    <%= link_to "Add to Profile", "/users/#{@user.id}/parks/#{@park.id}/events/#{event.event_code}"%>
 <%end%>
