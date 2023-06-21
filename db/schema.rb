@@ -19,14 +19,14 @@ ActiveRecord::Schema.define(version: 2023_06_20_202618) do
     t.string "name"
     t.string "location"
     t.string "description"
-    t.string "date"
-    t.string "time"
+    t.string "date", default: [], array: true
+    t.string "time", default: [], array: true
     t.string "free"
     t.string "event_code"
     t.string "fee_info"
     t.float "latitude"
     t.float "longitude"
-    t.string "type_of_event"
+    t.string "type_of_event", default: [], array: true
   end
 
   create_table "new_parks", force: :cascade do |t|
