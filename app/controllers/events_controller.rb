@@ -16,6 +16,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    # require 'pry'; binding.pry
     # change to use facade and save on 'add to profile'
     @user = User.find(session[:user_id])
     @park = NewPark.find_by(id: params[:park_id])
