@@ -16,13 +16,17 @@ class EventsController < ApplicationController
   end
 
   def show
-    # require 'pry'; binding.pry
     # change to use facade and save on 'add to profile'
-    @user = User.find(session[:user_id])
-    @park = NewPark.find_by(id: params[:park_id])
-    @event = NationalParkFacade.get_single_event(params[:id])
-
+    if current_user.nil?
+      @park = NewPark.find_by(id: params[:park_id])
+      @event = NationalParkFacade.get_single_event(params[:id])
+    else
+      @user = User.find(session[:user_id])
+      @park = NewPark.find_by(id: params[:park_id])
+      @event = NationalParkFacade.get_single_event(params[:id])
+    end
   end
+
 private
   def event_params
     params.require(:new_event).permit(:location, :description, :name, :date, :time, :event_code, :free, :id, :fee_info, :latitude, :longitude, :type_of_event)
