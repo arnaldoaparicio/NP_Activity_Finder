@@ -41,6 +41,7 @@
       <%= button_to "Add To Profile", "/users/#{@user.id}/parks/#{@park.id}/user_new_parks", method: :post %>
       <h3> Search Events </h3>
 
+
       <%=form_with url: "/users/#{@user.id}/parks/#{@park.park_code}/events", method: :get do |form|%>
          <%=form.date_field :start%>
          <%=form.date_field :finish%>

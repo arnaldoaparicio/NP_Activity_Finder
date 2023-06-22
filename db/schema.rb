@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_22_140548) do
+ActiveRecord::Schema.define(version: 2023_06_22_161620) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.bigint "user_new_event_id"
+    t.text "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["user_new_event_id"], name: "index_comments_on_user_new_event_id"
+  end
 
   create_table "new_events", force: :cascade do |t|
     t.string "name"
@@ -70,6 +78,7 @@ ActiveRecord::Schema.define(version: 2023_06_22_140548) do
     t.string "password_digest"
   end
 
+  add_foreign_key "comments", "user_new_events"
   add_foreign_key "user_new_events", "new_events"
   add_foreign_key "user_new_events", "new_parks"
   add_foreign_key "user_new_events", "users"

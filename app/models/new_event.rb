@@ -13,4 +13,5 @@ class NewEvent < ApplicationRecord
 
   has_many :user_new_events
   has_many :users, through: :user_new_events
+  
 end

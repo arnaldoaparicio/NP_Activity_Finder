@@ -9,4 +9,6 @@ class UserNewEvent < ApplicationRecord
     belongs_to :new_event, dependent: :destroy
     belongs_to :new_park
 
+    has_many :comments
+
 end
