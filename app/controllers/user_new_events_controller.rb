@@ -12,15 +12,33 @@ class UserNewEventsController < ApplicationController
 
     else
       @event = NewEvent.find_by(id: params[:id])
-      @new_event = UserNewEvent.find_by(user_id: @user.id, new_event_id: @event.id)
+      @new_event = UserNewEvent.find_by(user_id: @user.id, new_event_id: @event.id, new_park_id: params[:park_id])
 
     end
     redirect_to user_path(@user)
   end
 
+  def update
+    @user = User.find(params[:user_id])
+    @new_event = UserNewEvent.find_by(user_id: @user.id, new_event_id: params[:id], new_park_id: params[:park_id])
+    @new_event.update(new_event_params)
+
+    redirect_to user_path(@user)
+  end
+
+  def destroy
+
+    @user = User.find(params[:user_id])
+    @new_event = UserNewEvent.find_by(user_id: @user.id, new_event_id: params[:event_id], new_park_id: params[:park_id])
+    # binding.pry 
+    @new_event.delete
+    redirect_to user_path(@user)
+    
+  end
+
   private
 
   def new_event_params
-    params.permit(:new_event_id, :user_id)
+    params.permit(:new_event_id, :user_id, :new_park_id, :date_attend)
   end
 end
