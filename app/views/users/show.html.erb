@@ -1,17 +1,30 @@
-<h1><%=@user.first_name%>'s Profile</h1>
-<%=@user.last_name%>
-<%=@user.username%>
-<%=@user.state%>
+<h1><%=@user.first_name%> <%=@user.last_name%>'s Profile</h1>
+<p><b>Username: </b><%=@user.username%></p>
+<p><b>State: </b><%=@user.state%></p>
 <h3> Favorite Parks </h3>
-<%@user_new_parks.each do |park|%>
-    <p>Name: <%=link_to "#{park.name}", "/users/#{@user.id}/parks/#{park.id}"%></p>
-    <p>Description: <%=park.description%></p>
+<%@all_user_parks.each do |park|%>
+    <p>Name: <%=link_to "#{park.new_park.name}", "/users/#{@user.id}/parks/#{park.new_park.id}"%></p>
+    <p>Description: <%=park.new_park.description%></p>
+    <%=button_to "Delete Park", "/users/#{@user.id}/parks/#{park.new_park.id}/user_new_parks/#{park.id}", method: :delete%>
+
+
 <%end%>
 
 <h3> Favorite Events </h3>
-<% @all_user_data.each do |event| %>
-
-    <p>Name: <%= sanitize event.new_event.name %> </p>
-    <p>Description: <%= sanitize event.new_event.description %></p>
+<% @all_user_events.each do |event| %>
+    <p><b>Name: </b><%= sanitize event.new_event.name %> </p>
+    <p><b>Description: </b><%= sanitize event.new_event.description %></p>
+    <%if !event.date_attend.nil?%>
+    <p><b>Date Attended: </b><%= event.date_attend%> </p>
+    <%end%>
     <p><%=link_to 'Find more events at this park', user_park_path(current_user.id, event.new_park.id) %></p>
+    <%if event.date_attend.nil?%>
+        <%=form_with url: "/users/#{@user.id}/parks/#{event.new_park.id}/events/#{event.new_event.id}/user_new_events/#{event.id}", method: :patch do |form|%>
+            <%=form.date_field :date_attend%>
+        
+            <%=form.submit "Add Date Attended"%>
+        <%end%>
+    <%end%>
+
+    <%=button_to "Delete Event", "/users/#{@user.id}/parks/#{event.new_park.id}/events/#{event.new_event.id}/user_new_events/#{event.id}", method: :delete%>
 <% end%>
