@@ -9,7 +9,9 @@
 <%end%>
 
 <h3> Favorite Events </h3>
-<%@user_new_events.each do |event|%>
-    <p>Name: <%=link_to "#{event.name}", "/users/#{@user.id}/parks/#{@park.id}/events/#{event.id}"%></p>
-    <p>Description: <%=event.description%></p>
-<%end%>
+<% @all_user_data.each do |event| %>
+
+    <p>Name: <%= sanitize event.new_event.name %> </p>
+    <p>Description: <%= sanitize event.new_event.description %></p>
+    <p><%=link_to 'Find more events at this park', user_park_path(current_user.id, event.new_park.id) %></p>
+<% end%>

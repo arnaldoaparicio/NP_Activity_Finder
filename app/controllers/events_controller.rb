@@ -1,9 +1,8 @@
 class EventsController < ApplicationController
   def index
-
     @events = NationalParkFacade.all_park_events(params[:park_id], params[:start], params[:finish])
     @park = NewPark.find_by(park_code: params[:park_id])
-    @user = User.find(session[:user_id])
+    
 
     if @events.empty?
       flash.now[:notice] = "No events available for this park."
@@ -17,17 +16,12 @@ class EventsController < ApplicationController
   end
 
   def show
+    # require 'pry'; binding.pry
+    # change to use facade and save on 'add to profile'
     @user = User.find(session[:user_id])
     @park = NewPark.find_by(id: params[:park_id])
-    if NewEvent.where(id: params[:id]).empty?
-      event = NationalParkFacade.get_single_event(params[:event_code])
-      e = NewEvent.new(location: event.location, description: event.description, name: event.name, date: event.date, time: event.time, event_code: event.event_code, free: event.free, fee_info: event.fee_info, latitude: event.latitude, longitude: event.longitude, type_of_event: event.type_of_event)
-      e.save
-      @event = NewEvent.find_by(id: e.id)
+    @event = NationalParkFacade.get_single_event(params[:id])
 
-    else
-      @event = NewEvent.find(params[:id])
-    end
   end
 private
   def event_params

@@ -9,7 +9,8 @@ class UsersController < ApplicationController
     @user_new_parks = @user.new_parks
     @user_new_events = @user.new_events
     @park = NewPark.find_by(id: params[:new_park_id])
-    binding.pry
+    @all_user_data = @user.user_new_events
+    # require 'pry'; binding.pry
   end
 
   def new
