@@ -1,5 +1,6 @@
 class UserNewEventsController < ApplicationController
   def create
+
     @user = User.find(params[:user_id])
 
     if NewEvent.where(id: params[:id]).empty?
@@ -7,7 +8,7 @@ class UserNewEventsController < ApplicationController
       e = NewEvent.new(location: event.location, description: event.description, name: event.name,
                        date: event.date, time: event.time, event_code: event.event_code, free: event.free, fee_info: event.fee_info, latitude: event.latitude, longitude: event.longitude, type_of_event: event.type_of_event)
       e.save
-      @new_event = UserNewEvent.create!(user_id: @user.id, new_event_id: e.id)
+      @new_event = UserNewEvent.create!(user_id: @user.id, new_event_id: e.id, new_park_id: params[:park_id])
 
     else
       @event = NewEvent.find_by(id: params[:id])
