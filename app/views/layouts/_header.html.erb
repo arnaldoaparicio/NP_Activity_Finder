@@ -1,0 +1,15 @@
+<%if logged_in?%>
+
+    <%= link_to "Home", "/"%>
+
+
+    <%= link_to "Log Out", "/logout"%>
+    <%= link_to "Profile", "/users/#{current_user.id}"%>
+
+
+<%else%>
+    <%= link_to "Home", "/"%>
+    <%= link_to "Log In", "/login"%>
+    <%= link_to "Sign Up", "/users/new"%>
+
+<%end%>

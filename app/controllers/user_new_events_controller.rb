@@ -31,7 +31,7 @@ class UserNewEventsController < ApplicationController
     @user = User.find(params[:user_id])
     @new_event = UserNewEvent.find_by(user_id: @user.id, new_event_id: params[:event_id], new_park_id: params[:park_id])
     # binding.pry 
-    @new_event.delete
+    @new_event.destroy
     redirect_to user_path(@user)
     
   end
