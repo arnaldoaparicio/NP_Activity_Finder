@@ -10,5 +10,7 @@
   
    <% if current_user %>
         <%= link_to "View Event", "/users/#{current_user.id}/parks/#{@park.id}/events/#{event.event_code}"%>
+    <% else%>
+         <%= link_to "View Event", "/parks/#{@park.id}/events/#{event.event_code}"%>
     <% end %>
 <%end%>
