@@ -48,7 +48,9 @@ ActiveRecord::Schema.define(version: 2023_06_20_202618) do
   create_table "user_new_events", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "new_event_id"
+    t.bigint "new_park_id"
     t.index ["new_event_id"], name: "index_user_new_events_on_new_event_id"
+    t.index ["new_park_id"], name: "index_user_new_events_on_new_park_id"
     t.index ["user_id"], name: "index_user_new_events_on_user_id"
   end
 
@@ -68,6 +70,7 @@ ActiveRecord::Schema.define(version: 2023_06_20_202618) do
   end
 
   add_foreign_key "user_new_events", "new_events"
+  add_foreign_key "user_new_events", "new_parks"
   add_foreign_key "user_new_events", "users"
   add_foreign_key "user_new_parks", "new_parks"
   add_foreign_key "user_new_parks", "users"
