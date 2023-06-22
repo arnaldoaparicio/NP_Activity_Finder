@@ -16,7 +16,9 @@ Rails.application.routes.draw do
     resources :parks do
     resources :user_new_parks
       resources :events do
-        resources :user_new_events
+        resources :user_new_events do
+          resources :comments
+        end
       end
     end
   end

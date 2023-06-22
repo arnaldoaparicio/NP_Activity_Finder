@@ -13,4 +13,6 @@ class NewEvent < ApplicationRecord
 
   has_many :user_new_events
   has_many :users, through: :user_new_events
+  has_many :comments, through: :user_new_events, dependent: :destroy
+  
 end
