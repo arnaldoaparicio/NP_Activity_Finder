@@ -1,16 +1,24 @@
-
-<% flash.each do |msg| %>
-    <%= msg %>
-<% end %>
-
-<%@events.each do |event|%>
-
-    <h1><p><%=event.name%></p></h1>
-   <p> <%= sanitize event.description %></p>
-  
-   <% if current_user %>
-        <%= link_to "View Event", "/users/#{current_user.id}/parks/#{@park.id}/events/#{event.event_code}"%>
-    <% else%>
-         <%= link_to "View Event", "/parks/#{@park.id}/events/#{event.event_code}"%>
+<div class="container text-center">
+    <% flash.each do |msg| %>
+        <%= msg %>
     <% end %>
-<%end%>
+    <div class="row">
+
+        <%@events.each do |event|%>
+            <div class="col-lg-6">
+              <div class="event-index">
+                <div class="header">
+                    <h1><p><%=event.name%></p></h1>
+                </div>
+                      <p> <%= sanitize event.description %></p>
+        
+                    <% if current_user %>
+                        <%= link_to "View Event", "/users/#{current_user.id}/parks/#{@park.id}/events/#{event.event_code}"%>
+                    <% else%>
+                        <%= link_to "View Event", "/parks/#{@park.id}/events/#{event.event_code}"%>
+                    <% end %>
+                </div>
+            </div>
+        <%end%>
+    </div>
+</div>    
