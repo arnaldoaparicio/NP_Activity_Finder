@@ -19,7 +19,7 @@
     <%end%>
     <p><%=link_to 'Find more events at this park', user_park_path(current_user.id, event.new_park.id) %></p>
     <%if event.date_attend.nil?%>
-        <%=form_with url: "/users/#{@user.id}/parks/#{event.new_park.id}/events/#{event.new_event.id}/user_new_events/#{event.id}", method: :patch do |form|%>
+        <%=form_with url: "/users/#{@user.id}/parks/#{event.new_park.id}/events/#{event.new_event.id}/user_new_events/#{event.id}", method: :patch, local: true  do |form|%>
             <%=form.date_field :date_attend%>
         
             <%=form.submit "Add Date Attended"%>
