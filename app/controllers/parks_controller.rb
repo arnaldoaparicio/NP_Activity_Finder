@@ -13,8 +13,8 @@ class ParksController < ApplicationController
                       directions_website: @park.directions_website, email: @park.email, entrance_fees: @park.entrance_fees,
                       latitude: @park.latitude, longitude: @park.longitude, name: @park.name,
                       operating_hours: @park.operating_hours, park_code: @park.park_code, phone_number: @park.phone_number, photos: @park.photos)
-
       n.save
+
       @park = NewPark.find_by(id: n.id)
     else
 

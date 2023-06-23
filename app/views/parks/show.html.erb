@@ -1,5 +1,8 @@
+  <div class = "container text-center">
    <%if !logged_in?%>
+   <div class="header">
       <h1><p><%= @park.name %></p></h1>
+   </div>
       <p> <b>Phone: </b><%=@park.phone_number%> </p>
       <p><b>Email: </b><%=@park.email%></p>
       <p> <b>Directions From Site: </b><%=link_to @park.directions_website, @park.directions_website, target: :blank%></p>
@@ -22,30 +25,93 @@
       
          <%=form.submit "Search"%>
       <%end%>
+</div>
+
    <%else%>
-      <h1><p><%= @park.name %></p></h1>
-      <p> <b>Phone: </b><%=@park.phone_number%> </p>
-      <p><b>Email: </b><%=@park.email%></p>
-      <p> <b>Directions From Site: </b><%=link_to @park.directions_website, @park.directions_website, target: :blank%></p>
-      <p><%= link_to "View Directions", "https://www.google.com/maps/dir/?api=1&destination=#{@park.latitude},#{@park.longitude}" %> </p>
-      <%@park.entrance_fees.each do |p_fees|%>
-         <p> <%=p_fees[1]%>: <b>$<%=p_fees[0]%></b></p>
-      <%end%>
-         <h3> Important Operating Hours Information </h3>
-      <p> <%=@park.closed_day%></p>
-         <h3> Operating Hours </h3>
-         <% @park.operating_hours.each do |hours| %>
-            <p><%= hours[0]%>: <%=hours[1] %></p>
-         <% end %>
-
-      <%= button_to "Add To Profile", "/users/#{@user.id}/parks/#{@park.id}/user_new_parks", method: :post %>
-      <h3> Search Events </h3>
 
 
-      <%=form_with url: "/users/#{@user.id}/parks/#{@park.park_code}/events", method: :get do |form|%>
-         <%=form.date_field :start%>
-         <%=form.date_field :finish%>
+<div class="header">
+   <h1><p><%= @park.name %></p></h1>
+</div>
+<div class="container text-center">
+   <div class="row">
+
+      <div class="col-lg-6">
+         <div class="user-comments">
+            
+               <b>Phone: </b><%=@park.phone_number%>  | <b>Email: </b><%=@park.email%>
+               <p> <b>Directions: </b><%=link_to @park.directions_website, @park.directions_website, target: :blank%></p>
+            
+            
+   
+            <p><%= link_to "View Directions", "https://www.google.com/maps/dir/?api=1&destination=#{@park.latitude},#{@park.longitude}" %> </p>
+            <%= button_to "Add To Profile", "/users/#{@user.id}/parks/#{@park.id}/user_new_parks", method: :post, class: "btn btn-primary"%>
+         </div>
+      </div>
       
-         <%=form.submit "Search"%>
-      <%end%>
+
+         <div class="col-lg-6">
+            <div class="user-comments">
+           
+               <div class="header">
+               <h3> Search Events </h3>
+               </div>
+               
+               <%=form_with url: "/users/#{@user.id}/parks/#{@park.park_code}/events", method: :get, local: true do |form|%>
+               <div class="row">
+                  <div class="col-lg-6">
+                     <%=form.date_field :start, class: "form-control"%>
+                  </div>
+                  <div class="col-lg-6">
+                     <%=form.date_field :finish, class: "form-control"%>
+                  </div>
+               </div>
+               
+                  <%=form.submit "Search", class: "btn btn-primary" %>
+               <%end%>
+            </div>
+         </div>
+   </div>
+</div>
+
+
+
+</div>
+
+<div class="container text-center">
+      <div class="user-comments">
+         <div class="header">
+            <h3> Entrance Fee Information </h3>
+         </div>
+         <%@park.entrance_fees.each do |p_fees|%>
+            <p> <%=p_fees[1]%>: <b>$<%=p_fees[0]%></b></p>
+         <%end%>
+      </div>
+</div>
+
+<div class ="container text-center">
+   <div class="row">
+      <div class="col-lg-6">
+         <div class="user-comments">
+            <div class="header">
+               <h3> Operating Hours </h3>
+            </div>
+               <% @park.operating_hours.each do |hours| %>
+                  <p><b><%= hours[0]%>:</b> <%=hours[1] %></p>
+               <% end %>
+         </div>
+      </div>
+      <div class="col-lg-6">
+         <div class="user-comments">
+            <div class="header">
+               <h3> Important Operating Hours Information </h3>
+            </div>
+            <p> <%=@park.closed_day%></p>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+
 <%end%>

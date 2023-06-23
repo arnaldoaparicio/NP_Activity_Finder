@@ -1,0 +1,84 @@
+@import "bootstrap";
+
+.navbar {
+  background-color: #064635;
+  margin-bottom: 10px;
+}
+
+#nav-blurb {
+  position: relative;
+  float: right;
+  top: 10px;
+  bottom: 20px;
+  font-size: 175%;
+  color: #F0BB62;
+  padding: 10px;
+  font-family: Monaco;
+}
+.btn {
+  color: #F0BB62;
+  background-color: #064635;
+  border: none;
+  
+}
+.form-control {
+  color: #F0BB62;
+  background-color: #064635;
+  width: 80%;
+  border-color: #064635;
+  box-sizing: border-box;
+  margin: 8px 0;
+  align: center;
+}
+
+
+
+.btn:hover {
+  color: #F0BB62;
+  background-color: #064635;
+  border: none;
+}
+
+.dropdown-menu {
+  background-color: #064635;
+}
+
+.dropdown {
+  color: #F0BB62;
+}
+
+a:link {
+  color: #519259;
+}
+
+a:visited {
+  color: #519259;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.user-comments {
+    border: 12px solid #064635;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #F0BB62; 
+    }
+.park-index {
+    border: 12px solid #064635;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+    padding-bottom: 30px;
+    background-color: #F0BB62; 
+    }
+body {
+    background-color: #ECE5C7;
+    }
+.header{
+    color: #064635;
+    text-align: center;
+    
+    }
