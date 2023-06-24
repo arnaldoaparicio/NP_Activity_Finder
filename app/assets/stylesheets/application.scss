@@ -1,9 +1,14 @@
 @import "bootstrap";
 
 .navbar {
-  background-color: #064635;
+  background-color: #8E3200;
   margin-bottom: 10px;
 }
+
+h1,h2,h3,h4,h5,h6,p{
+    cursor: default;
+  }
+  
 
 #nav-blurb {
   position: relative;
@@ -11,74 +16,96 @@
   top: 10px;
   bottom: 20px;
   font-size: 175%;
-  color: #F0BB62;
+  color: #D7A86E;
   padding: 10px;
   font-family: Monaco;
 }
 .btn {
-  color: #F0BB62;
-  background-color: #064635;
-  border: none;
+  color: #D7A86E;
+  background-color: #8E3200;
+  border: rounded;
+  border-color: #D7A86E;
+  border-radius: 20px;
   
 }
 .form-control {
-  color: #F0BB62;
-  background-color: #064635;
+  color: #D7A86E;
+  background-color: #8E3200;
   width: 80%;
-  border-color: #064635;
+  border-color: #8E3200;
   box-sizing: border-box;
   margin: 8px 0;
-  align: center;
+  text-align: center;
 }
 
 
 
-.btn:hover {
+.btn:hover, .nav-link:hover  {
   color: #F0BB62;
-  background-color: #064635;
+  background-color: #A64B2A;
   border: none;
 }
 
 .dropdown-menu {
-  background-color: #064635;
+  background-color: #D7A86E;
 }
 
 .dropdown {
-  color: #F0BB62;
+  color: #A64B2A;
 }
 
 a:link {
-  color: #519259;
+  color: #A64B2A;
 }
 
 a:visited {
-  color: #519259;
+  color: #A64B2A;
   background-color: transparent;
   text-decoration: none;
 }
 
 .user-comments {
-    border: 12px solid #064635;
+    border: 12px solid #8E3200;
     border-radius: 10px;
     margin-top: 15px;
     margin-bottom: 15px;
     padding: 10px;
-    background-color: #F0BB62; 
+    background-color: #D7A86E; 
     }
 .park-index {
-    border: 12px solid #064635;
+    border: 12px solid #8E3200;
     border-radius: 10px;
     margin-top: 15px;
     margin-bottom: 15px;
     padding: 10px;
     padding-bottom: 30px;
-    background-color: #F0BB62; 
+    background-color: #D7A86E; 
+    }
+
+.event-index {
+    border: 12px solid #8E3200;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+    height: 95%;
+    background-color: #D7A86E; 
+    }
+
+.event-info {
+    border: 12px solid #8E3200;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+    padding-top: 15px;
+    background-color: #D7A86E; 
     }
 body {
     background-color: #ECE5C7;
     }
 .header{
-    color: #064635;
+    color: #A64B2A;
     text-align: center;
     
     }

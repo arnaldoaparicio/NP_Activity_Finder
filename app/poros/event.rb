@@ -13,10 +13,11 @@ class Event
     @latitude = data[:latitude]
     @longitude = data[:longitude]
     @type_of_event = data[:types] #iterate
+    # binding.pry
   end
 
   def blank_event(data)
-    if @fee_info == nil
+    if data[:feeinfo] == nil
       @fee_info = "No fee information available."
     else 
       @fee_info = data[:feeinfo]
@@ -24,7 +25,7 @@ class Event
   end
 
   def blank_location(data)
-    if @location == nil
+    if data[:location] == nil
       @location = "No location information available."
     else 
       @location = data[:location]
