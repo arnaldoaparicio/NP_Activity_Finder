@@ -5,8 +5,8 @@
     
         <%@comments.each do |comment| %>
         
-            <div class="col-lg-3">
-                <div class="user-comments">
+            <div class="col-lg-12">
+                <div class="comments-index">
                     <p><%=comment.body%></p>
                     <p><b>Posted: </b><%=comment.created_at.to_datetime.strftime("%m/%d/%Y")%></p>
                 </div>
