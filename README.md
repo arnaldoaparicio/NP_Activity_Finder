@@ -6,7 +6,7 @@ On your local machine open a terminal session and enter the following commands f
 ```shell
 $ git clone https://github.com/WadeNaughton/NP_Activity_Finder.git
 ```
-- using https <br>
+- using SSH <br>
 ```shell
 $ git clone git@github.com:WadeNaughton/NP_Activity_Finder.git
 ```
