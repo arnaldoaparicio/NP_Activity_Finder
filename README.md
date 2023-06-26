@@ -4,8 +4,13 @@ On your local machine open a terminal session and enter the following commands f
 
 - using https <br>
 ```shell
+$ git clone https://github.com/WadeNaughton/NP_Activity_Finder.git
+```
+- using https <br>
+```shell
 $ git clone git@github.com:WadeNaughton/NP_Activity_Finder.git
 ```
+
 2. Change to the project directory:<br>
 
 ``` 
@@ -29,7 +34,7 @@ $ bundle install
 Before using the web application you will need to setup your databases locally by running the following command
 
 ```shell
-$ rails db: {:drop, :create, :migrate, :seed}
+$ rails db:{:drop, :create, :migrate}
 ```
 
 5. Set up environment variables
@@ -38,16 +43,14 @@ $ rails db: {:drop, :create, :migrate, :seed}
 $ bundle exec figaro install
 ```
 
-6. Add backend connection in application.yml to set up a local variable for your endpoints if you choose to deploy outside of localhost.<br>
 
-
-7. Visit https://www.nps.gov/subjects/developer/get-started.htm to sign up for an API key <br>
+6. Visit https://www.nps.gov/subjects/developer/get-started.htm to sign up for an API key <br>
 
 ```shell
 parks_key: api_key_goes_here
 ```
 
-8. Startup and Access<br>
+7. Startup and Access<br>
 Finally, in order to use the web app you will have to start the server locally and access the app through a web browser. 
 - Start server
 ```shell
