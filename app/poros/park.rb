@@ -34,12 +34,12 @@ class Park
 
     if data == []
         "No information available"
-    end
-
-    days.each do |day|
-      data.first[:standardHours].each do |k, v|
-        if day[0].downcase == k.to_s
-          day << v
+    else
+      days.each do |day|
+        data.first[:standardHours].each do |k, v|
+          if day[0].downcase == k.to_s
+            day << v
+          end
         end
       end
     end
