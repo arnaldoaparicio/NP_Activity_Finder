@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 16 Jun 2023 22:04:02 GMT
+      - Mon, 26 Jun 2023 20:48:10 GMT
       Content-Type:
       - application/json;charset=utf-8
       Transfer-Encoding:
@@ -35,7 +35,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Age:
-      - '0'
+      - '1'
       Allow:
       - Get
       Content-Security-Policy:
@@ -51,7 +51,7 @@ http_interactions:
       Via:
       - http/1.1 api-umbrella (ApacheTrafficServer [cMsSf ])
       X-Api-Umbrella-Request-Id:
-      - c8ooua272saedqa751cg
+      - c8v5rc51vhordpva7vig
       X-Cache:
       - MISS
       X-Content-Type-Options:
@@ -59,9 +59,9 @@ http_interactions:
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Remaining:
-      - '951'
+      - '996'
       X-Vcap-Request-Id:
-      - 31d6ae8d-e370-4426-520e-6954cd3822a4
+      - e45d2015-1ab9-4fc9-59f9-1d93b7529e99
       X-Xss-Protection:
       - 1; mode=block
       X-Frame-Options:
@@ -1033,16 +1033,27 @@ http_interactions:
         Parkway north. Just past the CIA exit turn right into the parking lot for
         the US Park Police and parkway headquarters. Go through the chain link fence
         and take an immediate right. Follow the road down to a stop sign and turn
-        right into the parking lot for the headquarters building.\"\r\n\r\n,\"directionsUrl\":\"http://www.nps.gov/gwmp/planyourvisit/directions.htm\"\r\n\r\n,\"operatingHours\":[{\"exceptions\":[{\"exceptionHours\":{},\"startDate\":\"2023-06-19\",\"name\":\"Closed
-        Juneteenth\",\"endDate\":\"2023-06-19\"},{\"exceptionHours\":{},\"startDate\":\"2023-07-04\",\"name\":\"Closed
-        Independence Day\",\"endDate\":\"2023-07-04\"},{\"exceptionHours\":{},\"startDate\":\"2023-09-04\",\"name\":\"Closed
-        Labor Day\",\"endDate\":\"2023-09-04\"},{\"exceptionHours\":{},\"startDate\":\"2023-10-09\",\"name\":\"Closed
+        right into the parking lot for the headquarters building.\"\r\n\r\n,\"directionsUrl\":\"http://www.nps.gov/gwmp/planyourvisit/directions.htm\"\r\n\r\n,\"operatingHours\":[{\"exceptions\":[{\"exceptionHours\":{\"wednesday\":\"Closed\",\"monday\":\"Closed\",\"thursday\":\"Closed\",\"sunday\":\"Closed\",\"tuesday\":\"Closed\",\"friday\":\"Closed\",\"saturday\":\"Closed\"},\"startDate\":\"2024-05-29\",\"name\":\"Memorial
+        Day\",\"endDate\":\"2024-05-29\"},{\"exceptionHours\":{\"wednesday\":\"Closed\",\"monday\":\"Closed\",\"thursday\":\"Closed\",\"sunday\":\"Closed\",\"tuesday\":\"Closed\",\"friday\":\"Closed\",\"saturday\":\"Closed\"},\"startDate\":\"2024-06-19\",\"name\":\"Juneteenth
+        National Independence Day\",\"endDate\":\"2024-06-19\"},{\"exceptionHours\":{},\"startDate\":\"2024-06-19\",\"name\":\"Closed
+        Juneteenth\",\"endDate\":\"2024-06-19\"},{\"exceptionHours\":{\"wednesday\":\"Closed\",\"monday\":\"Closed\",\"thursday\":\"Closed\",\"sunday\":\"Closed\",\"tuesday\":\"Closed\",\"friday\":\"Closed\",\"saturday\":\"Closed\"},\"startDate\":\"2023-07-04\",\"name\":\"Independence
+        Day\",\"endDate\":\"2023-07-04\"},{\"exceptionHours\":{},\"startDate\":\"2023-07-04\",\"name\":\"Closed
+        Independence Day\",\"endDate\":\"2023-07-04\"},{\"exceptionHours\":{\"wednesday\":\"Closed\",\"monday\":\"Closed\",\"thursday\":\"Closed\",\"sunday\":\"Closed\",\"tuesday\":\"Closed\",\"friday\":\"Closed\",\"saturday\":\"Closed\"},\"startDate\":\"2023-09-04\",\"name\":\"Labor
+        Day\",\"endDate\":\"2023-09-04\"},{\"exceptionHours\":{},\"startDate\":\"2023-09-04\",\"name\":\"Closed
+        Labor Day\",\"endDate\":\"2023-09-04\"},{\"exceptionHours\":{\"wednesday\":\"Closed\",\"monday\":\"Closed\",\"thursday\":\"Closed\",\"sunday\":\"Closed\",\"tuesday\":\"Closed\",\"friday\":\"Closed\",\"saturday\":\"Closed\"},\"startDate\":\"2023-10-09\",\"name\":\"Columbus
+        Day\",\"endDate\":\"2023-10-09\"},{\"exceptionHours\":{},\"startDate\":\"2023-10-09\",\"name\":\"Closed
         Columbus Day\",\"endDate\":\"2023-10-09\"},{\"exceptionHours\":{},\"startDate\":\"2023-11-11\",\"name\":\"Closed
-        Veterans Day\",\"endDate\":\"2023-11-11\"},{\"exceptionHours\":{},\"startDate\":\"2023-11-23\",\"name\":\"Closed
-        Thanksgiving Day\",\"endDate\":\"2023-11-23\"},{\"exceptionHours\":{},\"startDate\":\"2023-12-25\",\"name\":\"Closed
-        Christmas Day\",\"endDate\":\"2023-12-25\"},{\"exceptionHours\":{},\"startDate\":\"2024-01-01\",\"name\":\"Closed
-        New Year's Day\",\"endDate\":\"2024-01-01\"},{\"exceptionHours\":{},\"startDate\":\"2024-01-15\",\"name\":\"Closed
-        MLK Day\",\"endDate\":\"2024-01-15\"},{\"exceptionHours\":{},\"startDate\":\"2024-02-19\",\"name\":\"Closed
+        Veterans Day\",\"endDate\":\"2023-11-11\"},{\"exceptionHours\":{\"wednesday\":\"Closed\",\"monday\":\"Closed\",\"thursday\":\"Closed\",\"sunday\":\"Closed\",\"tuesday\":\"Closed\",\"friday\":\"Closed\",\"saturday\":\"Closed\"},\"startDate\":\"2023-11-11\",\"name\":\"Veterans
+        Day\",\"endDate\":\"2023-11-11\"},{\"exceptionHours\":{},\"startDate\":\"2023-11-23\",\"name\":\"Closed
+        Thanksgiving Day\",\"endDate\":\"2023-11-23\"},{\"exceptionHours\":{\"wednesday\":\"Closed\",\"monday\":\"Closed\",\"thursday\":\"Closed\",\"sunday\":\"Closed\",\"tuesday\":\"Closed\",\"friday\":\"Closed\",\"saturday\":\"Closed\"},\"startDate\":\"2023-11-23\",\"name\":\"Thanksgiving
+        Day\",\"endDate\":\"2023-11-23\"},{\"exceptionHours\":{},\"startDate\":\"2023-12-25\",\"name\":\"Closed
+        Christmas Day\",\"endDate\":\"2023-12-25\"},{\"exceptionHours\":{\"wednesday\":\"Closed\",\"monday\":\"Closed\",\"thursday\":\"Closed\",\"sunday\":\"Closed\",\"tuesday\":\"Closed\",\"friday\":\"Closed\",\"saturday\":\"Closed\"},\"startDate\":\"2023-12-25\",\"name\":\"Christmas
+        Day\",\"endDate\":\"2023-12-25\"},{\"exceptionHours\":{\"wednesday\":\"Closed\",\"monday\":\"Closed\",\"thursday\":\"Closed\",\"sunday\":\"Closed\",\"tuesday\":\"Closed\",\"friday\":\"Closed\",\"saturday\":\"Closed\"},\"startDate\":\"2024-01-01\",\"name\":\"New
+        Year's Day\",\"endDate\":\"2024-01-01\"},{\"exceptionHours\":{},\"startDate\":\"2024-01-01\",\"name\":\"Closed
+        New Year's Day\",\"endDate\":\"2024-01-01\"},{\"exceptionHours\":{\"wednesday\":\"Closed\",\"monday\":\"Closed\",\"thursday\":\"Closed\",\"sunday\":\"Closed\",\"tuesday\":\"Closed\",\"friday\":\"Closed\",\"saturday\":\"Closed\"},\"startDate\":\"2024-01-15\",\"name\":\"Birthday
+        of Martin Luther King, Jr.\",\"endDate\":\"2024-01-15\"},{\"exceptionHours\":{},\"startDate\":\"2024-01-15\",\"name\":\"Closed
+        MLK Day\",\"endDate\":\"2024-01-15\"},{\"exceptionHours\":{\"wednesday\":\"Closed\",\"monday\":\"Closed\",\"thursday\":\"Closed\",\"sunday\":\"Closed\",\"tuesday\":\"Closed\",\"friday\":\"Closed\",\"saturday\":\"Closed\"},\"startDate\":\"2024-02-19\",\"name\":\"Washington's
+        Birthday\",\"endDate\":\"2024-02-19\"},{\"exceptionHours\":{},\"startDate\":\"2024-02-19\",\"name\":\"Closed
         Washington's Birthday\",\"endDate\":\"2024-02-19\"},{\"exceptionHours\":{},\"startDate\":\"2024-05-27\",\"name\":\"Closed
         Memorial Day\",\"endDate\":\"2024-05-27\"}],\"description\":\"Parkway headquarters
         is open Monday through Friday from 8:15 am to 4:15 pm. It is closed on weekends
@@ -1892,5 +1903,5 @@ http_interactions:
         there is a wide variety in weather. Please check with your favorite weather
         website before traveling.\"\r\n\r\n,\"name\":\"Washington-Rochambeau Revolutionary
         Route\"\r\n\r\n,\"designation\":\"National Historic Trail\"\r\n\r\n\r\n}\r\n\r\n]\r\n}\r\n"
-  recorded_at: Fri, 16 Jun 2023 22:04:02 GMT
+  recorded_at: Mon, 26 Jun 2023 20:48:10 GMT
 recorded_with: VCR 6.1.0
