@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :users do 
     resources :parks do
+      get "/comments", to: 'parks#park_comments'
     resources :user_new_parks
       resources :events do
         resources :user_new_events do
