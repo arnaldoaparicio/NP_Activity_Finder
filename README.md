@@ -46,13 +46,19 @@ $ bundle exec figaro install
 
 6. Visit https://www.nps.gov/subjects/developer/get-started.htm to sign up for an API key <br>
 
-7. Add the following code to your application.yml file
+7. Visit https://openweathermap.org/full-price#current to sign up for an API key <br>
+
+8. Add the following code to your application.yml file
 
 ```shell
 parks_key: api_key_goes_here
 ```
 
-8. Startup and Access<br>
+```
+weather_key: api_key_goes_here
+```
+
+9. Startup and Access<br>
 Finally, in order to use the web app you will have to start the server locally and access the app through a web browser. 
 - Start server
 ```shell
