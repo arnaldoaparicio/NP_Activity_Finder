@@ -22,6 +22,10 @@ class ParksController < ApplicationController
     end
   end
 
+  def park_comments
+    @comments = Comment.park_comments(params[:park_id])
+  end
+
   private
 
   def park_params
