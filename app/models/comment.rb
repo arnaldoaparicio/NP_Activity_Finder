@@ -18,7 +18,7 @@ has_many :new_events, through: :user_new_events
     
         Comment.all.each do |comment|
           user_new_events.each do |event|
-            if comment.user_new_event_id == event.id && event.new_park_id == park_id.to_i
+            if comment.user_new_event_id == event.id && event.new_park_id == park.id
                 park_comment_array << comment
             end
           end
