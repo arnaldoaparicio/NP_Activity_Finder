@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
 
     def index 
-        # @comments = Comment.all
         @user = User.find(session[:user_id])
         @event = UserNewEvent.find(params[:user_new_event_id])
         @comments = @event.comments
@@ -22,10 +21,8 @@ class CommentsController < ApplicationController
         
         @user = User.find(params[:user_id])
         @event = UserNewEvent.find(params[:user_new_event_id])
-        # @comment = Comment.new(comment_params)
         @all_user_events = @user.user_new_events
         @comment = @event.comments.new(comment_params)
-        # @comment.user_new_event_id = @event.id
         @comment.save
         redirect_to user_path(@user)
     end
