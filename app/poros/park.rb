@@ -26,6 +26,11 @@ class Park
   end
 
   def formatted_address(data)
+    # address = data[:addresses].first[:line1]
+    # if address.include? "|"
+    #   address = address.gsub("|", ",")
+    # end
+    # address
     "#{data[:addresses].first[:line1]}, #{data[:addresses].first[:city]}, #{data[:addresses].first[:stateCode]} #{data[:addresses].first[:postalCode]}"
   end
 
@@ -51,7 +56,12 @@ class Park
     data.each do |d|
       array << [d[:url], d[:altText]]
     end
-    array
+
+    if array.empty?
+      array << "No photos available"
+    else 
+      array
+    end
   end
 
   def formatted_entrance_fees(data)
