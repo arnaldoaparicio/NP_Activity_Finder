@@ -72,6 +72,18 @@ a:visited {
     padding: 10px;
     background-color: #D7A86E; 
     }
+  .user-show {
+    border: 12px solid #8E3200;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #D7A86E; 
+    width: 100%;
+
+    }
+
+  
 .park-index {
     border: 12px solid #8E3200;
     border-radius: 10px;
@@ -109,3 +121,7 @@ body {
     text-align: center;
     
     }
+
+#form-header {
+  padding-right: 20px;
+}

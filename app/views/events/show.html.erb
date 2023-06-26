@@ -5,24 +5,45 @@
 
     <div class="row">
        
-        <div class="col-lg-6">
+        <div class="col-lg-4">
             <div class="event-info">
-                <p><b>Location: </b><%= @event.location %></p>
+                <div class="header">
+                        <p><h3>Location </h3></p>
+                </div>
+                <p><%= @event.location %></p>
 
-                    <div class="row">
-                        <div class="col-lg-12">
-                            
-                            <p><%= link_to "View Directions", "https://www.google.com/maps/dir/?api=1&destination=#{@event.latitude},#{@event.longitude}" %> </p>
-                        </div>
+                <div class="row">
+                    <div class="col-lg-12"> 
+                        <p><%= link_to "View Directions", "https://www.google.com/maps/dir/?api=1&destination=#{@event.latitude},#{@event.longitude}" %> </p>
                     </div>
+                </div>
             </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-4">
             <div class="event-info">
-                <p><b>Fee: </b><%= @event.fee_info %></p>
+                <div class="header">
+                    <p><h3>Fee </h3></p>
+                </div>
+                <p><%= @event.fee_info %></p>
             </div>
         </div>
-            
+
+
+        <div class="col-lg-4">
+            <div class="event-info">
+                <div class="header">
+                    <p><h3>Event Type </h3></p>
+                </div>
+                <div class="row">
+                    <% @event.type_of_event.each do |t| %>
+                        <div class="col-lg-12">
+                        
+                            <p><%= t %></p>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>         
     </div>
 
     <div class="row">
@@ -34,8 +55,8 @@
                 <div class="row">
                 <% @event.date.each do |date| %>
                 
-                    <div class="col-lg-2">
-                        <p> <%= date %></p>
+                    <div class="col-lg-4">
+                        <p> <%= date.to_datetime.strftime("%m/%d/%Y") %></p>
                     </div>
                 
                     <% end %>
@@ -46,25 +67,6 @@
                         </div>
                     </div>
                 
-            </div>
-        </div>
-    
-
-
-    
-        <div class="col">
-            <div class="event-info">
-                <div class="header">
-                    <p><h3>Event Type </h3></p>
-                </div>
-                    <div class="row">
-                        <% @event.type_of_event.each do |t| %>
-                            <div class="col-lg-12">
-                            
-                                <p><%= t %></p>
-                            </div>
-                        <% end %>
-                    </div>
             </div>
         </div>
     </div>

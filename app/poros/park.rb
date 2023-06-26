@@ -3,6 +3,7 @@ class Park
               :directions_website, :closed_day, :operating_hours, :address, :photos
 
   def initialize(data)
+
     @name = data[:fullName]
     @description = data[:description]
     @park_code = data[:parkCode]
@@ -12,8 +13,8 @@ class Park
     @email = data[:contacts][:emailAddresses].first[:emailAddress]
     @entrance_fees = formatted_entrance_fees(data[:entranceFees])
     @directions_website = data[:directionsUrl]
-    @closed_day = data[:operatingHours].first[:description]
-    @operating_hours = formatted_operating_hours(data[:operatingHours].first[:standardHours]) # iterate through
+    @closed_day = blank_closed_day(data[:operatingHours])
+    @operating_hours = formatted_operating_hours(data[:operatingHours]) # iterate through
     @address = formatted_address(data)
     @photos = formatted_photos(data[:images]) # iterate through
   end
@@ -31,8 +32,12 @@ class Park
   def formatted_operating_hours(data)
     days = [['Monday'], ['Tuesday'], ['Wednesday'], ['Thursday'], ['Friday'], ['Saturday'], ['Sunday']]
 
+    if data == []
+        "No information available"
+    end
+
     days.each do |day|
-      data.each do |k, v|
+      data.first[:standardHours].each do |k, v|
         if day[0].downcase == k.to_s
           day << v
         end
@@ -58,6 +63,14 @@ class Park
         array << [d[:cost], d[:description]]
       end
       array
+    end
+  end
+
+  def blank_closed_day(data)
+    if data == []
+      'No information available'
+    else
+      data.first[:description]
     end
   end
 end

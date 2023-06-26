@@ -11,4 +11,6 @@ class UserNewEvent < ApplicationRecord
 
     has_many :comments, dependent: :destroy
 
+ 
+
 end
