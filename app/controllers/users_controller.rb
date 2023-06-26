@@ -5,7 +5,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
     @user_new_parks = @user.new_parks
     @user_new_events = @user.new_events
     @park = NewPark.find_by(id: params[:new_park_id])

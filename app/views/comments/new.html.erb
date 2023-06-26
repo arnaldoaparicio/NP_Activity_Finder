@@ -1,11 +1,11 @@
+<div class="container">
+  <%= link_to "Back","/users/#{current_user.id}" %>
 
-<%= link_to "Back","/users/#{current_user.id}" %>
+      <%= form_with url:  "/users/#{@user.id}/parks/#{@event.new_park.id}/events/#{@event.new_event.id}/user_new_events/#{@event.id}/comments", method: :post, local:true do |form| %>
 
-    <%= form_with url:  "/users/#{@user.id}/parks/#{@event.new_park.id}/events/#{@event.new_event.id}/user_new_events/#{@event.id}/comments", method: :post, local:true do |form| %>
+        <h6><p><%= form.label "Add Entry:" %></p></h6>
+      <h6><p> <%= form.text_area :body, rows: 10,:cols => "90", wrap: "hard" %></p>
 
-      <h6><p><%= form.label "Add Entry:" %></p></h6>
-     <h6><p> <%= form.text_area :body, rows: 10,:cols => "90", wrap: "hard" %></p>
-
-      <p><%= form.submit "Submit", class: "btn btn-primary"  %></p>
-    <% end %>
-
+        <p><%= form.submit "Submit", class: "btn btn-primary"  %></p>
+      <% end %>
+</div>
