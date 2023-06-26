@@ -17,8 +17,8 @@ RSpec.describe NewPark, type: :model do
     it { should validate_presence_of :photos }
   end
 
-  # describe 'relationships' do
-  #     it { should have_many(:user_events) }
-  #     it { should have_many(:events).through(:user_events) }
-  # end
+  describe 'relationships' do
+      it { should have_many(:user_new_parks) }
+      it { should have_many(:users).through(:user_new_parks) }
+  end
 end

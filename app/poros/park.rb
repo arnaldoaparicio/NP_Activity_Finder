@@ -20,17 +20,17 @@ class Park
   end
 
   def formatted_phone_number(number)
-    return nil if number.empty?
+    phone_array = []
+    if number.empty?
+      phone_array << "No phone number available"
+    else
 
-    number.first[:phoneNumber]
+      number.first[:phoneNumber]
+    end
   end
 
   def formatted_address(data)
-    # address = data[:addresses].first[:line1]
-    # if address.include? "|"
-    #   address = address.gsub("|", ",")
-    # end
-    # address
+  
     "#{data[:addresses].first[:line1]}, #{data[:addresses].first[:city]}, #{data[:addresses].first[:stateCode]} #{data[:addresses].first[:postalCode]}"
   end
 
@@ -83,4 +83,6 @@ class Park
       data.first[:description]
     end
   end
+
+
 end
