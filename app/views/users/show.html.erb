@@ -53,6 +53,14 @@
 
                         <h3> Favorite Events </h3>
                     </div>
+                    <%if @all_user_events.blank?%>
+                        <div class="user-show">
+                            <%= form_with url: "/users/#{@user.id}/parks", method: :get, local: true do %>
+                                <%= select_tag :state, options_for_select(us_states) %>
+                                <%= submit_tag "Find Parks", class: "btn btn-primary" %>
+                        </div>
+                            <% end %>
+                    <%end%>
                     
                         <% @all_user_events.each do |event| %>
                             <div class="col-lg-12">
