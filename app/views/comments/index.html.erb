@@ -9,6 +9,14 @@
                 <div class="comments-index">
                     <p><%=comment.body%></p>
                     <p><b>Posted: </b><%=comment.created_at.to_datetime.strftime("%m/%d/%Y")%></p>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <%=button_to "Update", "/users/#{@user.id}/parks/#{@event.new_park.id}/events/#{@event.new_event.id}/user_new_events/#{@event.id}/comments/#{comment.id}/edit", method: :get, class: "btn btn-primary"  %>
+                        </div>
+                        <div class="col-lg-6">
+                            <%=button_to "Delete", "/users/#{@user.id}/parks/#{@event.new_park.id}/events/#{@event.new_event.id}/user_new_events/#{@event.id}/comments/#{comment.id}", method: :delete, class: "btn btn-primary"   %>
+                        </div>
+                    </div>
                 </div>
             </div>
         <%end%>        
