@@ -119,7 +119,6 @@ a:visited {
     margin-top: 15px;
     margin-bottom: 15px;
     padding: 10px;
-    padding-top: 15px;
     background-color: #D7A86E; 
     }
 body {
@@ -133,4 +132,10 @@ body {
 
 #form-header {
   padding-right: 20px;
+}
+
+.flash-error{
+  color: red;
+  text-align: center;
+  font-size: 150%;
 }
