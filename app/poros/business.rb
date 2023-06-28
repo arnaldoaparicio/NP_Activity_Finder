@@ -14,7 +14,6 @@ class Business
         @zip = data[:place][:properties][:postalCode]
         @longitude = data[:place][:geometry][:coordinates][0]
         @latitude = data[:place][:geometry][:coordinates][1]
-        # binding.pry
     end
 
 

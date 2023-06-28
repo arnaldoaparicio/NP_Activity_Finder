@@ -19,95 +19,104 @@
         <div class="row">
             <div class="col">
                 
-                    <div class="header">
-                        <h3> Favorite Parks </h3>
+                <div class="header">
+                    <h3> Favorite Parks </h3>
+                </div>
+                <%if @all_user_parks.blank?%>
+                    <div class="user-show">
+                        <%= form_with url: "/users/#{@user.id}/parks", method: :get, local: true do %>
+                            <%= select_tag :state, options_for_select(us_states) %>
+                            <%= submit_tag "Find Parks", class: "btn btn-primary" %>
                     </div>
-                    <%if @all_user_parks.blank?%>
-                        <div class="user-show">
-                            <%= form_with url: "/users/#{@user.id}/parks", method: :get, local: true do %>
-                                <%= select_tag :state, options_for_select(us_states) %>
-                                <%= submit_tag "Find Parks", class: "btn btn-primary" %>
-                        </div>
-                            <% end %>
-                    <%end%>
-                    
-                        <%@all_user_parks.each do |park|%>
-                        <div class="col-lg-12">
-                            <div class="user-show">
-                                <h5><p>Name: <%=link_to "#{park.new_park.name}", "/users/#{@user.id}/parks/#{park.new_park.id}"%></p></h5>
-                                <p>Description: <%=park.new_park.description%></p>
-                                <%=button_to "Delete Park", "/users/#{@user.id}/parks/#{park.new_park.id}/user_new_parks/#{park.id}", method: :delete,class: "btn btn-primary"%>
-                            </div>
-                        </div>
-                        <%end%>
-                    
+                        <% end %>
+                <%end%>
                 
+                    <%@all_user_parks.each do |park|%>
+                    <div class="col-lg-12">
+                        <div class="user-show">
+                            <h5><p>Name: <%=link_to "#{park.new_park.name}", "/users/#{@user.id}/parks/#{park.new_park.id}"%></p></h5>
+                            <p>Description: <%=park.new_park.description%></p>
+                            <%=button_to "Delete Park", "/users/#{@user.id}/parks/#{park.new_park.id}/user_new_parks/#{park.id}", method: :delete,class: "btn btn-primary"%>
+                        <h5> Find a Place Near This Park </h5>
+                            <%=form_with url: "/users/#{@user.id}/search_results", method: :get, local: true  do |form|%>
+                                <%=form.label :q, "Place:"%>
+                                <%=form.text_field :q, placeholder: "Ex: Bar, Cafe"%>
+
+                                <%=form.label :radius, "Enter Radius:" %>
+                                <%=form.text_field :radius, placeholder: "Enter Miles"%>
+
+                                <%=form.hidden_field :park_id, :value => park.new_park.id%>
+                                    
+                                <%=form.submit "Find Place", class: "btn btn-primary"%>
+                            <%end%>
+                            </div>
+                    </div>
+
+                    <%end%>    
             </div>
         </div>
 
 
     <div class="row">
         <div class="col">
-                
-                    <div class="header">
+        
+            <div class="header">
+                <h3> Favorite Events </h3>
+            </div>
+            <%if @all_user_events.blank?%>
+                <div class="user-show">
+                    <%= form_with url: "/users/#{@user.id}/parks", method: :get, local: true do %>
+                        <%= select_tag :state, options_for_select(us_states) %>
+                        <%= submit_tag "Find Parks", class: "btn btn-primary" %>
+                </div>
+                    <% end %>
+            <%end%>
+            
+                <% @all_user_events.each do |event| %>
+                    <div class="col-lg-12">
 
-                        <h3> Favorite Events </h3>
-                    </div>
-                    <%if @all_user_events.blank?%>
                         <div class="user-show">
-                            <%= form_with url: "/users/#{@user.id}/parks", method: :get, local: true do %>
-                                <%= select_tag :state, options_for_select(us_states) %>
-                                <%= submit_tag "Find Parks", class: "btn btn-primary" %>
-                        </div>
-                            <% end %>
-                    <%end%>
-                    
-                        <% @all_user_events.each do |event| %>
-                            <div class="col-lg-12">
+                            <h5><p>Name: <%=link_to "#{sanitize event.new_event.name}", user_park_path(current_user.id, event.new_park.id) %></p></h5>
 
-                                <div class="user-show">
-                                    <h5><p>Name: <%=link_to "#{sanitize event.new_event.name}", user_park_path(current_user.id, event.new_park.id) %></p></h5>
-
-                                        <%if !event.date_attend.nil?%>
-                                        <p><b>Date Attended: </b><%= event.date_attend.to_datetime.strftime("%m/%d/%Y")%> </p>
-                                        <%end%>
-                                        <%if event.date_attend.nil?%>
-                                            <%=form_with url: "/users/#{@user.id}/parks/#{event.new_park.id}/events/#{event.new_event.id}/user_new_events/#{event.id}", method: :patch, local: true  do |form|%>
-                                                <%=form.date_field :date_attend%>
-                                            
-                                                <%=form.submit "Add Date Attended", class: "btn btn-primary"%>
-                                            <%end%>
-                                        <%end%>
-                                    <p><b>Description: </b><%= sanitize event.new_event.description %></p>
-                                                <p><b>Location: </b><%= sanitize event.new_event.location %></p>    
-                                    <div class ="row">
-                                        <div class="col-lg-4">
-                                            <%=button_to "Delete Event", "/users/#{@user.id}/parks/#{event.new_park.id}/events/#{event.new_event.id}/user_new_events/#{event.id}", method: :delete,class: "btn btn-primary"%>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <%= button_to "Add Comment", "/users/#{@user.id}/parks/#{event.new_park.id}/events/#{event.new_event.id}/user_new_events/#{event.id}/comments/new", method: :get,class: "btn btn-primary" %>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <%= button_to "View Comments", "/users/#{@user.id}/parks/#{event.new_park.id}/events/#{event.new_event.id}/user_new_events/#{event.id}/comments", method: :get,class: "btn btn-primary" %>
-                                        </div>
-                                    </div>
-                                    <%=form_with url: "/users/#{@user.id}/search_results", method: :get, local: true  do |form|%>
-                                        <%=form.label :q, "Place:"%>
-                                        <%=form.text_field :q%>
-
-                                        <%=form.label :radius, "Enter Radius:" %>
-                                        <%=form.text_field :radius%>
-
-                                        <%=form.hidden_field :park_id, :value => event.new_park.id%>
-                                            
-                                        <%=form.submit "Find Place", class: "btn btn-primary"%>
-                                        <%end%>
-
+                                <%if !event.date_attend.nil?%>
+                                <p><b>Date Attended: </b><%= event.date_attend.to_datetime.strftime("%m/%d/%Y")%> </p>
+                                <%end%>
+                                <%if event.date_attend.nil?%>
+                                    <%=form_with url: "/users/#{@user.id}/parks/#{event.new_park.id}/events/#{event.new_event.id}/user_new_events/#{event.id}", method: :patch, local: true  do |form|%>
+                                        <%=form.date_field :date_attend%>
+                                    
+                                        <%=form.submit "Add Date Attended", class: "btn btn-primary"%>
+                                    <%end%>
+                                <%end%>
+                            <p><b>Description: </b><%= sanitize event.new_event.description %></p>
+                            <p><b>Location: </b><%= sanitize event.new_event.location %></p>    
+                            <div class ="row">
+                                <div class="col-lg-4">
+                                    <%=button_to "Delete Event", "/users/#{@user.id}/parks/#{event.new_park.id}/events/#{event.new_event.id}/user_new_events/#{event.id}", method: :delete,class: "btn btn-primary"%>
+                                </div>
+                                <div class="col-lg-4">
+                                    <%= button_to "Add Comment", "/users/#{@user.id}/parks/#{event.new_park.id}/events/#{event.new_event.id}/user_new_events/#{event.id}/comments/new", method: :get,class: "btn btn-primary" %>
+                                </div>
+                                <div class="col-lg-4">
+                                    <%= button_to "View Comments", "/users/#{@user.id}/parks/#{event.new_park.id}/events/#{event.new_event.id}/user_new_events/#{event.id}/comments", method: :get,class: "btn btn-primary" %>
                                 </div>
                             </div>
-                        <% end%>
-                     
-                    
+
+                            <h5> Find a Place Near This Event </h5>
+                            <%=form_with url: "/users/#{@user.id}/search_results", method: :get, local: true  do |form|%>
+                                <%=form.label :q, "Place:"%>
+                                <%=form.text_field :q, placeholder: "Ex: Bar, Cafe"%>
+
+                                <%=form.label :radius, "Enter Radius:" %>
+                                <%=form.text_field :radius, placeholder: "Enter Miles"%>
+
+                                <%=form.hidden_field :park_id, :value => event.new_park.id%>
+                                    
+                                <%=form.submit "Find Place", class: "btn btn-primary"%>
+                            <%end%>
+                        </div>
+                    </div>
+                <% end%>           
         </div>
     </div>
 </div>
