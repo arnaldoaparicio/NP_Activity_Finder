@@ -1,4 +1,4 @@
-  <div class = "container text-center">
+<div class = "container text-center">
    <%if !logged_in?%>
    <div class="header">
       <h1><p><%= @park.name %></p></h1>
@@ -76,36 +76,25 @@
      <div class="row">
       <div class="col-lg-12">
          <div class="user-comments">
-        
             <div class="header">
                   <h3>Weather</h3>
             </div>
-         
             <div class="row">
-            
                <%@weather.each do |w|%>
-                 
-                     <div class="col-lg-3">
-         <img src="http://openweathermap.org/img/w/<%=w.icon%>.png" alt="weather">
-
+                  <div class="col-lg-3">
+                     <img src="http://openweathermap.org/img/w/<%=w.icon%>.png" alt="weather">
                      <p><h6><%=Time.at(w.day).strftime("%B %d ")%></h6></p>
                      <p><b>Sunrise: </b><%=Time.at(w.sunrise).to_formatted_s(:time)%></p>
                      <p><b>Sunset: </b><%=Time.at(w.sunset).to_formatted_s(:time)%></p>
                      <p><b> Max Temp: </b><%=w.max_temp%></p>
                      <p><b> Min Temp: </b><%=w.min_temp%></p>
                      <p><b> Description: </b><%=w.description%></p>
-        
-                  </div>
-                 
+                  </div> 
                <%end%>
             </div>
          </div>
       </div>
-
-
-   </div>
-
-      
+   </div>     
 </div>
 
    <%else%>
@@ -209,33 +198,24 @@
    <div class="row">
       <div class="col-lg-12">
          <div class="user-comments">
-        
             <div class="header">
-                  <h3>Weather</h3>
+               <h3>Weather</h3>
             </div>
-         
             <div class="row">
-            
                <%@weather.each do |w|%>
-                 
-                     <div class="col-lg-3">
-         <img src="http://openweathermap.org/img/w/<%=w.icon%>.png" alt="weather">
-
+                  <div class="col-lg-3">
+                     <img src="http://openweathermap.org/img/w/<%=w.icon%>.png" alt="weather">
                      <p><h6><%=Time.at(w.day).strftime("%B %d ")%></h6></p>
                      <p><b>Sunrise: </b><%=Time.at(w.sunrise).to_formatted_s(:time)%></p>
                      <p><b>Sunset: </b><%=Time.at(w.sunset).to_formatted_s(:time)%></p>
                      <p><b> Max Temp: </b><%=w.max_temp%></p>
                      <p><b> Min Temp: </b><%=w.min_temp%></p>
                      <p><b> Description: </b><%=w.description%></p>
-        
-                  </div>
-                 
+                  </div>    
                <%end%>
             </div>
          </div>
       </div>
-
-
    </div>
 </div>
 

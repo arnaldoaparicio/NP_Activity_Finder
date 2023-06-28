@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
 
   resources :users do 
+    get '/search_results', to: 'users#search_results'
     resources :parks do
       get "/comments", to: 'parks#park_comments'
     resources :user_new_parks

@@ -1,0 +1,16 @@
+<div class="container text-center">
+
+<h1>We Found <%=@response.count%> Results</h1> 
+    <div class="row">
+        <%@response.each do |result|%>
+            <div class="col-lg-6">
+                <div class="business-index">
+                <p><h2><%=result.name%></h2></p>
+                <p><b>Address: </b><%=result.address%></p> 
+                <%=result.city%>, <%=result.state%> <%=result.zip%></p>
+                <%= link_to "Get Directions", "https://www.google.com/maps/dir/?api=1&destination=#{result.latitude},#{result.longitude}"%>
+                </div>
+            </div>
+        <%end%>
+    </div>
+</div>

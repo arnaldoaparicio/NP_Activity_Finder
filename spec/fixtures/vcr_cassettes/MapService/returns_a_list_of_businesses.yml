@@ -1,0 +1,102 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.mapquestapi.com/search/v4/place?circle=-77.6445079,39.3341151,100000&key=ATUJvHMRAB7TFEaDH3pzIs4Ekae5av00&location=-77.6445079,39.3341151&q=bar&sort=distance
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.6
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 28 Jun 2023 14:29:26 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '7947'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit-2628000:
+      - '15000'
+      X-Ratelimit-Remaining-2628000:
+      - '14973'
+      Ratelimit-Limit:
+      - '15000'
+      Ratelimit-Remaining:
+      - '14973'
+      Ratelimit-Reset:
+      - '1841435'
+      X-Powered-By:
+      - MapQuest
+      X-Request-Id:
+      - 2ee35aa0-15c0-11ee-b71c-111c91489f8c
+      Access-Control-Allow-Origin:
+      - "*"
+      Etag:
+      - W/"1f0b-G86MV5dzp+i5Q0K1235h5V6XyUg"
+    body:
+      encoding: UTF-8
+      string: '{"pagination":{"currentPage":1},"request":{"sort":"distance","pageSize":20,"page":1,"feedback":false,"key":"ATUJvHMRAB7TFEaDH3pzIs4Ekae5av00","location":[-77.6445079,39.3341151],"circle":[-77.6445079,39.3341151,100000],"q":"bar"},"results":[{"id":"mqId:361648164","displayString":"Coach
+        House Grill N'' Bar, 160 High St, Harpers Ferry, WV 25425","name":"Coach House
+        Grill N'' Bar","slug":"/us/west-virginia/coach-house-grill-n-bar-361648164","language":"en","place":{"type":"Feature","geometry":{"coordinates":[-77.731053,39.32369],"type":"Point"},"properties":{"city":"Harpers
+        Ferry","stateCode":"WV","postalCode":"25425","county":"","countryCode":"US","street":"160
+        High St","type":"address"}}},{"id":"mqId:431232997","displayString":"H. B.
+        Snallygaster''s General Store & Cafe, 1102 Washington St, Bolivar, WV 25425","name":"H.
+        B. Snallygaster''s General Store & Cafe","slug":"/us/west-virginia/h-b-snallygasters-general-store-cafe-431232997","language":"en","place":{"type":"Feature","geometry":{"coordinates":[-77.74617,39.32639],"type":"Point"},"properties":{"city":"Bolivar","stateCode":"WV","postalCode":"25425","county":"","countryCode":"US","street":"1102
+        Washington St","type":"address"}}},{"id":"mqId:282845222","displayString":"Valley
+        Grill Sports Bar, 50 Glenbrook Dr, Middletown, MD 21769","name":"Valley Grill
+        Sports Bar","slug":"/us/maryland/valley-grill-sports-bar-282845222","language":"en","place":{"type":"Feature","geometry":{"coordinates":[-77.52963,39.43485],"type":"Point"},"properties":{"city":"Middletown","stateCode":"MD","postalCode":"21769","county":"","countryCode":"US","street":"50
+        Glenbrook Dr","type":"address"}}},{"id":"mqId:419055128","displayString":"Angels
+        Haven Sports Bar and Grill, 107 Keyes Ferry Rd, Charles Town, WV 25414","name":"Angels
+        Haven Sports Bar and Grill","slug":"/us/west-virginia/angels-haven-sports-bar-and-grill-419055128","language":"en","place":{"type":"Feature","geometry":{"coordinates":[-77.83449,39.29537],"type":"Point"},"properties":{"city":"Charles
+        Town","stateCode":"WV","postalCode":"25414","county":"","countryCode":"US","street":"107
+        Keyes Ferry Rd","type":"address"}}},{"id":"mqId:481333404","displayString":"Applebee''s,
+        129 Jefferson Crossing Way, Charles Town, WV 25414","name":"Applebee''s","slug":"/us/west-virginia/applebees-481333404","language":"en","place":{"type":"Feature","geometry":{"coordinates":[-77.84419,39.30031],"type":"Point"},"properties":{"city":"Charles
+        Town","stateCode":"WV","postalCode":"25414","county":"","countryCode":"US","street":"129
+        Jefferson Crossing Way","type":"address"}}},{"id":"mqId:376420517","displayString":"Taco
+        Bar, 1450 W Patrick St, Frederick, MD 21702","name":"Taco Bar","slug":"/us/maryland/taco-bar-376420517","language":"en","place":{"type":"Feature","geometry":{"coordinates":[-77.4655403,39.4213322],"type":"Point"},"properties":{"city":"Frederick","stateCode":"MD","postalCode":"21702","county":"","countryCode":"US","street":"1450
+        W Patrick St","type":"address"}}},{"id":"mqId:356328131","displayString":"Modern
+        Asia Bar & Restaurant, 1306 W Patrick St, Frederick, MD 21703","name":"Modern
+        Asia Bar & Restaurant","slug":"/us/maryland/modern-asia-bar-restaurant-356328131","language":"en","place":{"type":"Feature","geometry":{"coordinates":[-77.45528,39.41726],"type":"Point"},"properties":{"city":"Frederick","stateCode":"MD","postalCode":"21703","county":"","countryCode":"US","street":"1306
+        W Patrick St","type":"address"}}},{"id":"mqId:466185989","displayString":"Taj
+        Mahal, 1301 W Patrick St, Frederick, MD 21702","name":"Taj Mahal","slug":"/us/maryland/taj-mahal-466185989","language":"en","place":{"type":"Feature","geometry":{"coordinates":[-77.45351,39.41894],"type":"Point"},"properties":{"city":"Frederick","stateCode":"MD","postalCode":"21702","county":"","countryCode":"US","street":"1301
+        W Patrick St","type":"address"}}},{"id":"mqId:267561912","displayString":"Mi
+        Casa Bar & Grill, 50 N McCain Dr, Frederick, MD 21702","name":"Mi Casa Bar
+        & Grill","slug":"/us/maryland/mi-casa-bar-grill-267561912","language":"en","place":{"type":"Feature","geometry":{"coordinates":[-77.4532327592494,39.4208380713349],"type":"Point"},"properties":{"city":"Frederick","stateCode":"MD","postalCode":"21702","county":"","countryCode":"US","street":"50
+        N McCain Dr","type":"address"}}},{"id":"mqId:450923519","displayString":"Doc''s
+        Sports Club, 715 S George St, Charles Town, WV 25414","name":"Doc''s Sports
+        Club","slug":"/us/west-virginia/docs-sports-club-450923519","language":"en","place":{"type":"Feature","geometry":{"coordinates":[-77.85659,39.28225],"type":"Point"},"properties":{"city":"Charles
+        Town","stateCode":"WV","postalCode":"25414","county":"","countryCode":"US","street":"715
+        S George St","type":"address"}}},{"id":"mqId:429676961","displayString":"Thai
+        Meric Eatery & Bar, 1170 W Patrick St, Frederick, MD 21703","name":"Thai Meric
+        Eatery & Bar","slug":"/us/maryland/thai-meric-eatery-bar-429676961","language":"en","place":{"type":"Feature","geometry":{"coordinates":[-77.44968,39.41758],"type":"Point"},"properties":{"city":"Frederick","stateCode":"MD","postalCode":"21703","county":"","countryCode":"US","street":"1170
+        W Patrick St","type":"address"}}},{"id":"mqId:380473335","displayString":"Benchwarmers
+        Sports Bar & Grill, 809 N Mildred St, Ranson, WV 25438","name":"Benchwarmers
+        Sports Bar & Grill","slug":"/us/west-virginia/benchwarmers-sports-bar-grill-380473335","language":"en","place":{"type":"Feature","geometry":{"coordinates":[-77.86444,39.30625],"type":"Point"},"properties":{"city":"Ranson","stateCode":"WV","postalCode":"25438","county":"","countryCode":"US","street":"809
+        N Mildred St","type":"address"}}},{"id":"mqId:424265555","displayString":"Famous
+        Dave''s Bar-B-Que, 1003 W. Patrick Street, Frederick, MD 21703","name":"Famous
+        Dave''s Bar-B-Que","slug":"/us/maryland/famous-daves-bar-b-que-424265555","language":"en","place":{"type":"Feature","geometry":{"coordinates":[-77.4415333,39.4178621],"type":"Point"},"properties":{"city":"Frederick","stateCode":"MD","postalCode":"21703","county":"","countryCode":"US","street":"1003
+        W. Patrick Street","type":"address"}}},{"id":"mqId:427667888","displayString":"Jerk
+        N Jive Bar and Kitchen, 490 Prospect Blvd, Frederick, MD 21701","name":"Jerk
+        N Jive Bar and Kitchen","slug":"/us/maryland/jerk-n-jive-bar-and-kitchen-427667888","language":"en","place":{"type":"Feature","geometry":{"coordinates":[-77.43037,39.40624],"type":"Point"},"properties":{"city":"Frederick","stateCode":"MD","postalCode":"21701","county":"","countryCode":"US","street":"490
+        Prospect Blvd","type":"address"}}},{"id":"mqId:456563268","displayString":"Habanero
+        Tacos Bar & Grill, 425 S Jefferson St, Frederick, MD 21701","name":"Habanero
+        Tacos Bar & Grill","slug":"/us/maryland/habanero-tacos-bar-grill-456563268","language":"en","place":{"type":"Feature","geometry":{"coordinates":[-77.42954259999999,39.40836483458033],"type":"Point"},"properties":{"city":"Frederick","stateCode":"MD","postalCode":"21701","county":"","countryCode":"US","street":"425
+        S Jefferson St","type":"address"}}},{"id":"mqId:2713013","displayString":"Champion
+        Billiards Sports Cafe, 5205 Buckeystown Pike, Frederick, Maryland 21704","name":"Champion
+        Billiards Sports Cafe","slug":"/us/maryland/champion-billiards-sports-cafe-2713013","language":"en","place":{"type":"Feature","geometry":{"coordinates":[-77.4113661,39.3737518],"type":"Point"},"properties":{"city":"Frederick","stateCode":"Maryland","postalCode":"21704","county":"","countryCode":"US","street":"5205
+        Buckeystown Pike","type":"address"}}},{"id":"mqId:369322815","displayString":"Chili''s,
+        5100 Pegasus Ct, Frederick, MD 21704","name":"Chili''s","slug":"/us/maryland/chilis-369322815","language":"en","place":{"type":"Feature","geometry":{"coordinates":[-77.41025,39.372],"type":"Point"},"properties":{"city":"Frederick","stateCode":"MD","postalCode":"21704","county":"","countryCode":"US","street":"5100
+        Pegasus Ct","type":"address"}}}]}'
+  recorded_at: Wed, 28 Jun 2023 14:29:25 GMT
+recorded_with: VCR 6.1.0
