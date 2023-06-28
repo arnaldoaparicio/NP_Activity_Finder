@@ -1,0 +1,11 @@
+<div class="container">
+    <%@response.each do |result|%>
+        <p><h2><%=result.name%></h2></p>
+        <p>Address:<%=result.address%></p>
+
+        <p>City:<%=result.city%></p>
+        <p>State:<%=result.state%></p>
+        <p>Postal Code:<%=result.zip%></p>
+        <%= link_to "Get Directions", "https://www.google.com/maps/dir/?api=1&destination=#{result.latitude},#{result.longitude}"%>
+    <%end%>
+</div>

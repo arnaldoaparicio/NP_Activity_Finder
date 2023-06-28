@@ -5,15 +5,29 @@ class UsersController < ApplicationController
   end
 
   def show
-    # @user = User.find(params[:id])
     @user = User.find(session[:user_id])
     @user_new_parks = @user.new_parks
     @user_new_events = @user.new_events
-    @park = NewPark.find_by(id: params[:new_park_id])
     @all_user_events = @user.user_new_events
     @all_user_parks = @user.user_new_parks
     
-    # require 'pry'; binding.pry
+  end
+
+  def search_results
+    @user = User.find(session[:user_id])
+    @user_new_parks = @user.new_parks
+    @user_new_events = @user.new_events
+    @park = NewPark.find_by(id: params[:park_id])
+    @all_user_events = @user.user_new_events
+    @all_user_parks = @user.user_new_parks
+
+    location = @park.longitude.to_s + "," + @park.latitude.to_s
+    q = params[:q]
+    circle = @park.longitude.to_s + "," + @park.latitude.to_s + "," +  params[:radius].to_s
+    sort = "distance"
+    # @response = MapService.find_service(location, q, circle, sort)
+    @response = MapFacade.get_service(location, q, circle, sort)
+    # binding.pry
   end
 
   def new
@@ -53,6 +67,7 @@ class UsersController < ApplicationController
       render :login_form
     end
   end
+
 
   private
 
