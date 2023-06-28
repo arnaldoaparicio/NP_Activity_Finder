@@ -30,6 +30,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(session[:user_id])
+  end
+
+  def update
+    user = User.find(session[:user_id])
+    if user.update(user_params)
+      redirect_to user_path(user)
+    end
+
+  end
+
   def login
     user = User.find_by(username: params[:username])
     if user.nil?

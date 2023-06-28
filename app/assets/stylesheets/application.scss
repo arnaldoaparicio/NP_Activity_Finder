@@ -36,6 +36,7 @@ h1,h2,h3,h4,h5,h6,p{
   box-sizing: border-box;
   margin: 8px 0;
   text-align: center;
+  font-size: 15px;
   
 }
 
@@ -73,6 +74,7 @@ a:visited {
     padding: 10px;
     background-color: #D7A86E; 
     }
+    
   .user-show {
     border: 12px solid #8E3200;
     border-radius: 10px;
@@ -119,7 +121,6 @@ a:visited {
     margin-top: 15px;
     margin-bottom: 15px;
     padding: 10px;
-    padding-top: 15px;
     background-color: #D7A86E; 
     }
 body {
@@ -133,4 +134,10 @@ body {
 
 #form-header {
   padding-right: 20px;
+}
+
+.flash-error{
+  color: red;
+  text-align: center;
+  font-size: 150%;
 }

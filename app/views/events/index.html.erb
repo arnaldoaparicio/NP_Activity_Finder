@@ -1,7 +1,12 @@
 <div class="container text-center">
     <% flash.each do |msg| %>
+    
         <%= msg %>
     <% end %>
+
+    <%if @events.empty?%>
+        <h1>There Are No Events Scheduled. Please Contact The Park For More Information!</h1>
+    <%end%>
     <div class="row">
 
         <%@events.each do |event|%>

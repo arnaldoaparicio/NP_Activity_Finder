@@ -3,10 +3,10 @@
     <%if !logged_in?%>
 
 
-        <%= form_tag :parks, method: :get, class: "form-inline" do %>
+       <%= form_with url: "/parks", method: :get, local: true do %>
             <%= select_tag :state, options_for_select(us_states) %>
             <%= submit_tag "Find Parks", class: "btn btn-primary" %>
-        
+    
         <% end %>
 
             <div class="row">
@@ -34,9 +34,10 @@
 
 
 
-    
+ 
     <%end%>
-
+ </div>  
+<div class="container text-center">
 
 
 
