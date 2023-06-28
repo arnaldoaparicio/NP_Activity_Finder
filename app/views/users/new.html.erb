@@ -1,6 +1,6 @@
-<body>
 
-<p>
+<div class="container">
+
     <%= form_with url: "/users", method: :post, local:true do |form| %>
     <% if @user.errors.any? %>
       <div id="error_explanation">
@@ -34,6 +34,6 @@
       <%= form.label :password_confirmation %>
       <p><%= form.text_field :password_confirmation %></p>
 
-      <%= form.submit "Submit" %>
+      <%= form.submit "Submit", class: "btn btn-primary" %>
     <% end %>
-</body>
+</div>

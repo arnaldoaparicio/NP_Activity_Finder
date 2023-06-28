@@ -3,6 +3,7 @@ class Park
               :directions_website, :closed_day, :operating_hours, :address, :photos
 
   def initialize(data)
+
     @name = data[:fullName]
     @description = data[:description]
     @park_code = data[:parkCode]
@@ -12,29 +13,38 @@ class Park
     @email = data[:contacts][:emailAddresses].first[:emailAddress]
     @entrance_fees = formatted_entrance_fees(data[:entranceFees])
     @directions_website = data[:directionsUrl]
-    @closed_day = data[:operatingHours].first[:description]
-    @operating_hours = formatted_operating_hours(data[:operatingHours].first[:standardHours]) # iterate through
+    @closed_day = blank_closed_day(data[:operatingHours])
+    @operating_hours = formatted_operating_hours(data[:operatingHours]) # iterate through
     @address = formatted_address(data)
     @photos = formatted_photos(data[:images]) # iterate through
   end
 
   def formatted_phone_number(number)
-    return nil if number.empty?
+    phone_array = []
+    if number.empty?
+      phone_array << "No phone number available"
+    else
 
-    number.first[:phoneNumber]
+      number.first[:phoneNumber]
+    end
   end
 
   def formatted_address(data)
+  
     "#{data[:addresses].first[:line1]}, #{data[:addresses].first[:city]}, #{data[:addresses].first[:stateCode]} #{data[:addresses].first[:postalCode]}"
   end
 
   def formatted_operating_hours(data)
     days = [['Monday'], ['Tuesday'], ['Wednesday'], ['Thursday'], ['Friday'], ['Saturday'], ['Sunday']]
 
-    days.each do |day|
-      data.each do |k, v|
-        if day[0].downcase == k.to_s
-          day << v
+    if data == []
+        "No information available"
+    else
+      days.each do |day|
+        data.first[:standardHours].each do |k, v|
+          if day[0].downcase == k.to_s
+            day << v
+          end
         end
       end
     end
@@ -46,7 +56,12 @@ class Park
     data.each do |d|
       array << [d[:url], d[:altText]]
     end
-    array
+
+    if array.empty?
+      array << "No photos available"
+    else 
+      array
+    end
   end
 
   def formatted_entrance_fees(data)
@@ -60,4 +75,14 @@ class Park
       array
     end
   end
+
+  def blank_closed_day(data)
+    if data == []
+      'No information available'
+    else
+      data.first[:description]
+    end
+  end
+
+
 end

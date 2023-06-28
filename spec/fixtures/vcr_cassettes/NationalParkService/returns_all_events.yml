@@ -102,4 +102,107 @@ http_interactions:
         Pow Wow - NPS Table","latitude":"","subjectname":"","tags":["Pow Wow","Native
         American dances","Native American culture","tribal heritage"]}],"dates":"2023-06-17","pagenumber":"1","pagesize":"10"}'
   recorded_at: Fri, 16 Jun 2023 22:04:03 GMT
+- request:
+    method: get
+    uri: https://developer.nps.gov/api/v1/events?api_key=zmuTdZgBkO6cmrf401Mfjpr6hRqdfLwi8NdgROnB&dateEnd=2023-07-03&dateStart=2023-06-26&parkCode=cajo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.6
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 26 Jun 2023 22:06:27 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '1233'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-type, Authorization, Access-Control-Allow-Headers, Credentials
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, PATCH, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Age:
+      - '0'
+      Allow:
+      - GET
+      Strict-Transport-Security:
+      - max-age=31536000; preload
+      - max-age=31536000; preload
+      Vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      Via:
+      - http/1.1 api-umbrella (ApacheTrafficServer [cMsSf ])
+      X-Api-Umbrella-Request-Id:
+      - c8v6v735sjfjbqc9la6g
+      X-Cache:
+      - MISS
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '964'
+      X-Time-In-Cache-Check:
+      - '0'
+      X-Time-In-Cache-Save:
+      - '0'
+      X-Time-In-Ontaffyrequest:
+      - '0'
+      X-Time-In-Ontaffyrequestend:
+      - '0'
+      X-Time-In-Parse:
+      - '0'
+      X-Time-In-Resource:
+      - '31'
+      X-Time-In-Serialize:
+      - '109'
+      X-Time-In-Taffy:
+      - '0'
+      X-Vcap-Request-Id:
+      - ed48f88a-d488-4e51-67fe-faca62b0a30f
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: '{"total":"1","errors":[],"data":[{"location":"3601 Timberneck Farm
+        Rd, Hayes, VA 23072","updateuser":"","contactname":"Remi Sarihan","contacttelephonenumber":"(757)
+        856-1220","recurrencedateend":"","longitude":"-76.539538","datestart":"2023-07-01","isrecurring":"false","datetimeupdated":"","portalname":"","types":["Children’s
+        Program","Partner Program"],"createuser":"","isfree":"false","contactemailaddress":"remi_sarihan@nps.gov","regresurl":"","description":"<p>Join
+        us at Machicomoco State Park for a day of fishing fun!<\/p>\n<p>Junior Angler
+        is a National Park Service program that introduces young anglers to the pastime
+        of fishing. Learn how to set up your fishing pole, cast your line, and reel
+        them in with the help of experienced anglers. Back on shore, chat with a park
+        ranger about the long history of fishing in the Chesapeake Bay. Then, you''ll
+        be sworn in as a Junior Ranger! Participants will take home an activity booklet
+        and a special junior ranger badge. <\/p>\n<p><a href=\"https:\/\/www.nps.gov\/subjects\/fishing\/junior-ranger-fishing.htm\">Learn
+        about the Junior Angler Program<\/a><\/p>\n<p><a href=\"https:\/\/www.dcr.virginia.gov\/state-parks\/machicomoco\">Learn
+        about Machicomoco State Park<\/a><\/p>","images":[{"path":"\/common\/uploads\/event_calendar\/76756690-D77C-0908-7E9EA810A5471CBE.png","credit":"NPS","imageId":"38593","altText":"Junior
+        Angler badge","title":"","ordinal":"0","caption":"Earn your Junior Angler
+        badge!","url":"\/common\/uploads\/event_calendar\/76756690-D77C-0908-7E9EA810A5471CBE.png"}],"category":"Special
+        Event","imageidlist":"","isregresrequired":"false","organizationname":"","id":"769BC096-C1C5-B812-0934C3FD4D494BCC","isallday":"false","dateend":"2023-07-01","sitecode":"cajo","infourl":"https:\/\/www.dcr.virginia.gov\/state-parks\/machicomoco","times":[{"timestart":"10:00
+        AM","timeend":"03:00 PM","sunsetend":"false","sunrisestart":"false"}],"regresinfo":"","timeinfo":"Drop
+        by anytime and stay for as long as you can!","categoryid":"0","eventid":"0","parkfullname":"Captain
+        John Smith Chesapeake National Historic Trail","recurrencedatestart":"2023-07-01","date":"2023-07-01","sitetype":"park","feeinfo":"$5
+        parking fee","recurrencerule":"","dates":["2023-07-01"],"datetimecreated":"","title":"Junior
+        Angler @ Machicomoco State Park","latitude":"37.311523","subjectname":"","tags":["junior
+        angler","Junior Ranger","fishing","water activities","Chesapeake Bay","watershed","estuary"]}],"dates":"2023-07-01","pagenumber":"1","pagesize":"10"}'
+  recorded_at: Mon, 26 Jun 2023 22:06:27 GMT
 recorded_with: VCR 6.1.0

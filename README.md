@@ -1,24 +1,71 @@
-# README
+## Setup
+1. Clone this repository:
+On your local machine open a terminal session and enter the following commands for SSH or HTTPS to clone the repositiory.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- using https <br>
+```shell
+$ git clone https://github.com/WadeNaughton/NP_Activity_Finder.git
+```
+- using SSH <br>
+```shell
+$ git clone git@github.com:WadeNaughton/NP_Activity_Finder.git
+```
 
-Things you may want to cover:
+2. Change to the project directory:<br>
 
-* Ruby version
+``` 
+cd NP_Activity_Finder
+```
 
-* System dependencies
+3. Install required Gems utilizing Bundler: <br>
+In terminal, use Bundler to install any missing Gems. If Bundler is not installed, first run the following command.
 
-* Configuration
+```shell
+$ gem install bundler
+```
 
-* Database creation
+If Bundler is already installed or after it has been installed, run the following command.
 
-* Database initialization
+```shell
+$ bundle install
+```
 
-* How to run the test suite
+4. Database Migration<br>
+Before using the web application you will need to setup your databases locally by running the following command
 
-* Services (job queues, cache servers, search engines, etc.)
+```shell
+$ rails db:{:drop, :create, :migrate}
+```
 
-* Deployment instructions
+5. Set up environment variables
 
-* ...
+```shell
+$ bundle exec figaro install
+```
+
+
+6. Visit https://www.nps.gov/subjects/developer/get-started.htm to sign up for an API key <br>
+
+7. Visit https://openweathermap.org/full-price#current to sign up for an API key <br>
+
+8. Add the following code to your application.yml file
+
+```shell
+parks_key: api_key_goes_here
+```
+
+```
+weather_key: api_key_goes_here
+```
+
+9. Startup and Access<br>
+Finally, in order to use the web app you will have to start the server locally and access the app through a web browser. 
+- Start server
+```shell
+$ rails s
+```
+
+- Open web browser and visit link
+    http://localhost:3000/
+    
+At this point you should be taken to the welcome page of the web-app. If you encounter any errors or have not reached the web-app please confirm you followed the steps above and that your environment is properly set up.

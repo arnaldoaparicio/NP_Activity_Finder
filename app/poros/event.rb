@@ -16,7 +16,7 @@ class Event
   end
 
   def blank_event(data)
-    if @fee_info == nil
+    if data[:feeinfo] == nil || data[:feeinfo] == ""
       @fee_info = "No fee information available."
     else 
       @fee_info = data[:feeinfo]
@@ -24,7 +24,7 @@ class Event
   end
 
   def blank_location(data)
-    if @location == nil
+    if data[:location] == nil || data[:location] == ""
       @location = "No location information available."
     else 
       @location = data[:location]

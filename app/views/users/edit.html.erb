@@ -1,0 +1,20 @@
+<div class="container">
+
+<p>
+    <%= form_with url: "/users/#{@user.id}", method: :patch, local:true do |form| %>
+   
+      <%= form.label :first_name%>
+      <p><%= form.text_field :first_name, :value =>  @user.first_name  %></p>
+
+      <%= form.label :last_name %>
+      <p><%= form.text_field :last_name, :value =>  @user.last_name %></p>
+
+      <%= form.label :username %>
+      <p><%= form.text_field :username, :value =>  @user.username  %></p>
+  
+      <%= form.label :state %>
+      <p><%= form.select :state, options_for_select(us_states)%></p>
+
+      <%= form.submit "Submit", class: "btn btn-primary"   %>
+    <% end %>
+</div>
