@@ -1,3 +1,15 @@
-<% @comments.each do |comment| %>
-    <%= comment.body %>
+<div class="container">
+    <div class="col">
+    <% @comments.each do |comment| %>
+         <div class="image-format"><img src="https://user-images.githubusercontent.com/88012780/249285064-2a7decf0-0c9c-40c9-8f0e-1a191b5eee36.jpg", width="80" height="80"></div>
+    <div class="park-comments">
+        <div class="name-height">
+        <p style="color: #0000FF"> <%= comment[1] %></p>
+        <p style="font-size: 12px;"> <%= comment[0].created_at.strftime("%B %d") %> </p>
+        <p> <%= comment[0].body %></p>
+        <p>Event Name: <%= comment[2] %></p>
+        </div>
+    </div>
     <% end %>
+    </div>
+</div>
