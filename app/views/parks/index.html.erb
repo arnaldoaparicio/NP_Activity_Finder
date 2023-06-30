@@ -1,34 +1,193 @@
-<div class="container text-center">
+<div class="container ">
     <%if !logged_in?%>
-        <div class ="row">
-            <div class="col">
-                <% @parks.each do |park| %>
-                    <div class="park-index">
-                        <p><h2> <%= link_to park.name, park_path(park.park_code, :park_code => park.park_code)%></h2></p>
-                        <p><%=park.description%></p>
-                        <%park.photos.each do |photo|%>
-                            <img src="<%=photo[0]%>" alt="<%=photo[1]%>" style="width:110px;height:110px;">
-                        <%end%>
-                    </div>
+               <div class ="row">
+            <% @parks.each do |park| %>
             
-                <%end%>
-            </div>
-        </div>
-    <%else%>
-
-        <div class ="row">
-            <div class="col">
-                <% @parks.each do |park| %>
                 <div class="park-index">
-                    <p><h2> <%= link_to park.name, user_park_path(@user,park.park_code, :park_code => park.park_code)%></h2></p>
-                    <p><%=park.description%></p>
-                    <%park.photos.each do |photo|%>
-                        <img src="<%=photo[0]%>" alt="<%=photo[1]%>" style="width:110px;height:110px;">
-                    <%end%>
+                    <div class="row align-items-center">
+                            <div class="col-lg-7">
+                                <p><h2> <%= link_to park.name, park_path(park.park_code, :park_code => park.park_code)%></h2></p>
+
+
+                                <p><%=park.description%></p>
+                            </div>
+                        
+                            <div class="col-lg-5">
+                                <div id="park-photo">
+                                <%park.photos[0..2].each do |photo|%>
+                                    <img src="<%=photo[0]%>" alt="<%=photo[1]%>" style="width:130px;height:130px;">
+                                <%end%>
+                                </div>
+                               <div class="accordion" id="#parkInformation">
+                                    <div class="accordion-item">
+                                        <div class="accordion-header" id="headingOne">
+                                        <h5 class="mb-0">
+                                            <button class="button btn-hover" type="button" data-toggle="collapse" data-target="#collapseOne-<%=park.park_code%>" aria-expanded="true" aria-controls="collapseOne">
+                                            Address
+                                            </button>
+                                        </h5>
+                                        </div>
+
+                                        <div id="collapseOne-<%=park.park_code%>"  class="collapse" aria-labelledby="headingOne" data-parent="parkInformation">
+                                            <div class="accordion-body">
+                                                <%=park.address%>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="accordion-item">
+                                        <div class="accordion-header" id="headingThree">
+                                        <h5 class="mb-0">
+                                            <button class="button button-hover" type="button" data-toggle="collapse" data-target="#collapseThree-<%=park.park_code%>" aria-expanded="true" aria-controls="collapseThree">
+                                            Phone
+                                            </button>
+                                        </h5>
+                                        </div>
+
+                                        <div id="collapseThree-<%=park.park_code%>"  class="collapse" aria-labelledby="headingThree" data-parent="parkInformation">
+                                            <div class="accordion-body">
+                                                <%=park.phone_number%>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <div class="accordion-header" id="headingFour">
+                                        <h5 class="mb-0">
+                                            <button class="button btn-hover" type="button" data-toggle="collapse" data-target="#collapseFour-<%=park.park_code%>" aria-expanded="true" aria-controls="collapseFour">
+                                            Email
+                                            </button>
+                                        </h5>
+                                        </div>
+
+                                        <div id="collapseFour-<%=park.park_code%>"  class="collapse" aria-labelledby="headingFour" data-parent="parkInformation">
+                                            <div class="accordion-body">
+                                                <%=park.email%>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <div class="accordion-header" id="headingTwo">
+                                        <h5 class="mb-0">
+                                            <button class="button btn-hover" type="button" data-toggle="collapse" data-target="#collapseTwo-<%=park.park_code%>" aria-expanded="true" aria-controls="collapseTwo">
+                                            Directions
+                                            </button>
+                                        </h5>
+                                        </div>
+
+                                        <div id="collapseTwo-<%=park.park_code%>"  class="collapse" aria-labelledby="headingTwo" data-parent="parkInformation">
+                                            <div class="accordion-body">
+                                                <%=link_to park.directions_website, park.directions_website, target: :blank%>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                
+                            </div>      
                     </div>
-                <%end%>
-            </div>
+                </div>
+            <%end%>
+        </div>
+</div>
+    <%else%>
+<div class="container">
+        <div class ="row">
+            <% @parks.each do |park| %>
+            
+                <div class="park-index">
+                    <div class="row align-items-center">
+                            <div class="col-lg-7">
+                                <p><h2> <%= link_to park.name, user_park_path(@user,park.park_code, :park_code => park.park_code)%></h2></p>
+                                <p><%=park.description%></p>
+                            </div>
+                        
+                            <div class="col-lg-5">
+                                <div id="park-photo">
+                                <%park.photos[0..2].each do |photo|%>
+                                    <img src="<%=photo[0]%>" alt="<%=photo[1]%>" style="width:130px;height:130px;">
+                                <%end%>
+                                </div>
+                               <div class="accordion" id="#parkInformation">
+                                    <div class="accordion-item">
+                                        <div class="accordion-header" id="headingOne">
+                                        <h5 class="mb-0">
+                                            <button class="button btn-hover" type="button" data-toggle="collapse" data-target="#collapseOne-<%=park.park_code%>" aria-expanded="true" aria-controls="collapseOne">
+                                            Address
+                                            </button>
+                                        </h5>
+                                        </div>
+
+                                        <div id="collapseOne-<%=park.park_code%>"  class="collapse" aria-labelledby="headingOne" data-parent="parkInformation">
+                                            <div class="accordion-body">
+                                                <%=park.address%>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="accordion-item">
+                                        <div class="accordion-header" id="headingThree">
+                                        <h5 class="mb-0">
+                                            <button class="button button-hover" type="button" data-toggle="collapse" data-target="#collapseThree-<%=park.park_code%>" aria-expanded="true" aria-controls="collapseThree">
+                                            Phone
+                                            </button>
+                                        </h5>
+                                        </div>
+
+                                        <div id="collapseThree-<%=park.park_code%>"  class="collapse" aria-labelledby="headingThree" data-parent="parkInformation">
+                                            <div class="accordion-body">
+                                                <%=park.phone_number%>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <div class="accordion-header" id="headingFour">
+                                        <h5 class="mb-0">
+                                            <button class="button btn-hover" type="button" data-toggle="collapse" data-target="#collapseFour-<%=park.park_code%>" aria-expanded="true" aria-controls="collapseFour">
+                                            Email
+                                            </button>
+                                        </h5>
+                                        </div>
+
+                                        <div id="collapseFour-<%=park.park_code%>"  class="collapse" aria-labelledby="headingFour" data-parent="parkInformation">
+                                            <div class="accordion-body">
+                                                <%=park.email%>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <div class="accordion-header" id="headingTwo">
+                                        <h5 class="mb-0">
+                                            <button class="button btn-hover" type="button" data-toggle="collapse" data-target="#collapseTwo-<%=park.park_code%>" aria-expanded="true" aria-controls="collapseTwo">
+                                            Directions
+                                            </button>
+                                        </h5>
+                                        </div>
+
+                                        <div id="collapseTwo-<%=park.park_code%>"  class="collapse" aria-labelledby="headingTwo" data-parent="parkInformation">
+                                            <div class="accordion-body">
+                                                <%=link_to park.directions_website, park.directions_website, target: :blank%>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                
+                            </div>      
+                    </div>
+                </div>
+            <%end%>
         </div>
     <%end%>
 
 </div>
+
