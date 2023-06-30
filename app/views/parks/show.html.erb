@@ -99,101 +99,178 @@
 
    <%else%>
 
-
-<div class="header">
-   <h1><p><%= @park.name %></p></h1>
-</div>
 <div class="container text-center">
-   <div class="row">
+   <div class="header">
+      <h1><p><%= @park.name %></p></h1>
+   </div>
 
-      <div class="col-lg-4">
-         <div class="user-comments">
-            
-               <p><b>Phone: </b><%=@park.phone_number%></p>   
-               <p><b>Email: </b><%=@park.email%></p>
-               <%=link_to "Directions From Park Site", @park.directions_website, target: :blank%></p>
-            
-            
-   
-            <p><b>Google: </b><%= link_to "View Directions", "https://www.google.com/maps/dir/?api=1&destination=#{@park.latitude},#{@park.longitude}" %> </p>
-            <%= button_to "Add To Profile", "/users/#{@user.id}/parks/#{@park.id}/user_new_parks", method: :post, class: "btn btn-primary"%>
-         </div>
+   <div class="row">
+      <div class="col">
+      <%= button_to "Add To Profile", "/users/#{@user.id}/parks/#{@park.id}/user_new_parks", method: :post, class: "button btn-primary"%>
       </div>
+   </div>
+
+
+  <%# <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Link with href
+  </a> %>
+  <p>
+
+
+   <div class="user-comments">
+      <div class="row">
       
 
-         <div class="col-lg-4">
-            <div class="user-comments">
-           
-               <div class="header">
-               <h3> Search Events </h3>
+      <div class="col-lg-3">    
+               <button class="button btn-primary" type="button" data-toggle="collapse" data-target="#collapseOne-<%=@park.id%>" aria-expanded="false" aria-controls="collapseOne">
+                  Phone
+               </button>
+         
+               </p>
+
+               <div class="collapse" id="collapseOne-<%=@park.id%>">
+                        <%=@park.phone_number%>
                </div>
-               
-               <%=form_with url: "/users/#{@user.id}/parks/#{@park.park_code}/events", method: :get, local: true do |form|%>
-               <div class="row">
-                  <div class="col-lg-6">
-                     <%=form.date_field :start, class: "form-control"%>
-                  </div>
-                  <div class="col-lg-6">
-                     <%=form.date_field :finish, class: "form-control"%>
-                  </div>
+         </div>      
+         <div class="col-lg-3">       
+               <button class="button btn-primary" type="button" data-toggle="collapse" data-target="#collapseTwo-<%=@park.id%>" aria-expanded="false" aria-controls="collapseTwo">
+                  Email
+               </button>
+         
+               </p>
+               <div class="collapse" id="collapseTwo-<%=@park.id%>">
+                     <%=@park.email%>
                </div>
-               
-                  <%=form.submit "Search", class: "btn btn-primary" %>
-               <%end%>
-            </div>
+         </div>
+         <div class="col-lg-3">    
+               <button class="button btn-primary" type="button" data-toggle="collapse" data-target="#collapseThree-<%=@park.id%>" aria-expanded="false" aria-controls="collapseThree">
+                  Directions From Website
+               </button>
+         
+               </p>
+               <div class="collapse" id="collapseThree-<%=@park.id%>">
+                  <a href="<%=@park.directions_website%>"target="_blank">Directions</a>            
+               </div>
+         </div>
+         <div class="col-lg-3">    
+               <button class="button btn-primary" type="button" data-toggle="collapse" data-target="#collapseFour-<%=@park.id%>" aria-expanded="false" aria-controls="collapseFour">
+                  Google Directions
+               </button>
+      
+               </p>
+               <div class="collapse" id="collapseFour-<%=@park.id%>">
+                     <%= link_to "View Directions", "https://www.google.com/maps/dir/?api=1&destination=#{@park.latitude},#{@park.longitude}" %> </p>
+               </div>
          </div>
 
-         <div class ="col-lg-4">
-            <div class="user-comments">
-           
-               <div class="header">
-                  <h3> Comments </h3>
-               </div>
-
-               <%= link_to "View Park events comments", user_park_comments_path(@user.id, @park.id), method: :get%>
-
-            </div>
-         </div>
-   </div>
-</div>
-
-
-
-</div>
-
-<div class="container text-center">
-      <div class="user-comments">
-         <div class="header">
-            <h3> Entrance Fee Information </h3>
-         </div>
-         <%@park.entrance_fees.each do |p_fees|%>
-            <p> <%=p_fees[1]%>: <b>$<%=p_fees[0]%></b></p>
-         <%end%>
       </div>
-</div>
+   </div>
 
-<div class ="container text-center">
-   <div class="row">
-      <div class="col-lg-6">
-         <div class="user-comments">
-            <div class="header">
-               <h3> Operating Hours </h3>
+
+
+
+
+
+
+
+
+
+
+
+   <div class="user-comments">
+      <div class="row align-items-center"> 
+         <div class="col-lg-6">
+       
+         
+
+
+         
+            <button class="button btn-primary" type="button" data-toggle="collapse" data-target="#collapseFive-<%=@park.id%>" aria-expanded="false" aria-controls="collapseFive">
+               Search Events
+            </button>
+         
+            </p>
+            <div class="collapse" id="collapseFive-<%=@park.id%>">
+                  <%=form_with url: "/users/#{@user.id}/parks/#{@park.park_code}/events", method: :get, local: true do |form|%>
+                     <div class="row">
+                        <div class="col-lg-6">
+                           <%=form.date_field :start, class: "form-control"%>
+                        </div>
+                        <div class="col-lg-6">
+                           <%=form.date_field :finish, class: "form-control"%>
+                        </div>
+                     </div>
+                     
+                        <%=form.submit "Search", class: "btn btn-primary" %>
+                     <%end%>
+               </div>
+         
+
+
+            
+                  <button class="button btn-primary" type="button" data-toggle="collapse" data-target="#collapseSix-<%=@park.id%>" aria-expanded="false" aria-controls="collapseSix">
+                     View Events Comments
+                  </button>
+         
+                  </p>
+                  <div class="collapse" id="collapseSix-<%=@park.id%>">
+                  
+                     <%= link_to "View Park Events comments", user_park_comments_path(@user.id, @park.id), method: :get%>
+                           
+                  </div>
+            
+
+         </div>
+
+
+      
+            <div class="col-lg-6">
+                     
+               <img src="<%=@park.photos.first[0]%>" alt="<%=@park.photos.first[1]%>" style="width:250px;height:200px;"> 
             </div>
+         
+      </div>
+
+   </div>
+
+   <div class="user-comments">
+      <div class="row align-items-center">
+         <div class="col-lg-6">
+               <img src="<%=@park.photos[1][0]%>" alt="<%=@park.photos.first[1]%>" style="width:250px;height:200px;"> 
+         </div>
+         <div class="col-lg-6">
+            <button class="button btn-primary" type="button" data-toggle="collapse" data-target="#collapseSeven-<%=@park.id%>" aria-expanded="false" aria-controls="collapseSeven">
+               Entrance Fees
+            </button>
+            </p>
+            <div class="collapse" id="collapseSeven-<%=@park.id%>">
+               <%@park.entrance_fees.each do |p_fees|%>
+                  <p> <%=p_fees[1]%>: <b>$<%=p_fees[0]%></b></p>
+               <%end%>
+                     
+            </div>
+            <button class="button btn-primary" type="button" data-toggle="collapse" data-target="#collapseEight-<%=@park.id%>" aria-expanded="false" aria-controls="collapseEight">
+               Operating Hours
+            </button>
+         
+            </p>
+            <div class="collapse" id="collapseEight-<%=@park.id%>">
                <% @park.operating_hours.each do |hours| %>
                   <p><b><%= hours[0]%>:</b> <%=hours[1] %></p>
                <% end %>
-         </div>
-      </div>
-      <div class="col-lg-6">
-         <div class="user-comments">
-            <div class="header">
-               <h3>Operating Hours Information </h3>
+                     
             </div>
-            <p> <%=@park.closed_day%></p>
+            <button class="button btn-primary" type="button" data-toggle="collapse" data-target="#collapseNine-<%=@park.id%>" aria-expanded="false" aria-controls="collapseNine">
+               Operating Hours Information
+            </button>
+         
+            </p>
+            <div class="collapse" id="collapseNine-<%=@park.id%>">
+               <p> <%=@park.closed_day%></p>       
+            </div>
          </div>
       </div>
    </div>
-
 
    <div class="row">
       <div class="col-lg-12">
@@ -202,17 +279,66 @@
                <h3>Weather</h3>
             </div>
             <div class="row">
-               <%@weather.each do |w|%>
-                  <div class="col-lg-3">
+               <%@weather[0..5].each do |w|%>
+                  <div class="col-lg-4">
                      <img src="http://openweathermap.org/img/w/<%=w.icon%>.png" alt="weather">
                      <p><h6><%=Time.at(w.day).strftime("%B %d ")%></h6></p>
-                     <p><b>Sunrise: </b><%=Time.at(w.sunrise).to_formatted_s(:time)%></p>
-                     <p><b>Sunset: </b><%=Time.at(w.sunset).to_formatted_s(:time)%></p>
-                     <p><b> Max Temp: </b><%=w.max_temp%></p>
-                     <p><b> Min Temp: </b><%=w.min_temp%></p>
                      <p><b> Description: </b><%=w.description%></p>
+                        <div class="accordion" id="#weatherInformation">
+                           <div class="accordion-item">
+                                 <div class="accordion-header" id="headingOne">
+                                 <h5 class="mb-0">
+                                    <button class="button btn-hover" type="button" data-toggle="collapse" data-target="#collapseOne-<%=w.day%>" aria-expanded="true" aria-controls="collapseOne">
+                                    Extended Information
+                                    </button>
+                                 </h5>
+                                 </div>
+
+                                 <div id="collapseOne-<%=w.day%>"  class="collapse" aria-labelledby="headingOne" data-parent="weatherInformation">
+                                    <div class="accordion-body">
+                                       <div class="row">
+                                          <div class="col-lg-6">
+                                             <p><b>Sunrise: </b><%=Time.at(w.sunrise).to_formatted_s(:time)%></p>
+                                          </div>
+                                          <div class="col-lg-6">
+                                             <p><b>Sunset: </b><%=Time.at(w.sunset).to_formatted_s(:time)%></p>
+                                          </div>
+                                       </div>
+
+                                       <div class="row">
+                                          <div class="col-lg-6">
+                                             <p><b> Max Temp: </b><%=w.max_temp%></p>
+                                          </div>
+                                          <div class="col-lg-6">
+                                             <p><b> Min Temp: </b><%=w.min_temp%></p>
+                                          </div>
+                                       </div>
+
+                                       <div class="row">
+                                          <div class="col-lg-6">
+                                             <p><b> Feels Like Day: </b><%=w.feel_like_day%></p>
+                                          </div>
+                                          <div class="col-lg-6">
+                                             <p><b> Feels Like Night: </b><%=w.feel_like_night%></p>
+                                          </div>
+                                       </div>
+
+                                       <div class="row">
+                                          <div class="col-lg-6">
+                                             <p><b> Humidity: </b><%=w.humidity%></p>
+                                          </div>
+                                          <div class="col-lg-6">
+                                             <p><b> Wind Speed: </b><%=w.wind_speed%></p>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                           </div>
+                        </div>
                   </div>    
                <%end%>
+
+               
             </div>
          </div>
       </div>
@@ -220,3 +346,6 @@
 </div>
 
 <%end%>
+
+
+
