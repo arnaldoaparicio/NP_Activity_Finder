@@ -150,15 +150,20 @@ a:visited {
 
     }
 
+  // #park-photo , img:hover {
+
+  // }
+
 
 .event-index {
-    border: 12px solid #8E3200;
-    border-radius: 10px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    padding: 10px;
-    height: 95%;
-    background-color: #D7A86E; 
+  border: 12px solid #8E3200;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
+  padding-bottom: 30px;
+  background-color: #D7A86E; 
+  width: 100%;
     }
 
 .event-info {
@@ -210,8 +215,6 @@ body {
   text-align: center;
   font-size: 150%;
 }
-
-
 
 .carousel-inner .carousel-item img {
   height: 400px;

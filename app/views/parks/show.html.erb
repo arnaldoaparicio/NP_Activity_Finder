@@ -180,15 +180,12 @@
    <div class="user-comments">
       <div class="row align-items-center"> 
          <div class="col-lg-6">
-       
-         
-
-
-         
+            <div class="header">
+               <h1> Events </h1>
+            </div>
             <button class="button btn-primary" type="button" data-toggle="collapse" data-target="#collapseFive-<%=@park.id%>" aria-expanded="false" aria-controls="collapseFive">
                Search Events
-            </button>
-         
+            </button>        
             </p>
             <div class="collapse" id="collapseFive-<%=@park.id%>">
                   <%=form_with url: "/users/#{@user.id}/parks/#{@park.park_code}/events", method: :get, local: true do |form|%>
@@ -203,11 +200,7 @@
                      
                         <%=form.submit "Search", class: "btn btn-primary" %>
                      <%end%>
-               </div>
-         
-
-
-            
+               </div>            
                   <button class="button btn-primary" type="button" data-toggle="collapse" data-target="#collapseSix-<%=@park.id%>" aria-expanded="false" aria-controls="collapseSix">
                      View Events Comments
                   </button>
@@ -218,19 +211,11 @@
                      <%= link_to "View Park Events comments", user_park_comments_path(@user.id, @park.id), method: :get%>
                            
                   </div>
-            
-
-         </div>
-
-
-      
-            <div class="col-lg-6">
-                     
+         </div>      
+            <div class="col-lg-6">          
                <img src="<%=@park.photos.first[0]%>" alt="<%=@park.photos.first[1]%>" style="width:250px;height:200px;"> 
-            </div>
-         
+            </div>         
       </div>
-
    </div>
 
    <div class="user-comments">
@@ -239,6 +224,9 @@
                <img src="<%=@park.photos[1][0]%>" alt="<%=@park.photos.first[1]%>" style="width:250px;height:200px;"> 
          </div>
          <div class="col-lg-6">
+            <div class="header">
+               <h1> Fees and Hours </h1>
+            </div>
             <button class="button btn-primary" type="button" data-toggle="collapse" data-target="#collapseSeven-<%=@park.id%>" aria-expanded="false" aria-controls="collapseSeven">
                Entrance Fees
             </button>

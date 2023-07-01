@@ -7,21 +7,140 @@
     <%if @events.empty?%>
         <h1>There Are No Events Scheduled. Please Contact The Park For More Information!</h1>
     <%end%>
+</div>
+<div class="container text-center">
     <div class="row">
-
         <%@events.each do |event|%>
-            <div class="col-lg-6">
-              <div class="event-index">
-                <div class="header">
-                    <h1><p><%=event.name%></p></h1>
-                </div>
-                      <p> <%= sanitize event.description %></p>
-        
-                    <% if current_user %>
-                        <%= link_to "View Event", "/users/#{current_user.id}/parks/#{@park.id}/events/#{event.event_code}"%>
-                    <% else%>
-                        <%= link_to "View Event", "/parks/#{@park.id}/events/#{event.event_code}"%>
-                    <% end %>
+            <div class="event-index">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                
+                        <div class="header">
+                            <h1><p><%=event.name%></p></h1>
+                        </div>
+                            <p> <%= sanitize event.description %></p>
+                
+                            <% if current_user %>
+                                <%= link_to "View Event", "/users/#{current_user.id}/parks/#{@park.id}/events/#{event.event_code}"%>
+                                <%=button_to "Add to Profile", "/users/#{current_user.id}/parks/#{@park.id}/events/#{event.event_code}/user_new_events", method: :post, :park_id => params[:park_id], class: "btn btn-primary"%>
+
+                            <% else%>
+                                <%= link_to "View Event", "/parks/#{@park.id}/events/#{event.event_code}"%>
+                            <% end %>
+                    
+                    </div>
+
+                    <div class="col-lg-6">
+                        
+                        <div class="accordion" id="#parkInformation">
+                            <div class="accordion-item">
+                                <div class="accordion-header" id="headingOne">
+                                <h5 class="mb-0">
+                                    <button class="button btn-hover" type="button" data-toggle="collapse" data-target="#collapseOne-<%=event.event_code%>" aria-expanded="true" aria-controls="collapseOne">
+                                    Event Time
+                                    </button>
+                                </h5>
+                                </div>
+
+                                <div id="collapseOne-<%=event.event_code%>"  class="collapse" aria-labelledby="headingOne" data-parent="parkInformation">
+                                    <div class="accordion-body">
+                                        <p>Start: <%=event.time[0]%></p>
+                                        <p>End: <%=event.time[1]%></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <button class="button btn-hover" type="button" data-toggle="collapse" data-target="#collapseTwo-<%=event.event_code%>" aria-expanded="true" aria-controls="collapseTwo">
+                                    Location
+                                    </button>
+                                </h5>
+                                </div>
+
+                                <div id="collapseTwo-<%=event.event_code%>"  class="collapse" aria-labelledby="headingTwo" data-parent="parkInformation">
+                                    <div class="accordion-body">
+                                        <%=event.location%>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="accordion-item">
+                                <div class="accordion-header" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button class="button btn-hover" type="button" data-toggle="collapse" data-target="#collapseThree-<%=event.event_code%>" aria-expanded="true" aria-controls="collapseThree">
+                                    Fee
+                                    </button>
+                                </h5>
+                                </div>
+
+                                <div id="collapseThree-<%=event.event_code%>"  class="collapse" aria-labelledby="headingThree" data-parent="parkInformation">
+                                    <div class="accordion-body">
+                                        <%=event.fee_info%>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header" id="headingFour">
+                                <h5 class="mb-0">
+                                    <button class="button btn-hover" type="button" data-toggle="collapse" data-target="#collapseFour-<%=event.event_code%>" aria-expanded="true" aria-controls="collapseFour">
+                                    Type of Event
+                                    </button>
+                                </h5>
+                                </div>
+
+                                <div id="collapseFour-<%=event.event_code%>"  class="collapse" aria-labelledby="headingFour" data-parent="parkInformation">
+                                    <div class="accordion-body">
+                                        <%event.type_of_event.each do|e|%>
+                                            <p><%=e%></p>
+                                        <%end%>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="accordion-item">
+                                <div class="accordion-header" id="headingFive">
+                                    <h5 class="mb-0">
+                                        <button class="button btn-hover" type="button" data-toggle="collapse" data-target="#collapseFive-<%=event.event_code%>" aria-expanded="true" aria-controls="collapseFive">
+                                        Available Dates
+                                        </button>
+                                    </h5>
+                                </div>
+
+                                <div id="collapseFive-<%=event.event_code%>"  class="collapse" aria-labelledby="headingFive" data-parent="parkInformation">
+                                    <div class="accordion-body">
+                                        <div class="row">
+                                            <% event.date.each do |date| %>
+                                            
+                                                <div class="col-lg-3">
+                                                    <p> <%= date.to_datetime.strftime("%m/%d/%Y") %></p>
+                                                </div>
+                                            
+                                                <% end %>
+                                        
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+
+
+                    </div>
                 </div>
             </div>
         <%end%>
