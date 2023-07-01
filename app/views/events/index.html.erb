@@ -21,11 +21,8 @@
                             <p> <%= sanitize event.description %></p>
                 
                             <% if current_user %>
-                                <%= link_to "View Event", "/users/#{current_user.id}/parks/#{@park.id}/events/#{event.event_code}"%>
                                 <%=button_to "Add to Profile", "/users/#{current_user.id}/parks/#{@park.id}/events/#{event.event_code}/user_new_events", method: :post, :park_id => params[:park_id], class: "btn btn-primary"%>
 
-                            <% else%>
-                                <%= link_to "View Event", "/parks/#{@park.id}/events/#{event.event_code}"%>
                             <% end %>
                     
                     </div>
