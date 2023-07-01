@@ -48,7 +48,9 @@ $ bundle exec figaro install
 
 7. Visit https://openweathermap.org/full-price#current to sign up for an API key <br>
 
-8. Add the following code to your application.yml file
+8. Visit https://developer.mapquest.com/plans to sign up for an API key. Make sure to choose the free option! <br>
+
+9. Add the following code to your application.yml file
 
 ```shell
 parks_key: api_key_goes_here
@@ -56,6 +58,10 @@ parks_key: api_key_goes_here
 
 ```
 weather_key: api_key_goes_here
+```
+
+```
+map_key: api_key_goes_here
 ```
 
 9. Startup and Access<br>
