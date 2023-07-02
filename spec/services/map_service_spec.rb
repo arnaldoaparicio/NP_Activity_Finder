@@ -6,7 +6,6 @@ RSpec.describe MapService do
         q = "bar"
         circle = "-77.6445079,39.3341151,100000"
         sort = "distance"
-        response = MapService.find_service(location, q, circle, sort)
-        binding.pry
+        response = MapService.get_service(location, q, circle, sort)
     end
 end

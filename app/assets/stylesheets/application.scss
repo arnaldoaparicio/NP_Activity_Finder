@@ -28,6 +28,86 @@ h1,h2,h3,h4,h5,h6,p{
   border-radius: 20px;
   
 }
+.btn:active {
+  background-color: #A64B2A;
+}
+
+.button {
+  color: #D7A86E;
+  background-color: #8E3200;
+  border: rounded;
+  border-color: #D7A86E;
+  border-radius: 20px;
+  width: 96%;
+  margin: 8px 0;
+  text-align: center;
+  font-size: 15px;
+  height: 30px;
+  
+}
+.button:hover {
+  color: #F0BB62;
+  background-color: #A64B2A;
+  border: none;
+}
+.button:active {
+
+  background-color: #A64B2A;
+
+}
+
+.button1 {
+  color: #D7A86E;
+  background-color: #8E3200;
+  border: rounded;
+  border-color: #D7A86E;
+  border-radius: 20px;
+  width: 50%;
+  margin: 8px 0;
+  text-align: center;
+  font-size: 15px;
+  height: 30px;
+  
+}
+
+.button2 {
+  color: #D7A86E;
+  background-color: #8E3200;
+  border: rounded;
+  border-color: #D7A86E;
+  border-radius: 20px;
+  width: 100%;
+  margin: 8px 0;
+  text-align: center;
+  font-size: 15px;
+  padding-top: 5px;
+  height: 50px;
+  
+}
+
+.button2:hover {
+  color: #F0BB62;
+  background-color: #A64B2A;
+  border: none;
+}
+
+.button2:active {
+
+  background-color: #A64B2A;
+
+}
+.button1:hover {
+  color: #F0BB62;
+  background-color: #A64B2A;
+  border: none;
+}
+
+.button1:active {
+
+  background-color: #A64B2A;
+
+}
+
 .form-control {
   color: #D7A86E;
   background-color: #8E3200;
@@ -39,8 +119,6 @@ h1,h2,h3,h4,h5,h6,p{
   font-size: 15px;
   
 }
-
-
 
 .btn:hover, .nav-link:hover  {
   color: #F0BB62;
@@ -124,14 +202,28 @@ a:visited {
     background-color: #D7A86E; 
     }
 
-.event-index {
-    border: 12px solid #8E3200;
-    border-radius: 10px;
+#park-photo {
     margin-top: 15px;
     margin-bottom: 15px;
     padding: 10px;
-    height: 95%;
-    background-color: #D7A86E; 
+    padding-bottom: 10px;
+
+    }
+
+  // #park-photo , img:hover {
+
+  // }
+
+
+.event-index {
+  border: 12px solid #8E3200;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
+  padding-bottom: 30px;
+  background-color: #D7A86E; 
+  width: 100%;
     }
 
 .event-info {
@@ -183,3 +275,9 @@ body {
   text-align: center;
   font-size: 150%;
 }
+
+.carousel-inner .carousel-item img {
+  height: 400px;
+  position: relative;
+}
+

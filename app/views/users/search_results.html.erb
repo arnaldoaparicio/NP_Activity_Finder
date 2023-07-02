@@ -8,7 +8,7 @@
                 <p><h2><%=result.name%></h2></p>
                 <p><b>Address: </b><%=result.address%></p> 
                 <%=result.city%>, <%=result.state%> <%=result.zip%></p>
-                <%= link_to "Get Directions", "https://www.google.com/maps/dir/?api=1&destination=#{result.latitude},#{result.longitude}"%>
+                <%= link_to "Get Directions", "https://www.google.com/maps/dir/?api=1&destination=#{result.latitude},#{result.longitude}", target: :_blank%>
                 </div>
             </div>
         <%end%>
