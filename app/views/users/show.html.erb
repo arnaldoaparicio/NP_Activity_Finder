@@ -29,7 +29,7 @@
             <div class="accordion-header" id="headingOne">
             <h5 class="mb-0">
                 <button class="button2 btn-hover" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Favorite Parks
+                <h3>Favorite Parks</h3>
                 </button>
             </h5>
             </div>
@@ -107,7 +107,7 @@
             <div class="accordion-header" id="headingOneEvent">
                 <h5 class="mb-0">
                     <button class="button2 btn-hover" type="button" data-toggle="collapse" data-target="#collapseOneEvent" aria-expanded="true" aria-controls="collapseOneEvent">
-                    Favorite Events
+                    <h3>Favorite Events</h3>
                     </button>
                 </h5>
             </div>
@@ -135,10 +135,10 @@
                                         <div class ="row">
                                            
                                             <div class="col-lg-6">
-                                                <%= button_to "Add Comment", "/users/#{@user.id}/parks/#{event.new_park.id}/events/#{event.new_event.id}/user_new_events/#{event.id}/comments/new", method: :get,class: "btn btn-primary" %>
+                                                <%= button_to "Add Comment", "/users/#{@user.id}/parks/#{event.new_park.id}/events/#{event.new_event.id}/user_new_events/#{event.id}/comments/new", method: :get,class: "btn" %>
                                             </div>
                                             <div class="col-lg-6">
-                                                <%= button_to "View Comments", "/users/#{@user.id}/parks/#{event.new_park.id}/events/#{event.new_event.id}/user_new_events/#{event.id}/comments", method: :get,class: "btn btn-primary" %>
+                                                <%= button_to "View Comments", "/users/#{@user.id}/parks/#{event.new_park.id}/events/#{event.new_event.id}/user_new_events/#{event.id}/comments", method: :get,class: "btn" %>
                                             </div>
                                         </div>
                                     </div>
@@ -198,7 +198,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <%=button_to "Delete Event", "/users/#{@user.id}/parks/#{event.new_park.id}/events/#{event.new_event.id}/user_new_events/#{event.id}", method: :delete,class: "button btn-primary"%>
+                                        <%=button_to "Delete Event", "/users/#{@user.id}/parks/#{event.new_park.id}/events/#{event.new_event.id}/user_new_events/#{event.id}", method: :delete,class: "button"%>
 
                                     </div>
                                 </div>

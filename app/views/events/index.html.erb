@@ -21,7 +21,7 @@
                             <p> <%= sanitize event.description %></p>
                 
                             <% if current_user %>
-                                <%=button_to "Add to Profile", "/users/#{current_user.id}/parks/#{@park.id}/events/#{event.event_code}/user_new_events", method: :post, :park_id => params[:park_id], class: "btn btn-primary"%>
+                                <%=button_to "Add to Profile", "/users/#{current_user.id}/parks/#{@park.id}/events/#{event.event_code}/user_new_events", method: :post, :park_id => params[:park_id], class: "btn"%>
 
                             <% end %>
                     

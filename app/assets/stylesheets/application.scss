@@ -28,6 +28,9 @@ h1,h2,h3,h4,h5,h6,p{
   border-radius: 20px;
   
 }
+.btn:active {
+  background-color: #A64B2A;
+}
 
 .button {
   color: #D7A86E;
@@ -46,6 +49,11 @@ h1,h2,h3,h4,h5,h6,p{
   color: #F0BB62;
   background-color: #A64B2A;
   border: none;
+}
+.button:active {
+
+  background-color: #A64B2A;
+
 }
 
 .button1 {
