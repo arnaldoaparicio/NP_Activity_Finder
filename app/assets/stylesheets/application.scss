@@ -80,6 +80,7 @@ h1,h2,h3,h4,h5,h6,p{
   margin: 8px 0;
   text-align: center;
   font-size: 15px;
+  padding-top: 5px;
   height: 50px;
   
 }
@@ -89,10 +90,22 @@ h1,h2,h3,h4,h5,h6,p{
   background-color: #A64B2A;
   border: none;
 }
+
+.button2:active {
+
+  background-color: #A64B2A;
+
+}
 .button1:hover {
   color: #F0BB62;
   background-color: #A64B2A;
   border: none;
+}
+
+.button1:active {
+
+  background-color: #A64B2A;
+
 }
 
 .form-control {

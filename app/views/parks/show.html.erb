@@ -120,7 +120,7 @@
       
 
       <div class="col-lg-3">    
-               <button class="button btn-primary" type="button" data-toggle="collapse" data-target="#collapseOne-<%=@park.id%>" aria-expanded="false" aria-controls="collapseOne">
+               <button class="button" type="button" data-toggle="collapse" data-target="#collapseOne-<%=@park.id%>" aria-expanded="false" aria-controls="collapseOne">
                   Phone
                </button>
          
@@ -131,7 +131,7 @@
                </div>
          </div>      
          <div class="col-lg-3">       
-               <button class="button btn-primary" type="button" data-toggle="collapse" data-target="#collapseTwo-<%=@park.id%>" aria-expanded="false" aria-controls="collapseTwo">
+               <button class="button" type="button" data-toggle="collapse" data-target="#collapseTwo-<%=@park.id%>" aria-expanded="false" aria-controls="collapseTwo">
                   Email
                </button>
          
@@ -141,7 +141,7 @@
                </div>
          </div>
          <div class="col-lg-3">    
-               <button class="button btn-primary" type="button" data-toggle="collapse" data-target="#collapseThree-<%=@park.id%>" aria-expanded="false" aria-controls="collapseThree">
+               <button class="button" type="button" data-toggle="collapse" data-target="#collapseThree-<%=@park.id%>" aria-expanded="false" aria-controls="collapseThree">
                   Directions From Website
                </button>
          
@@ -151,13 +151,13 @@
                </div>
          </div>
          <div class="col-lg-3">    
-               <button class="button btn-primary" type="button" data-toggle="collapse" data-target="#collapseFour-<%=@park.id%>" aria-expanded="false" aria-controls="collapseFour">
+               <button class="button" type="button" data-toggle="collapse" data-target="#collapseFour-<%=@park.id%>" aria-expanded="false" aria-controls="collapseFour">
                   Google Directions
                </button>
       
                </p>
                <div class="collapse" id="collapseFour-<%=@park.id%>">
-                     <%= link_to "View Directions", "https://www.google.com/maps/dir/?api=1&destination=#{@park.latitude},#{@park.longitude}" %> </p>
+                     <%= link_to "View Directions", "https://www.google.com/maps/dir/?api=1&destination=#{@park.latitude},#{@park.longitude}", target: :_blank %> </p>
                </div>
          </div>
 
@@ -181,7 +181,7 @@
             <div class="header">
                <h1> Events </h1>
             </div>
-            <button class="button btn-primary" type="button" data-toggle="collapse" data-target="#collapseFive-<%=@park.id%>" aria-expanded="false" aria-controls="collapseFive">
+            <button class="button" type="button" data-toggle="collapse" data-target="#collapseFive-<%=@park.id%>" aria-expanded="false" aria-controls="collapseFive">
                Search Events
             </button>        
             </p>
@@ -199,7 +199,7 @@
                         <%=form.submit "Search", class: "btn btn-primary" %>
                      <%end%>
                </div>            
-                  <button class="button btn-primary" type="button" data-toggle="collapse" data-target="#collapseSix-<%=@park.id%>" aria-expanded="false" aria-controls="collapseSix">
+                  <button class="button" type="button" data-toggle="collapse" data-target="#collapseSix-<%=@park.id%>" aria-expanded="false" aria-controls="collapseSix">
                      View Events Comments
                   </button>
          
@@ -236,7 +236,7 @@
             <div class="header">
                <h1> Fees and Hours </h1>
             </div>
-            <button class="button btn-primary" type="button" data-toggle="collapse" data-target="#collapseSeven-<%=@park.id%>" aria-expanded="false" aria-controls="collapseSeven">
+            <button class="button" type="button" data-toggle="collapse" data-target="#collapseSeven-<%=@park.id%>" aria-expanded="false" aria-controls="collapseSeven">
                Entrance Fees
             </button>
             </p>
@@ -246,7 +246,7 @@
                <%end%>
                      
             </div>
-            <button class="button btn-primary" type="button" data-toggle="collapse" data-target="#collapseEight-<%=@park.id%>" aria-expanded="false" aria-controls="collapseEight">
+            <button class="button" type="button" data-toggle="collapse" data-target="#collapseEight-<%=@park.id%>" aria-expanded="false" aria-controls="collapseEight">
                Operating Hours
             </button>
          
@@ -257,7 +257,7 @@
                <% end %>
                      
             </div>
-            <button class="button btn-primary" type="button" data-toggle="collapse" data-target="#collapseNine-<%=@park.id%>" aria-expanded="false" aria-controls="collapseNine">
+            <button class="button" type="button" data-toggle="collapse" data-target="#collapseNine-<%=@park.id%>" aria-expanded="false" aria-controls="collapseNine">
                Operating Hours Information
             </button>
          
