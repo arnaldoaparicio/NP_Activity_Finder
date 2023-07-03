@@ -44,7 +44,7 @@
                  <div class="user-comments">
                     <%= form_with url: "/users/#{@user.id}/parks", method: :get, local: true do %>
                     <%= select_tag :state, options_for_select(us_states) %>
-                    <%= submit_tag "Find Parks", class: "btn btn-primary" %>
+                    <%= submit_tag "Find Parks", class: "btn" %>
                 </div>
                     <% end %>
                 <%end%>
@@ -82,14 +82,14 @@
 
                                                     <%=form.hidden_field :park_id, :value => park.new_park.id%>
                                                         
-                                                    <%=form.submit "Find Place", class: "btn btn-primary"%>
+                                                    <%=form.submit "Find Place", class: "btn"%>
                                                 <%end%>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                            <%=button_to "Remove Park", "/users/#{@user.id}/parks/#{park.new_park.id}/user_new_parks/#{park.id}", method: :delete,class: "button btn-primary"%>
+                            <%=button_to "Remove Park", "/users/#{@user.id}/parks/#{park.new_park.id}/user_new_parks/#{park.id}", method: :delete,class: "button"%>
 
                             </div>
                         </div>
@@ -122,7 +122,7 @@
                         <div class="user-comments">
                             <%= form_with url: "/users/#{@user.id}/parks", method: :get, local: true do %>
                             <%= select_tag :state, options_for_select(us_states) %>
-                            <%= submit_tag "Find Parks", class: "btn btn-primary" %>
+                            <%= submit_tag "Find Parks", class: "btn" %>
                         </div>
                             <% end %>
                         <%end%>
@@ -165,9 +165,9 @@
                                                             <%=form.label :radius, "Radius:" %>
                                                             <%=form.text_field :radius, placeholder: "Enter Miles"%>
 
-                                                            <%=form.hidden_field :park_id, :value => event.new_.id%>
+
                                                                 
-                                                            <%=form.submit "Find Place", class: "btn btn-primary"%>
+                                                            <%=form.submit "Find Place", class: "btn"%>
                                                         <%end%>
                                                     </div>
                                                 </div>
@@ -194,7 +194,7 @@
                                                             <%=form_with url: "/users/#{current_user.id}/parks/#{event.new_park.id}/events/#{event.new_event.id}/user_new_events/#{event.id}", method: :patch, local: true  do |form|%>
                                                                 <%=form.date_field :date_attend%>
                                                             
-                                                                <%=form.submit "Add Date Attended", class: "btn btn-primary"%>
+                                                                <%=form.submit "Add Date Attended", class: "btn"%>
                                                             <%end%>
                                                         <%end%>
                                                     </div>
