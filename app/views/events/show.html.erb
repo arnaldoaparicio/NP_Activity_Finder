@@ -86,6 +86,6 @@
     </div>
 
         <% if current_user %>
-            <%=button_to "Add to Profile", "/users/#{@user.id}/parks/#{@park.id}/events/#{@event.event_code}/user_new_events", method: :post, :park_id => params[:park_id], class: "btn btn-primary"%>
+            <%=button_to "Add to Profile", "/users/#{@user.id}/parks/#{@park.id}/events/#{@event.event_code}/user_new_events", method: :post, :park_id => params[:park_id], class: "btn "%>
         <%end%>
 </div>
