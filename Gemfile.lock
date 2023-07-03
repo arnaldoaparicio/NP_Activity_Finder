@@ -73,6 +73,8 @@ GEM
     date (3.3.3)
     diff-lcs (1.5.0)
     docile (1.4.0)
+    dockerfile-rails (1.5.1)
+      rails
     erubi (1.12.0)
     execjs (2.8.1)
     faraday (2.7.6)
@@ -121,7 +123,11 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.9)
+    nokogiri (1.15.2-aarch64-linux)
+      racc (~> 1.4)
     nokogiri (1.15.2-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.15.2-x86_64-linux)
       racc (~> 1.4)
     orderly (0.1.1)
       capybara (>= 1.1)
@@ -239,7 +245,9 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
+  aarch64-linux
   arm64-darwin-20
+  x86_64-linux
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
@@ -247,6 +255,7 @@ DEPENDENCIES
   bootstrap (~> 4.0.0)
   byebug
   capybara
+  dockerfile-rails (>= 1.5)
   faraday
   figaro
   jquery-rails
