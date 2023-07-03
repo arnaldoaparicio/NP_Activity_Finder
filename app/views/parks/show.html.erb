@@ -109,7 +109,7 @@
             <%if @park.photos[0] == "No photos available"%>      
              <img src="/assets/test.png" alt="Logo" style="width:250px;height:200px;"> 
             <%else%>
-               <img src="<%=@park.photos.first[0]%>" alt="<%=@park.photos.first[1]%>" style="width:250px;height:200px;"> 
+               <img src="<%=@park.photos.last[0]%>" alt="<%=@park.photos.first[1]%>" style="width:250px;height:200px;"> 
               
             <%end%> 
          </div>
@@ -343,7 +343,7 @@
             <%if @park.photos[0] == "No photos available"%>      
              <img src="/assets/test.png" alt="Logo" style="width:250px;height:200px;"> 
             <%else%>
-               <img src="<%=@park.photos.first[0]%>" alt="<%=@park.photos.first[1]%>" style="width:250px;height:200px;"> 
+               <img src="<%=@park.photos.last[0]%>" alt="<%=@park.photos.first[1]%>" style="width:250px;height:200px;"> 
               
             <%end%> 
          </div>
