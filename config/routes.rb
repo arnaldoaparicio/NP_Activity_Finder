@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/', to: 'welcome#index'
   
   resources :parks do
+    get "/comments", to: 'parks#park_comments'
     resources :events
   end
 
