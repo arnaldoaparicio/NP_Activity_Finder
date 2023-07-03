@@ -2,35 +2,51 @@
     <%if !logged_in?%>
 <h1> Welcome, Guest!</h1>
 <h3> Please Login or Create An Account For Full Functionality  </h3>
+<div id ="homepage">
+    <%= form_with url: "/parks", method: :get, local: true do %>
+        <%= select_tag :state, options_for_select(us_states) %>
+        <%= submit_tag "Find Parks", class: "btn" %>
 
-       <%= form_with url: "/parks", method: :get, local: true do %>
-            <%= select_tag :state, options_for_select(us_states) %>
-            <%= submit_tag "Find Parks", class: "btn" %>
-    
-        <% end %>
+    <% end %>
+</div>
 
-            <div class="row">
-        <div class="col">
+    <div class="row">
+        <div class="col-lg-4">
+            
+                <div class="user-comments">
+                    <h2> Create An Account </h2>
+
+                    <%= button_to "Sign Up", "/users/new", method: :get,class: "btn"%>
+                </div>
+                <img src="/assets/snow.png" alt="Logo" style="width:340px;height:250px;"> 
+
+            
+        </div>
+        <div class="col-lg-4">
+
             <div class="user-comments">
-            <h2> Create An Account </h2>
+                <h2> Login </h2>
 
-            <%= button_to "Sign Up", "/users/new", method: :get,class: "btn"%>
+                <%= button_to "Login", "/login", method: :get,class: "btn"%>
             </div>
+            <img src="/assets/cali.png" alt="Logo" style="width:340px;height:250px;"> 
+
         </div>
+  
 
-        
 
+        <div class="col-lg-4">
 
-    
-        <div class="col">
-            <div class="user-comments">
-            <h2> Login </h2>
-
-            <%= button_to "Login", "/login", method: :get,class: "btn"%>
+            <div class ="user-comments">
+                <h2> Give Back </h2>
+                <%=link_to "Give Back","https://www.nps.gov/getinvolved/volunteer.htm",target: :_blank, class: "btn"%>
             </div>
-        </div>
+        <img src="/assets/volunteer.png" alt="Logo" style="width:340px;height:250px;"> 
 
         </div>
+    </div>
+
+ </div>
 
 
 
@@ -43,32 +59,45 @@
 
     <%if logged_in?%>
 <h1> Welcome, <%=@user.first_name%> </h1>
-
+    <div id="homepage">
         <%= form_with url: "/users/#{@user.id}/parks", method: :get, local: true do %>
             <%= select_tag :state, options_for_select(us_states) %>
             <%= submit_tag "Find Parks", class: "btn" %>
     
         <% end %>
+    </div>
 
 
         <div class="row">
         
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <div class="user-comments">
                     <h2>Logout</h2>
                     <%= button_to "Logout", "/logout", method: :get,class: "btn"%>
 
                 </div>
+                <img src="/assets/cali.JPG" alt="Logo" style="width:340px;height:250px;"> 
+
             </div>
         
-                <div class="col-lg-6">
+            <div class="col-lg-4">
                 <div class="user-comments">
                     
                     <h2>View Your Profile</h2>
                     <%= button_to "Profile", "/users/#{@user.id}", method: :get,class: "btn"%>
                 </div>
+                <img src="/assets/snow.JPG" alt="Logo" style="width:340px;height:250px;"> 
+
             </div>
-        
+
+            <div class="col-lg-4">
+                <div class="user-comments">
+                    <h2> Give Back </h2>
+                <%=link_to "Give Back","https://www.nps.gov/getinvolved/volunteer.htm",target: :_blank, class: "btn"%>
+                </div>
+                <img src="/assets/volunteer.png" alt="Logo" style="width:340px;height:250px;"> 
+
+            </div>
         </div>
         
     <%end%>
