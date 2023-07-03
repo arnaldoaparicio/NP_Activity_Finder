@@ -175,13 +175,33 @@ a:visited {
   .user-show {
     border: 12px solid #8E3200;
     border-radius: 10px;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin: auto;
     padding: 10px;
+    padding-bottom: 10px;
     background-color: #D7A86E; 
-    width: 100%;
+    width: 50%;
 
     }
+
+    .user-show-text {
+      text-align: left;
+      padding-left: 240px;
+    }
+
+
+    .profile-image-format {
+      margin-top: 10px;
+      margin-left: 35px;
+      position: absolute;
+  }
+
+  .profile-btn-bottom {
+    margin-top: 12px;
+  }
+
+  .btn .profile-btn-bottom {
+    position: absolute;
+  }
 
 .comments-index {
     border: 12px solid #8E3200;

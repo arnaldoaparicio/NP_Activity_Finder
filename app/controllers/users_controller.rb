@@ -10,13 +10,11 @@ class UsersController < ApplicationController
     @user_new_events = @user.new_events
     @all_user_events = @user.user_new_events
     @all_user_parks = @user.user_new_parks
-    
   end
 
   def search_results
     @user = User.find(session[:user_id])
     @park = NewPark.find_by(id: params[:park_id])
-
 
     radius = params[:radius].to_i * 1609.34
     location = @park.longitude.to_s + "," + @park.latitude.to_s
@@ -49,7 +47,6 @@ class UsersController < ApplicationController
     if user.update(user_params)
       redirect_to user_path(user)
     end
-
   end
 
   def login
@@ -63,7 +60,6 @@ class UsersController < ApplicationController
       render :login_form
     end
   end
-
 
   private
 
