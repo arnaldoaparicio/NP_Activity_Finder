@@ -5,13 +5,16 @@
 
     <div class="user-show">
         <div class="row">
-        
-            <div class="col-lg-6">
+            <div class="col">
+                 <div class="profile-image-format"><img src="https://user-images.githubusercontent.com/88012780/249285064-2a7decf0-0c9c-40c9-8f0e-1a191b5eee36.jpg"></div>
+                <div class="user-show-text">
                 <h5><p><b>Username: </b><%=@user.username%></p></h5>
-            </div>
-            <div class="col-lg-6">
                 <h5><p><b>State: </b><%=@user.state%></p></h5>
-            </div>
+                <h5><p><b>Favorited Parks: </b><%=@all_user_parks.size %> </p></h5>
+                <h5><p><b>Favorited Events: </b><%= @all_user_events.size %> </p></h5>
+                    </div>
+                <%= button_to "Edit Profile", edit_user_path(current_user), method: :get,class: "btn profile-btn-bottom"%>
+                </div>
         </div>
     </div>
 
@@ -162,7 +165,7 @@
                                                             <%=form.label :radius, "Radius:" %>
                                                             <%=form.text_field :radius, placeholder: "Enter Miles"%>
 
-                                                            <%=form.hidden_field :park_id, :value => event.new_event.id%>
+                                                            <%=form.hidden_field :park_id, :value => event.new_.id%>
                                                                 
                                                             <%=form.submit "Find Place", class: "btn btn-primary"%>
                                                         <%end%>
