@@ -3,17 +3,17 @@
         <h1><%=@user.first_name%> <%=@user.last_name%>'s Profile</h1>
     </div>
 
-    <div class="user-show">
+    <div class="user-show2">
         <div class="row">
             <div class="col">
                  <div class="profile-image-format"><img src="https://user-images.githubusercontent.com/88012780/249285064-2a7decf0-0c9c-40c9-8f0e-1a191b5eee36.jpg"></div>
                 <div class="user-show-text">
-                <h5><p><b>Username: </b><%=@user.username%></p></h5>
-                <h5><p><b>State: </b><%=@user.state%></p></h5>
-                <h5><p><b>Favorited Parks: </b><%=@all_user_parks.size %> </p></h5>
-                <h5><p><b>Favorited Events: </b><%= @all_user_events.size %> </p></h5>
-                    </div>
-                <%= button_to "Edit Profile", edit_user_path(current_user), method: :get,class: "btn profile-btn-bottom"%>
+                    <h5><p><b>Username: </b><%=@user.username%></p></h5>
+                    <h5><p><b>State: </b><%=@user.state%></p></h5>
+                    <h5><p><b>Favorited Parks: </b><%=@all_user_parks.size %> </p></h5>
+                    <h5><p><b>Favorited Events: </b><%= @all_user_events.size %> </p></h5>
+            </div>
+                    <%= button_to "Edit Profile", edit_user_path(current_user), method: :get,class: "btn profile-btn-bottom"%>
                 </div>
         </div>
     </div>
