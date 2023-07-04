@@ -20,7 +20,7 @@ class NationalParkService
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def self.find_all_park_events(park_code,start,finish)
+  def self.find_all_park_events(park_code, start, finish)
     response = conn.get('events') do |faraday|
       faraday.params['parkCode'] = park_code
       faraday.params['dateStart'] = start
@@ -33,7 +33,6 @@ class NationalParkService
     response = conn.get('events') do |faraday|
       faraday.params['id'] = event_code
     end
-    
     JSON.parse(response.body, symbolize_names: true)
   end
 end
