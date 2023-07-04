@@ -4,12 +4,11 @@ class EventsController < ApplicationController
     @park = NewPark.find_by(park_code: params[:park_id])
 
     if @events.empty?
-      flash.now[:notice] = "No events available for this park."
+      flash.now[:notice] = 'No events available for this park.'
     end
   end
 
   def show
-    # change to use facade and save on 'add to profile'
     if current_user.nil?
       @park = NewPark.find_by(id: params[:park_id])
       @event = NationalParkFacade.get_single_event(params[:id])
@@ -23,5 +22,5 @@ class EventsController < ApplicationController
 private
   def event_params
     params.require(:new_event).permit(:location, :description, :name, :date, :time, :event_code, :free, :id, :fee_info, :latitude, :longitude, :type_of_event)
-  end 
+  end
 end

@@ -14,7 +14,6 @@ class UserNewParksController < ApplicationController
   end
 
   def destroy
-
     @user = User.find(params[:user_id])
     @park = NewPark.find_by(id: params[:park_id])
     @user_new_park = UserNewPark.find_by(user_id: @user.id, new_park_id: @park.id)

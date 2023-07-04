@@ -12,7 +12,6 @@ class UserNewEventsController < ApplicationController
     else
       @event = NewEvent.find_by(id: params[:id])
       @new_event = UserNewEvent.find_by(user_id: @user.id, new_event_id: @event.id, new_park_id: params[:park_id])
-
     end
     redirect_to user_path(@user)
   end
