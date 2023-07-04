@@ -14,7 +14,7 @@ class ParksController < ApplicationController
                       operating_hours: @park.operating_hours, park_code: @park.park_code, phone_number: @park.phone_number, photos: @park.photos)
       n.save
 
-      @park = NewPark.find_by(id: n.id)     
+      @park = NewPark.find_by(id: n.id)
       @weather = WeatherFacade.get_forecast(@park.latitude, @park.longitude)
     else
 
