@@ -18,12 +18,12 @@ class UsersController < ApplicationController
 
     radius = params[:radius].to_i * 1609.34
     q = params[:q]
-  
+
     location = @park.longitude.to_s + "," + @park.latitude.to_s
     circle = @park.longitude.to_s + "," + @park.latitude.to_s + "," +  radius.to_s
-    sort = "distance"
-    if q == ""
-      flash.now[:notice] = "please enter a search term"
+    sort = 'distance'
+    if q == ''
+      flash.now[:notice] = 'please enter a search term'
       redirect_to user_path(@user)
     else
       @response = MapFacade.get_service(location, q, circle, sort)
