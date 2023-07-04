@@ -18,7 +18,7 @@ RSpec.describe NewPark, type: :model do
   end
 
   describe 'relationships' do
-      it { should have_many(:user_new_parks) }
-      it { should have_many(:users).through(:user_new_parks) }
+    it { should have_many(:user_new_parks) }
+    it { should have_many(:users).through(:user_new_parks) }
   end
 end
