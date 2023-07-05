@@ -7,7 +7,9 @@ class UserNewParksController < ApplicationController
     @park = NewPark.find_by(id: params[:park_id])
     @user_new_park = UserNewPark.find_or_create_by(user_id: @user.id, new_park_id: @park.id)
     if @user_new_park.save
-      redirect_to user_path(@user_new_park.user)
+      # redirect_to user_path(@user_new_park.user)
+      redirect_to "/users/#{@user.id}/parks/#{@park.id}"
+      flash[:notice] = 'Park Added To Profile!'
     else
       redirect_to user_path(@user_new_park.user)
     end
@@ -19,6 +21,7 @@ class UserNewParksController < ApplicationController
     @user_new_park = UserNewPark.find_by(user_id: @user.id, new_park_id: @park.id)
     @user_new_park.delete
     redirect_to user_path(@user)
+    flash[:notice] = 'Park Removed From Profile!'
   end
 
   private

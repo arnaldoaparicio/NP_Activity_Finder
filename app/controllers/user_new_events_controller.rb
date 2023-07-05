@@ -30,6 +30,7 @@ class UserNewEventsController < ApplicationController
 
     @new_event.destroy
     redirect_to user_path(@user)
+    flash[:notice] = 'Event Removed From Profile!'
   end
 
   private

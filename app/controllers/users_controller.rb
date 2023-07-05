@@ -52,6 +52,7 @@ class UsersController < ApplicationController
     user = User.find(session[:user_id])
     if user.update(user_params)
       redirect_to user_path(user)
+      flash[:notice] = 'Profile updated!'
     end
   end
 
