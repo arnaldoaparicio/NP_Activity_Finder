@@ -13,6 +13,7 @@ class UserNewEventsController < ApplicationController
       @event = NewEvent.find_by(id: params[:id])
       @new_event = UserNewEvent.find_by(user_id: @user.id, new_event_id: @event.id, new_park_id: params[:park_id])
     end
+    # binding.pry 
     redirect_to user_path(@user)
   end
 

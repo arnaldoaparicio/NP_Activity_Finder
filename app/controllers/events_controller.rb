@@ -5,7 +5,10 @@ class EventsController < ApplicationController
 
     if @events.empty?
       flash.now[:notice] = 'No events available for this park.'
+   
+
     end
+    # binding.pry
   end
 
   def show
