@@ -248,10 +248,6 @@ a:visited {
 
     }
 
-  // #park-photo , img:hover {
-
-  // }
-
 
 .event-index {
   border: 12px solid #8E3200;
@@ -319,9 +315,12 @@ body {
   position: relative;
 }
 
-.flash-style{
+#flash-style {
+  border: 5px solid #8E3200;
+  border-radius: 10px;
   color: #A64B2A;
   text-align: center;
-  font-size: 150%;
+  font-size: 250%;
+  font-family: Courier; 
 }
 
