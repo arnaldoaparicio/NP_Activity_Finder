@@ -11,21 +11,21 @@
             <div class="event-index">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                
+
                         <div class="header">
                             <h1><p><%=event.name%></p></h1>
                         </div>
                             <p> <%= sanitize event.description %></p>
-                
+
                             <% if current_user %>
-                                <%=button_to "Add to Profile", "/users/#{current_user.id}/parks/#{@park.id}/events/#{event.event_code}/user_new_events", method: :post, :park_id => params[:park_id], class: "btn"%>
+                                <%=button_to "Add to Profile", "/users/#{current_user.id}/parks/#{@park.id}/events/#{event.event_code}/user_new_events", params: {event_dates: @event_dates}, method: :post, :park_id => params[:park_id], class: "btn"%>
 
                             <% end %>
-                    
+
                     </div>
 
                     <div class="col-lg-6">
-                        
+
                         <div class="accordion" id="#parkInformation">
                             <div class="accordion-item">
                                 <div class="accordion-header" id="headingOne">
@@ -56,7 +56,7 @@
                                 <div id="collapseTwo-<%=event.event_code%>"  class="collapse" aria-labelledby="headingTwo" data-parent="parkInformation">
                                     <div class="accordion-body">
                                         <%=event.location%>
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
                                 <div id="collapseThree-<%=event.event_code%>"  class="collapse" aria-labelledby="headingThree" data-parent="parkInformation">
                                     <div class="accordion-body">
                                         <%=event.fee_info%>
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -93,7 +93,7 @@
                                         <%event.type_of_event.each do|e|%>
                                             <p><%=e%></p>
                                         <%end%>
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -112,15 +112,15 @@
                                     <div class="accordion-body">
                                         <div class="row">
                                             <% event.date.each do |date| %>
-                                            
+
                                                 <div class="col-lg-3">
                                                     <p> <%= date.to_datetime.strftime("%m/%d/%Y") %></p>
                                                 </div>
-                                            
+
                                                 <% end %>
-                                        
+
                                         </div>
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -139,4 +139,4 @@
             </div>
         <%end%>
     </div>
-</div>    
+</div>
