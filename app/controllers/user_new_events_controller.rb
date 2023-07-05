@@ -13,7 +13,8 @@ class UserNewEventsController < ApplicationController
       @event = NewEvent.find_by(id: params[:id])
       @new_event = UserNewEvent.find_by(user_id: @user.id, new_event_id: @event.id, new_park_id: params[:park_id])
     end
-    redirect_to user_path(@user)
+    redirect_to "/users/#{current_user.id}/parks/#{params[:event_dates][:park_code]}/events?utf8=#{params[:event_dates][:utf8]}&start=#{params[:event_dates][:start]}&finish=#{params[:event_dates][:finish]}&commit=#{params[:event_dates][:commit]}"
+    flash[:notice] = 'Event Added to Profile'
   end
 
   def update
