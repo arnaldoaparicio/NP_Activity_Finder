@@ -3,9 +3,12 @@ class EventsController < ApplicationController
     @events = NationalParkFacade.all_park_events(params[:park_id], params[:start], params[:finish])
     @park = NewPark.find_by(park_code: params[:park_id])
 
-    if @events.empty?
-      flash.now[:notice] = 'No events available for this park.'
-    end
+    @start = params[:start]
+
+    @event_dates = { park_code: params[:park_id], utf8: params[:utf8], start: params[:start], finish: params[:finish],
+                     commit: params[:commit] }
+
+    flash.now[:notice] = 'No events available for this park.' if @events.empty?
   end
 
   def show
@@ -19,8 +22,10 @@ class EventsController < ApplicationController
     end
   end
 
-private
+  private
+
   def event_params
-    params.require(:new_event).permit(:location, :description, :name, :date, :time, :event_code, :free, :id, :fee_info, :latitude, :longitude, :type_of_event)
+    params.require(:new_event).permit(:location, :description, :name, :date, :time, :event_code, :free, :id, :fee_info,
+                                      :latitude, :longitude, :type_of_event)
   end
 end
