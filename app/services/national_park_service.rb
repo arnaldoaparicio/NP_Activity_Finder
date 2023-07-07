@@ -35,4 +35,25 @@ class NationalParkService
     end
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.get_amenities
+    response = conn.get('amenities') do |faraday|
+      faraday.params['limit'] = 127
+    end
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
+  # def self.get_places_by_accessibility(search, park_code)
+  #   response = conn.get('amenities/parksplaces') do |faraday|
+  #     faraday.params['q'] = "#{search}"
+  #     faraday.params['parkCode'] = park_code
+  #   end
+  #   JSON.parse(response.body, symbolize_names: true)
+  #   binding.pry
+  # end
+
+  def self.get_places_by_accessibility(search, park_code)
+    response = conn.get("amenities/parksplaces?parkCode=#{park_code}&api_key=#{ENV['parks_key']}&q=#{search}") 
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end

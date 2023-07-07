@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 28 Jun 2023 14:29:26 GMT
+      - Wed, 05 Jul 2023 19:41:03 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -29,17 +29,17 @@ http_interactions:
       X-Ratelimit-Limit-2628000:
       - '15000'
       X-Ratelimit-Remaining-2628000:
-      - '14973'
+      - '14831'
       Ratelimit-Limit:
       - '15000'
       Ratelimit-Remaining:
-      - '14973'
+      - '14831'
       Ratelimit-Reset:
-      - '1841435'
+      - '1217937'
       X-Powered-By:
       - MapQuest
       X-Request-Id:
-      - 2ee35aa0-15c0-11ee-b71c-111c91489f8c
+      - e0582df0-1b6b-11ee-ad0e-bf43b5418c58
       Access-Control-Allow-Origin:
       - "*"
       Etag:
@@ -98,5 +98,5 @@ http_interactions:
         Buckeystown Pike","type":"address"}}},{"id":"mqId:369322815","displayString":"Chili''s,
         5100 Pegasus Ct, Frederick, MD 21704","name":"Chili''s","slug":"/us/maryland/chilis-369322815","language":"en","place":{"type":"Feature","geometry":{"coordinates":[-77.41025,39.372],"type":"Point"},"properties":{"city":"Frederick","stateCode":"MD","postalCode":"21704","county":"","countryCode":"US","street":"5100
         Pegasus Ct","type":"address"}}}]}'
-  recorded_at: Wed, 28 Jun 2023 14:29:25 GMT
+  recorded_at: Wed, 05 Jul 2023 19:41:03 GMT
 recorded_with: VCR 6.1.0

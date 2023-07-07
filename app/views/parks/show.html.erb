@@ -5,8 +5,6 @@
       <h1><p><%= @park.name %></p></h1>
    </div>
   <p>
-
-
    <div class="user-comments">
       <div class="row">
       
@@ -150,6 +148,23 @@
       </div>
    </div>
 
+     <div class="row">
+      <div class="col-lg-12">
+         <div class="user-comments">
+            <div class="header">
+               <h3>Handicapped Accessible Places Within <%=@park.name%></h3>
+            <div id ="homepage">
+               <%= form_with url: "/parks/#{@park.id}/accessible_places", method: :get, local: true do |form|%>
+                  <%= select_tag :accessible, options_for_select(accessible_searches) %>
+                  <% form.hidden_field :park_code, :value => @park.id%>
+                  <%= form.submit "Find Places", class: "btn" %>
+
+               <% end %>
+            </div>
+         </div>
+      </div>
+   </div>
+
    <div class="row">
       <div class="col-lg-12">
          <div class="user-comments">
@@ -214,9 +229,7 @@
                            </div>
                         </div>
                   </div>    
-               <%end%>
-
-               
+               <%end%>  
             </div>
          </div>
       </div>
@@ -384,6 +397,24 @@
       </div>
    </div>
 
+
+   <div class="row">
+      <div class="col-lg-12">
+         <div class="user-comments">
+            <div class="header">
+               <h3>Handicapped Accessible Places Within <%=@park.name%></h3>
+            <div id ="homepage">
+               <%= form_with url: "/parks/#{@park.id}/accessible_places", method: :get, local: true do |form|%>
+                  <%= select_tag :accessible, options_for_select(accessible_searches) %>
+                  <% form.hidden_field :park_code, :value => @park.id%>
+                  <%= form.submit "Find Places", class: "btn" %>
+
+               <% end %>
+            </div>
+         </div>
+      </div>
+   </div>
+
    <div class="row">
       <div class="col-lg-12">
          <div class="user-comments">
@@ -449,13 +480,14 @@
                         </div>
                   </div>    
                <%end%>
-
-               
             </div>
          </div>
       </div>
    </div>
 </div>
+
+
+
 
 <%end%>
 

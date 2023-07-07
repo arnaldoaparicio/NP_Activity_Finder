@@ -21,6 +21,15 @@ class ParksController < ApplicationController
       @park = NewPark.find_by(id: params[:id]) || NewPark.find_by(park_code: params[:park_code])
       @weather = WeatherFacade.get_forecast(@park.latitude, @park.longitude)
     end
+
+  
+
+  end
+
+  def accessible_places
+    @park = NewPark.find_by(id: params[:park_id]) || NewPark.find_by(park_code: params[:park_code])
+    search = "%22#{params[:accessible]}%22"
+    @accessible_places = NationalParkFacade.get_places_by_accessibility(search, @park.park_code)
   end
 
   def park_comments

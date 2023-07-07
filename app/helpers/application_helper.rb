@@ -55,4 +55,25 @@ module ApplicationHelper
       ['Wyoming', 'WY']
     ]
   end
+
+  def accessible_searches
+    @amenities = NationalParkFacade.get_amenities
+    # empty = []
+    # filled = []
+    # @amenities.map do |amenity|
+    #   if amenity.accessibility == []
+    #     empty << amenity
+    #   else 
+    #     filled << amenity.accessibility
+    #   end
+    # end
+    # filled
+
+    test_1 = @amenities.select do |amenity|
+      amenity.accessibility != []
+    end
+    test_1.map do |amenity|
+      amenity.accessibility
+    end
+  end
 end

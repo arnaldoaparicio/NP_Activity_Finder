@@ -1,0 +1,20 @@
+
+<div class="container text-center">
+    <div class="row align-items-center">
+
+                <%if @accessible_places.empty?%>
+                    <h1> No Accessible Places Information Provided by <%=@park.name%></h1>
+                <%else%>
+                    <%@accessible_places.each do |place|%>
+                        <% place.places.each do |p|%>
+                        <div class="col-lg-6">
+                            <div class="accessible">
+                            <p><h2> <%= p[:title]%></h2></p>
+                            <a href="<%= p[:url]%>"target="_blank">View Place</a>  
+                            </div>
+                        </div>          
+                        <%end%>
+                    <%end%>
+                <%end%>
+    </div>
+</div>
