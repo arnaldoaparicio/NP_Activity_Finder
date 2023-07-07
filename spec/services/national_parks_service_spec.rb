@@ -69,4 +69,17 @@ RSpec.describe NationalParkService do
     events = NationalParkService.find_all_park_events(park_code, start, finish)
     expect(events).to be_a Hash
   end
+
+  it 'returns amenities', :vcr do
+    amenities = NationalParkService.get_amenities
+    expect(amenities).to be_a Hash
+  end
+
+  it 'returns places by accessibility', :vcr do
+    search = "Wheelchair Accessible"
+    search_new = "%22#{search}%22"
+    park_code = "acad"
+    places = NationalParkService.get_places_by_accessibility(search_new, park_code)
+    expect(places).to be_a Hash
+  end
 end

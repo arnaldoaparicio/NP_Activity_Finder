@@ -26,4 +26,19 @@ class NationalParkFacade
     event = single_event[:data][0]
     Event.new(event)
   end
+
+  def self.get_amenities
+    amenities = NationalParkService.get_amenities[:data]
+    amenities.map do |amenity|
+      Amenity.new(amenity)
+    end
+  end
+
+  def self.get_places_by_accessibility(search,park_code)
+    places = NationalParkService.get_places_by_accessibility(search,park_code)[:data]
+    # binding.pry
+    places.map do |place|
+      AccessiblePlace.new(place)
+    end
+  end
 end

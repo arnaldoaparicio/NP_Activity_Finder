@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   get '/volunteer', to: 'volunteers#index'
   resources :parks do
     get "/comments", to: 'parks#park_comments'
+    get '/accessible_places', to: 'parks#accessible_places'
     resources :events
   end
+
+  # get '/accessible_places', to: 'parks#accessible_places'
 
   # resources :users
   get '/login', to: 'sessions#new'

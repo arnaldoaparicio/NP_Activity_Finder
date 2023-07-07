@@ -1,0 +1,84 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://developer.nps.gov/api/v1/amenities/parksplaces?api_key=zmuTdZgBkO6cmrf401Mfjpr6hRqdfLwi8NdgROnB&parkCode=acad&q=%22Wheelchair%20Accessible%22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.6
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 06 Jul 2023 16:57:43 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '729'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-type, Authorization, Access-Control-Allow-Headers, Credentials, X-Api-Key
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Age:
+      - '0'
+      Allow:
+      - Get
+      Content-Security-Policy:
+      - default-src 'none'; base-uri 'none'; connect-src 'self'; form-action 'self';
+        font-src 'self'; frame-ancestors 'none'; img-src 'self'; media-src 'self';
+        style-src 'self' 'unsafe-inline'; script-src 'self'; worker-src 'self';
+      Strict-Transport-Security:
+      - max-age=31536000; preload
+      - max-age=31536000; preload
+      Vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      Via:
+      - http/1.1 api-umbrella (ApacheTrafficServer [cMsSf ])
+      X-Api-Umbrella-Request-Id:
+      - c95ghm03ul6pukprvif0
+      X-Cache:
+      - MISS
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '976'
+      X-Vcap-Request-Id:
+      - 0d0365ec-aaf6-4a16-6da0-e088a06db9e2
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+    body:
+      encoding: ASCII-8BIT
+      string: " \r\n{\r\n\r\n\"total\":\"1\",\r\n\"limit\":\"50\",\r\n\"start\":\"0\",
+        \ \r\n\"data\":[\r\n[\r\n{\r\n\r\n\"id\":\"EAB59B1F-2FA1-4545-A322-2C19149AF7FC\"\r\n\r\n,\"name\":\"Wheelchair
+        Accessible\"      \r\n\r\n,\"parks\":[\r\n{\"states\":\"ME\",\"designation\":\"National
+        Park\",\"parkCode\":\"acad\",\"fullName\":\"Acadia National Park\",\"places\":[{\"title\":\"Carroll
+        Homestead\",\"id\":\"12A7B194-DFC1-4099-8897-0E4A1687A939\",\"url\":\"https://www.nps.gov/places/carroll-homestead.htm\"},{\"title\":\"Sieur
+        de Monts Nature Center\",\"id\":\"13672307-DED6-4438-8D17-C1F7B6284CCC\",\"url\":\"https://www.nps.gov/places/sieur-de-monts-nature-center.htm\"},{\"title\":\"Wild
+        Gardens of Acadia\",\"id\":\"71B77232-4FB0-4EA9-8710-55F87D2FF97D\",\"url\":\"https://www.nps.gov/places/wild-gardens-of-acadia.htm\"},{\"title\":\"Civilian
+        Conservation Corps Memorial Plaque\",\"id\":\"CF486473-5EAE-4D64-B17F-EBD0B767C702\",\"url\":\"https://www.nps.gov/places/ccc-plaque.htm\"},{\"title\":\"Jordan
+        Pond House\",\"id\":\"73CD84BA-F5B5-491E-A3B4-B5B6743668AC\",\"url\":\"https://www.nps.gov/places/jordan-pond-house.htm\"},{\"title\":\"Cadillac
+        Mountain\",\"id\":\"156133FE-D003-4A12-BBD6-E1AEF8B1BAE4\",\"url\":\"https://www.nps.gov/places/cadillac-mountain.htm\"},{\"title\":\"Rockefeller
+        Hall\",\"id\":\"1D4CB377-9590-4FE1-8E4F-E9AAB37B8FB0\",\"url\":\"https://www.nps.gov/places/rockefeller-hall.htm\"},{\"title\":\"AXS:
+        Hulls Cove Visitor Center\",\"id\":\"040A6029-F7F0-4662-BD24-FAB54F59AA0D\",\"url\":\"https://www.nps.gov/places/axs_hcvc.htm\"}],\"url\":\"http://www.nps.gov/acad/\",\"name\":\"Acadia\"}\r\n]\r\n\r\n\r\n}\r\n]\r\n]\r\n}\r\n"
+  recorded_at: Thu, 06 Jul 2023 16:57:43 GMT
+recorded_with: VCR 6.1.0
