@@ -1,0 +1,107 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://developer.nps.gov/api/v1/alerts?api_key=zmuTdZgBkO6cmrf401Mfjpr6hRqdfLwi8NdgROnB&parkCode=gate&stateCode=NJ
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.6
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 09 Jul 2023 22:27:20 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '1273'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-type, Authorization, Access-Control-Allow-Headers, Credentials, X-Api-Key
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Age:
+      - '0'
+      Allow:
+      - Get
+      Content-Security-Policy:
+      - default-src 'none'; base-uri 'none'; connect-src 'self'; form-action 'self';
+        font-src 'self'; frame-ancestors 'none'; img-src 'self'; media-src 'self';
+        style-src 'self' 'unsafe-inline'; script-src 'self'; worker-src 'self';
+      Strict-Transport-Security:
+      - max-age=31536000; preload
+      - max-age=31536000; preload
+      Vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      Via:
+      - http/1.1 api-umbrella (ApacheTrafficServer [cMsSf ])
+      X-Api-Umbrella-Request-Id:
+      - c97j23n9t60uf545bts0
+      X-Cache:
+      - MISS
+      X-Content-Type-Options:
+      - nosniff
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '992'
+      X-Vcap-Request-Id:
+      - 942a13b4-e229-44c6-640b-620b87a1a50e
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+    body:
+      encoding: ASCII-8BIT
+      string: " \r\n{\r\n\r\n\"total\":\"6\",\r\n\"limit\":\"50\",\r\n\"start\":\"0\",
+        \ \r\n\"data\":[\r\n\r\n{\r\n\r\n\"id\":\"2EA3899C-27C2-49ED-B332-268A8481E954\"\r\n\r\n,\"url\":\"\"\r\n\r\n,\"title\":\"Please
+        check our IG and Twitter for updated beach closures\"\r\n\r\n,\"parkCode\":\"gate\"\r\n\r\n,\"description\":\"There
+        are beach closures throughout the park due to nesting birds. Our Instagram
+        and Twitter pages have the most up-to-date information about these closures.\"\r\n\r\n,\"category\":\"Park
+        Closure\"  \r\n\r\n,\"relatedRoadEvents\":[]\r\n,\"lastIndexedDate\":\"2023-07-02
+        09:57:53.0\"\r\n\r\n\r\n}\r\n,\r\n{\r\n\r\n\"id\":\"FD4EC585-CB10-48FD-8918-E1D28260B593\"\r\n\r\n,\"url\":\"https://fire.airnow.gov/\"\r\n\r\n,\"title\":\"Important
+        Air Quality Health Advisory\"\r\n\r\n,\"parkCode\":\"gate\"\r\n\r\n,\"description\":\"Potentially
+        hazardous and unhealthy Air Quality Index levels are present in some areas
+        of the Northeast due to wildfire smoke from wildfires burning in eastern Canada.
+        Find out what actions you can take to protect your health.\"\r\n\r\n,\"category\":\"Caution\"
+        \ \r\n\r\n,\"relatedRoadEvents\":[]\r\n,\"lastIndexedDate\":\"2023-06-07 16:31:55.0\"\r\n\r\n\r\n}\r\n,\r\n{\r\n\r\n\"id\":\"3A25F0B0-1523-4F82-B602-58F776556A7B\"\r\n\r\n,\"url\":\"\"\r\n\r\n,\"title\":\"Sandy
+        Hook's North Beach and Beach E closed to swimming summer 2023\"\r\n\r\n,\"parkCode\":\"gate\"\r\n\r\n,\"description\":\"Sandy
+        Hook's North Beach and Beach E will be closed to swimming this summer. Please
+        swim only at lifeguarded areas while lifeguards are on duty.\"\r\n\r\n,\"category\":\"Park
+        Closure\"  \r\n\r\n,\"relatedRoadEvents\":[]\r\n,\"lastIndexedDate\":\"2023-05-26
+        10:53:58.0\"\r\n\r\n\r\n}\r\n,\r\n{\r\n\r\n\"id\":\"EF7A6680-0F56-4EA3-985A-C7750D5E09C7\"\r\n\r\n,\"url\":\"https://www.nps.gov/gate/learn/management/spring-creek-park-environmental-cleanup-project.htm\"\r\n\r\n,\"title\":\"Spring
+        Creek Closed to the Public\"\r\n\r\n,\"parkCode\":\"gate\"\r\n\r\n,\"description\":\"Spring
+        Creek is closed to the public at this time. The NPS is conducting field investigations
+        as part of a Remedial Investigation at the site.\"\r\n\r\n,\"category\":\"Park
+        Closure\"  \r\n\r\n,\"relatedRoadEvents\":[]\r\n,\"lastIndexedDate\":\"2023-04-13
+        09:18:49.0\"\r\n\r\n\r\n}\r\n,\r\n{\r\n\r\n\"id\":\"C2ED81E8-F50F-42E2-94FE-83713735767E\"\r\n\r\n,\"url\":\"https://www.nps.gov/gate/protecting-plovers.htm\"\r\n\r\n,\"title\":\"Dogs
+        Not allowed on ocean beaches in Jamaica Bay and Sandy Hook March 15- Sept.
+        15\"\r\n\r\n,\"parkCode\":\"gate\"\r\n\r\n,\"description\":\"Dogs are not
+        allowed on ocean beaches at Sandy Hook between March 15 through September
+        15. Dogs are not allowed on the ocean beaches at Jacob Riis Park, Fort Tilden,
+        Breezy Point Tip and at the bayside of Breezy Point between March 15 through
+        September 15\"\r\n\r\n,\"category\":\"Information\"  \r\n\r\n,\"relatedRoadEvents\":[]\r\n,\"lastIndexedDate\":\"2023-03-15
+        15:55:13.0\"\r\n\r\n\r\n}\r\n,\r\n{\r\n\r\n\"id\":\"5AA505D1-585E-4776-86F9-AFB02034840B\"\r\n\r\n,\"url\":\"\"\r\n\r\n,\"title\":\"Dead
+        Horse Bay Remains Closed to the Public\"\r\n\r\n,\"parkCode\":\"gate\"\r\n\r\n,\"description\":\"The
+        entire southern area of Dead Horse Bay, including Glass Bottle Beach, is closed
+        to the public. Crews are working in these areas using heavy brush clearing
+        equipment and performing radiation surveys.\"\r\n\r\n,\"category\":\"Park
+        Closure\"  \r\n\r\n,\"relatedRoadEvents\":[]\r\n,\"lastIndexedDate\":\"2023-03-03
+        15:43:10.0\"\r\n\r\n\r\n}\r\n\r\n]\r\n}\r\n"
+  recorded_at: Sun, 09 Jul 2023 22:27:20 GMT
+recorded_with: VCR 6.1.0

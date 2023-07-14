@@ -1,0 +1,11 @@
+<% if @alerts.empty? %>
+  <p>No alerts available.</p>
+<%else %>
+  <% @alerts.each do |alert| %>
+    <p><%= alert.title %><p>
+    <p>Description: <%= alert.description %>
+    <p>Category: <%= alert.category %></p>
+    <p>Last Updated: <%= alert.last_index %></p>
+    <p>Link: <%= alert.url %></p>
+  <% end %>
+<% end %>

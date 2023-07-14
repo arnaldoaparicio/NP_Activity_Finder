@@ -76,10 +76,21 @@ RSpec.describe NationalParkService do
   end
 
   it 'returns places by accessibility', :vcr do
-    search = "Wheelchair Accessible"
+    search = 'Wheelchair Accessible'
     search_new = "%22#{search}%22"
-    park_code = "acad"
+    park_code = 'acad'
     places = NationalParkService.get_places_by_accessibility(search_new, park_code)
     expect(places).to be_a Hash
+  end
+
+  it 'returns alerts for National Gateway Park in NJ', :vcr do
+    park_code = 'gate'
+    state = 'NJ'
+
+    alerts = NationalParkService.all_alerts(park_code, state)
+
+    require 'pry'
+    binding.pry
+    expect(alerts).to be_a Hash
   end
 end

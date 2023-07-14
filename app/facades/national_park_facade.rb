@@ -34,11 +34,18 @@ class NationalParkFacade
     end
   end
 
-  def self.get_places_by_accessibility(search,park_code)
-    places = NationalParkService.get_places_by_accessibility(search,park_code)[:data]
+  def self.get_places_by_accessibility(search, park_code)
+    places = NationalParkService.get_places_by_accessibility(search, park_code)[:data]
     # binding.pry
     places.map do |place|
       AccessiblePlace.new(place)
+    end
+  end
+
+  def self.get_alerts(park_code, state)
+    all_alerts = NationalParkService.all_alerts(park_code, state)[:data]
+    all_alerts.map do |alert|
+      Alert.new(alert)
     end
   end
 end

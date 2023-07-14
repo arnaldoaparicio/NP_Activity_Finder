@@ -2,10 +2,12 @@ class ParksController < ApplicationController
   def index
     @user = User.find_by(id: session[:user_id])
     @parks = NationalParkFacade.get_parks_by_state(params[:state])
+    @state = params[:state]
   end
 
   def show
     @user = User.find_by(id: session[:user_id])
+    @state_info = { park_code: params[:park_code], state: params[:state] }
     if NewPark.where(id: params[:id]).empty? && NewPark.where(park_code: params[:park_code]).empty?
       @park = NationalParkFacade.one_park(params[:park_code])
       n = NewPark.new(address: @park.address, closed_day: @park.closed_day, description: @park.description,
@@ -21,9 +23,7 @@ class ParksController < ApplicationController
       @park = NewPark.find_by(id: params[:id]) || NewPark.find_by(park_code: params[:park_code])
       @weather = WeatherFacade.get_forecast(@park.latitude, @park.longitude)
     end
-
-  
-
+    @alerts = NationalParkFacade.get_alerts(params[:park_code], params[:state])
   end
 
   def accessible_places
