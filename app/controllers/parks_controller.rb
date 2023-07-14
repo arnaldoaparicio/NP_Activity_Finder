@@ -23,7 +23,6 @@ class ParksController < ApplicationController
       @weather = WeatherFacade.get_forecast(@park.latitude, @park.longitude)
     end
     @alerts = NationalParkFacade.get_alerts(params[:park_code], params[:state])
-    flash[:emergency] = "There are #{@alerts.size} alerts for this park"
   end
 
   def accessible_places
