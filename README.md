@@ -1,5 +1,4 @@
 ## Fly.io Link
-(Currently working through connection issues)
 https://national-park-events-finder.fly.dev/
 
 ## Setup
