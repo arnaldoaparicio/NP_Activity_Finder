@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :parks do
     get "/comments", to: 'parks#park_comments'
     get '/accessible_places', to: 'parks#accessible_places'
+    get '/alerts', to: 'alerts#index'
     resources :events
   end
 
@@ -20,7 +21,7 @@ Rails.application.routes.draw do
     get '/search_results', to: 'users#search_results'
     resources :parks do
       get "/comments", to: 'parks#park_comments'
-    resources :user_new_parks
+      resources :user_new_parks
       resources :events do
         resources :user_new_events do
           resources :comments
