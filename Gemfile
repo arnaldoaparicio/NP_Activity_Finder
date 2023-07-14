@@ -18,6 +18,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'sass-rails'
+gem 'coffee-rails', '~> 4.2'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
