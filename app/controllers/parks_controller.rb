@@ -2,6 +2,7 @@ class ParksController < ApplicationController
   def index
     @user = User.find_by(id: session[:user_id])
     @parks = NationalParkFacade.get_parks_by_state(params[:state])
+    @state = params[:state]
   end
 
   def show
