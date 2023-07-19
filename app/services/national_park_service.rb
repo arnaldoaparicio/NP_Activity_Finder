@@ -57,10 +57,10 @@ class NationalParkService
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def self.all_alerts(park_code, state)
+  def self.all_alerts(park_code)
     response = conn.get('alerts') do |f|
       f.params['parkCode'] = park_code
-      f.params['stateCode'] = state
+      # f.params['stateCode'] = state
     end
     JSON.parse(response.body, symbolize_names: true)
   end
