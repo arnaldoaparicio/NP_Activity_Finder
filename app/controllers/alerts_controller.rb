@@ -1,5 +1,5 @@
 class AlertsController < ApplicationController
   def index
-    @alerts = NationalParkFacade.get_alerts(params[:park_code], params[:state])
+    @alerts = NationalParkFacade.get_alerts(params[:park_code])
   end
 end

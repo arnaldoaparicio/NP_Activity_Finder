@@ -23,7 +23,8 @@ class ParksController < ApplicationController
       @park = NewPark.find_by(id: params[:id]) || NewPark.find_by(park_code: params[:park_code])
       @weather = WeatherFacade.get_forecast(@park.latitude, @park.longitude)
     end
-    @alerts = NationalParkFacade.get_alerts(params[:park_code], params[:state])
+    @alerts = NationalParkFacade.get_alerts(@park.park_code)
+    # binding.pry
   end
 
   def accessible_places

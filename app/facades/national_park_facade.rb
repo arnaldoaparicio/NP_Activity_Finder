@@ -42,8 +42,8 @@ class NationalParkFacade
     end
   end
 
-  def self.get_alerts(park_code, state)
-    all_alerts = NationalParkService.all_alerts(park_code, state)[:data]
+  def self.get_alerts(park_code)
+    all_alerts = NationalParkService.all_alerts(park_code)[:data]
     all_alerts.map do |alert|
       Alert.new(alert)
     end

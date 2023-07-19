@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :users do 
     get '/search_results', to: 'users#search_results'
     resources :parks do
+      get '/alerts', to: 'alerts#index'
       get "/comments", to: 'parks#park_comments'
       resources :user_new_parks
       resources :events do
