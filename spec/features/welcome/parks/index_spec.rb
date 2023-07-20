@@ -24,7 +24,7 @@ RSpec.describe 'Parks Index Page' do
   end
 
   describe 'park index visitor' do
-    it 'lists all the parks in NJ as a visitor' do
+    it 'lists all the parks in NJ as a visitor', :vcr do
       visit('/parks?utf8=✓&state=NJ&commit=Find+Parks')
 
       expect(current_page).to have_content('Appalachian National Scenic Trail')
