@@ -89,8 +89,6 @@ RSpec.describe NationalParkService do
 
     alerts = NationalParkService.all_alerts(park_code, state)
 
-    require 'pry'
-    binding.pry
     expect(alerts).to be_a Hash
   end
 end
